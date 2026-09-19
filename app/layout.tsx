@@ -4,6 +4,7 @@ import Marquee from "@/components/layout/Marquee";
 import ThemeProvider from "@/components/providers/ThemeProvider";
 import "./globals.css";
 import ScrollProgress from "@/components/layout/ScrollProgress";
+import FloatingActions from "@/components/layout/FloatingActions";
 
 export default function RootLayout({
   children,
@@ -18,6 +19,7 @@ export default function RootLayout({
           <Header />
 
           {children}
+          <FloatingActions />
 
           <Marquee />
 
