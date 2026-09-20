@@ -1,44 +1,41 @@
 "use client";
 
-import Link from "next/link";
-import { MessageCircle, Send } from "lucide-react";
+import { MessageSquare } from "lucide-react";
+import WhatsappIcon from "@mui/icons-material/WhatsApp";
 
 const WHATSAPP_NUMBER = "910000000000";
 
-const whatsappMessage = encodeURIComponent(
-  "Hello LIMRA INDUSTRY, I would like to enquire about your ceiling fans."
-);
+const getGeneralWhatsAppUrl = () => {
+  const message = encodeURIComponent(
+    "Hello LIMRA INDUSTRY, I would like to enquire about your ceiling fans."
+  );
+
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+};
 
 export default function FloatingActions() {
   return (
-    <div className="fixed bottom-5 right-5 z-[90] flex flex-col items-end gap-3">
-      {/* Enquiry Button */}
-      <Link
-        href="/contact"
-        aria-label="Make an enquiry"
-        className="group flex items-center gap-3 rounded-full border border-border bg-background px-4 py-3 text-sm font-semibold text-foreground shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-primary-foreground"
+    <>
+      {/* Sticky Floating WhatsApp Contact Button on Mobile & Desktop */}
+      <aside
+        className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-2"
+        aria-label="Direct trade quick contacts"
       >
-        <span className="hidden sm:block">Enquire Now</span>
+        <a
+          href={getGeneralWhatsAppUrl()}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center gap-2 rounded-full bg-emerald-600 p-3 text-white shadow-lg transition-all duration-200 hover:bg-emerald-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 sm:px-4 sm:py-3"
+          aria-label="Direct WhatsApp Enquiry"
+        >
+          <WhatsappIcon className="h-5 w-5 fill-current" />
 
-        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform duration-300 group-hover:rotate-6">
-          <Send className="h-4 w-4" />
-        </span>
-      </Link>
-
-      {/* WhatsApp Button */}
-      <a
-        href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat with LIMRA INDUSTRY on WhatsApp"
-        className="group flex items-center gap-3 rounded-full border border-border bg-background px-4 py-3 text-sm font-semibold text-foreground shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#25D366] hover:bg-[#25D366] hover:text-white"
-      >
-        <span className="hidden sm:block">WhatsApp</span>
-
-        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366] text-white transition-transform duration-300 group-hover:scale-110">
-          <MessageCircle className="h-5 w-5" />
-        </span>
-      </a>
-    </div>
+          <span className="hidden text-xs font-bold tracking-wide sm:inline">
+            WhatsApp Us
+          </span>
+        </a>
+      </aside>
+    </>
   );
 }
+

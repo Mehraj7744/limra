@@ -5,11 +5,13 @@ import Applications from "@/components/home/Applications";
 import AboutPreview from "@/components/home/AboutPreview";
 import CatalogueCTA from "@/components/home/CatalogueCTA";
 import IndustryShowcase from "@/components/home/IndustryShowcase";
+import HomePage from "./home/page";
 
 export default function Home() {
   return (
     <main>
-      <Hero />
+      <HomePage />
+      {/* <Hero />
 
       <Categories />
       <IndustryShowcase />
@@ -20,7 +22,7 @@ export default function Home() {
 
       <AboutPreview />
 
-      <CatalogueCTA />
+      <CatalogueCTA /> */}
     </main>
   );
 }
