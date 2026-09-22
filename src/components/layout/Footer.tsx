@@ -1,7 +1,8 @@
 import Link from "next/link";
-import WhatsappIcon from '@mui/icons-material/WhatsApp';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+
 import {
   Phone,
   Mail,
@@ -61,7 +62,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-bold text-white transition-all duration-150 hover:bg-emerald-700"
             >
-              <WhatsappIcon className="h-4 w-4" />
+              <WhatsAppIcon className="h-4 w-4" />
               <span>WhatsApp Us</span>
             </a>
 
@@ -167,15 +168,7 @@ export default function Footer() {
               </a>
 
 
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-slate-300 transition-colors hover:bg-[#174e8c] hover:text-white"
-                aria-label="YouTube"
-              >
-                {/* <Youtube className="h-4 w-4" /> */}
-              </a>
+             
 
             </div>
 

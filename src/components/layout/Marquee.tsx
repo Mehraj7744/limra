@@ -23,13 +23,13 @@ export default function Marquee() {
               key={`first-${item}-${index}`}
               className="flex items-center"
             >
-              <span className="px-4 py-3 font-heading text-sm font-semibold uppercase tracking-[0.16em] text-foreground sm:px-8 sm:text-base">
+              <span className="px-1 py-1 font-heading text-sm font-semibold uppercase tracking-[0.16em] text-foreground sm:px-8 sm:text-base">
                 {item}
               </span>
 
               <ArrowUpRight
                 aria-hidden="true"
-                className="h-4 w-4 shrink-0 text-primary"
+                className="h-10 w-4 shrink-0 text-primary"
               />
             </div>
           ))}
@@ -42,7 +42,7 @@ export default function Marquee() {
               key={`second-${item}-${index}`}
               className="flex items-center"
             >
-              <span className="px-6 py-5 font-heading text-sm font-semibold uppercase tracking-[0.16em] text-foreground sm:px-8 sm:text-base">
+              <span className="px-3 py-3 font-heading text-sm font-semibold uppercase tracking-[0.16em] text-foreground sm:px-8 sm:text-base">
                 {item}
               </span>
 

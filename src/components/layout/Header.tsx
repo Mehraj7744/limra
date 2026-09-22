@@ -16,14 +16,16 @@ import {
   ShieldCheck,
   Globe,
   ArrowUpRight,
+  BriefcaseBusiness,
 } from "lucide-react";
 
 const WHATSAPP_NUMBER = "910000000000";
 
 const getGeneralWhatsAppUrl = () => {
   const message = encodeURIComponent(
-    "Hello LIMRA INDUSTRY, I would like to enquire about your ceiling and pedestal fans."
+    "Hello LIMRA INDUSTRY, I would like to enquire about your ceiling, table and pedestal fans."
   );
+
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
 };
 
@@ -39,39 +41,70 @@ export default function Navbar() {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [isBusinessOpen, setIsBusinessOpen] = useState(false);
+  const [isMobileBusinessOpen, setIsMobileBusinessOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [language, setLanguage] = useState("en");
 
-  // Handle scroll detection for sticky header shadow and padding contraction
+  /* =====================================================
+     SCROLL DETECTION
+  ===================================================== */
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  // Close mobile menus and scroll to top on route change
+  /* =====================================================
+     CLOSE MENUS ON ROUTE CHANGE
+  ===================================================== */
+
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setIsProductsOpen(false);
+    setIsBusinessOpen(false);
+    setIsMobileBusinessOpen(false);
+    setIsLanguageOpen(false);
+
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   }, [pathname]);
 
+  /* =====================================================
+     ACTIVE NAVIGATION
+  ===================================================== */
+
   const isActive = (path: string) => {
     if (path === "/") {
       return pathname === "/";
     }
+
     return pathname.startsWith(path);
   };
+
+  const isBusinessActive =
+    pathname.startsWith("/wholesale") || pathname.startsWith("/dealers");
 
   const navItemClass = (path: string) =>
     `rounded-lg px-3.5 py-2 text-sm font-bold tracking-tight transition-all duration-200 ${
       isActive(path)
+        ? "bg-blue-50 text-[#0b2f5c] shadow-sm"
+        : "text-slate-600 hover:bg-slate-50 hover:text-[#0b2f5c]"
+    }`;
+
+  const businessNavClass = () =>
+    `inline-flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-bold tracking-tight transition-all duration-200 ${
+      isBusinessActive
         ? "bg-blue-50 text-[#0b2f5c] shadow-sm"
         : "text-slate-600 hover:bg-slate-50 hover:text-[#0b2f5c]"
     }`;
@@ -83,32 +116,48 @@ export default function Navbar() {
     <>
       {/* =====================================================
           TOP INFORMATION BAR
-      ==================================================== */}
+      ===================================================== */}
+
       <div className="border-b border-slate-800 bg-[#07192f] px-4 py-2 text-xs text-slate-300">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
-          
-          {/* Left info */}
+          {/* LEFT INFORMATION */}
+
           <div className="flex items-center gap-3">
             <span className="inline-flex items-center gap-1.5 font-bold tracking-wider text-white">
-              <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
+              <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-400" />
               LIMRA INDUSTRY
             </span>
-            <span className="hidden text-slate-600 sm:inline">|</span>
-            <span className="hidden text-slate-300 sm:inline font-medium">
+
+            <span className="hidden text-slate-600 sm:inline">
+              |
+            </span>
+
+            <span className="hidden font-medium text-slate-300 sm:inline">
               ISO 9001:2015 Certified Manufacturer
             </span>
           </div>
 
-          {/* Right quick actions */}
+          {/* RIGHT QUICK ACTIONS */}
+
           <div className="flex items-center gap-4 sm:gap-6">
+            {/* PHONE */}
+
             <a
               href="tel:+910000000000"
               className="flex items-center gap-1.5 text-slate-300 transition-colors hover:text-white"
             >
               <Phone className="h-3.5 w-3.5 text-cyan-400" />
-              <span className="hidden sm:inline font-medium">+91 00000 00000</span>
-              <span className="sm:hidden font-medium">Call</span>
+
+              <span className="hidden font-medium sm:inline">
+                +91 00000 00000
+              </span>
+
+              <span className="font-medium sm:hidden">
+                Call
+              </span>
             </a>
+
+            {/* WHATSAPP */}
 
             <a
               href={getGeneralWhatsAppUrl()}
@@ -117,24 +166,38 @@ export default function Navbar() {
               className="flex items-center gap-1.5 text-emerald-400 transition-colors hover:text-emerald-300"
             >
               <WhatsappIcon className="h-3.5 w-3.5" />
-              <span className="font-semibold">WhatsApp Inquiry</span>
+
+              <span className="font-semibold">
+                WhatsApp Inquiry
+              </span>
             </a>
 
-            {/* Language Selector Top Bar */}
+            {/* LANGUAGE */}
+
             <div className="relative hidden border-l border-slate-800 pl-4 lg:block">
               <button
+                type="button"
                 onClick={() => setIsLanguageOpen(!isLanguageOpen)}
                 className="flex items-center gap-1.5 text-slate-300 transition-colors hover:text-white"
               >
                 <Globe className="h-3.5 w-3.5 text-slate-400" />
-                <span className="font-medium">{currentLanguageLabel}</span>
-                <ChevronDown className="h-3 w-3" />
+
+                <span className="font-medium">
+                  {currentLanguageLabel}
+                </span>
+
+                <ChevronDown
+                  className={`h-3 w-3 transition-transform ${
+                    isLanguageOpen ? "rotate-180" : ""
+                  }`}
+                />
               </button>
 
               {isLanguageOpen && (
                 <div className="absolute right-0 top-7 z-[100] w-36 overflow-hidden rounded-xl border border-slate-200 bg-white py-1.5 text-sm shadow-2xl">
                   {languages.map((item) => (
                     <button
+                      type="button"
                       key={item.code}
                       onClick={() => {
                         setLanguage(item.code);
@@ -153,13 +216,13 @@ export default function Navbar() {
               )}
             </div>
           </div>
-
         </div>
       </div>
 
       {/* =====================================================
           MAIN STICKY HEADER
-      ==================================================== */}
+      ===================================================== */}
+
       <header
         className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md transition-all duration-300 ${
           isScrolled
@@ -168,10 +231,10 @@ export default function Navbar() {
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:gap-8 lg:px-8">
-
           {/* =================================================
-              BRAND LOGO (Fixed path with leading slash)
-          ================================================ */}
+              LOGO
+          ================================================= */}
+
           <Link
             href="/"
             className="group shrink-0 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0b2f5c]"
@@ -182,20 +245,26 @@ export default function Navbar() {
               alt="LIMRA Industry Logo"
               width={160}
               height={44}
-              className="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
               priority
+              className="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
             />
           </Link>
 
           {/* =================================================
               DESKTOP NAVIGATION
-          ================================================ */}
+          ================================================= */}
+
           <nav className="hidden shrink-0 items-center space-x-1 lg:flex xl:space-x-2">
+            {/* HOME */}
+
             <Link href="/" className={navItemClass("/")}>
               Home
             </Link>
 
-            {/* Products Dropdown Wrapper */}
+            {/* =================================================
+                PRODUCTS DROPDOWN
+            ================================================= */}
+
             <div
               className="relative"
               onMouseEnter={() => setIsProductsOpen(true)}
@@ -203,9 +272,12 @@ export default function Navbar() {
             >
               <Link
                 href="/products"
-                className={`${navItemClass("/products")} inline-flex items-center gap-1.5`}
+                className={`${navItemClass(
+                  "/products"
+                )} inline-flex items-center gap-1.5`}
               >
                 <span>Products</span>
+
                 <ChevronDown
                   className={`h-4 w-4 text-slate-400 transition-transform duration-200 ${
                     isProductsOpen ? "rotate-180" : ""
@@ -213,58 +285,84 @@ export default function Navbar() {
                 />
               </Link>
 
-              {/* Mega Dropdown Menu */}
               {isProductsOpen && (
-                <div className="absolute left-0 top-full z-50 mt-1.5 w-72 overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-2 shadow-2xl shadow-slate-900/10 animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="absolute left-0 top-full z-50 mt-1.5 w-72 overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-2 shadow-2xl shadow-slate-900/10">
                   <div className="px-3 py-2 text-[10px] font-extrabold uppercase tracking-widest text-slate-400">
                     Fan Product Lines
                   </div>
 
                   <div className="space-y-1">
+                    {/* ALL PRODUCTS */}
+
                     <Link
                       href="/products"
                       className="flex items-center justify-between rounded-xl px-3.5 py-2.5 text-xs font-bold text-slate-700 transition-colors hover:bg-slate-50 hover:text-[#0b2f5c]"
                     >
                       <span>All Product Catalog</span>
+
                       <ArrowUpRight className="h-3.5 w-3.5 text-slate-400" />
                     </Link>
 
+                    {/* CEILING FANS */}
+
                     <Link
                       href="/products?category=ceiling-fans"
-                      className="flex items-center gap-3 rounded-xl px-3.5 py-2.5 transition-colors hover:bg-blue-50 group"
+                      className="group flex items-center gap-3 rounded-xl px-3.5 py-2.5 transition-colors hover:bg-blue-50"
                     >
                       <div className="rounded-lg bg-blue-100 p-2 text-[#0b2f5c] transition-colors group-hover:bg-[#0b2f5c] group-hover:text-white">
                         <Fan className="h-4 w-4" />
                       </div>
+
                       <div>
-                        <div className="text-xs font-bold text-slate-900">Ceiling Fans</div>
-                        <div className="text-[11px] text-slate-500">High speed & luxury models</div>
+                        <div className="text-xs font-bold text-slate-900">
+                          Ceiling Fans
+                        </div>
+
+                        <div className="text-[11px] text-slate-500">
+                          High speed & luxury models
+                        </div>
                       </div>
                     </Link>
 
+                    {/* TABLE FANS */}
+
                     <Link
                       href="/products?category=table-fans"
-                      className="flex items-center gap-3 rounded-xl px-3.5 py-2.5 transition-colors hover:bg-blue-50 group"
+                      className="group flex items-center gap-3 rounded-xl px-3.5 py-2.5 transition-colors hover:bg-blue-50"
                     >
                       <div className="rounded-lg bg-blue-100 p-2 text-[#0b2f5c] transition-colors group-hover:bg-[#0b2f5c] group-hover:text-white">
                         <Wind className="h-4 w-4" />
                       </div>
+
                       <div>
-                        <div className="text-xs font-bold text-slate-900">Table Fans</div>
-                        <div className="text-[11px] text-slate-500">Compact high-airflow units</div>
+                        <div className="text-xs font-bold text-slate-900">
+                          Table Fans
+                        </div>
+
+                        <div className="text-[11px] text-slate-500">
+                          Compact high-airflow units
+                        </div>
                       </div>
                     </Link>
 
+                    {/* PEDESTAL FANS */}
+
                     <Link
                       href="/products?category=pedestal-fans"
-                      className="flex items-center gap-3 rounded-xl px-3.5 py-2.5 transition-colors hover:bg-blue-50 group"
+                      className="group flex items-center gap-3 rounded-xl px-3.5 py-2.5 transition-colors hover:bg-blue-50"
                     >
                       <div className="rounded-lg bg-blue-100 p-2 text-[#0b2f5c] transition-colors group-hover:bg-[#0b2f5c] group-hover:text-white">
                         <ShieldCheck className="h-4 w-4" />
                       </div>
+
                       <div>
-                        <div className="text-xs font-bold text-slate-900">Pedestal Fans</div>
-                        <div className="text-[11px] text-slate-500">Heavy-duty commercial breeze</div>
+                        <div className="text-xs font-bold text-slate-900">
+                          Pedestal Fans
+                        </div>
+
+                        <div className="text-[11px] text-slate-500">
+                          Heavy-duty commercial breeze
+                        </div>
                       </div>
                     </Link>
                   </div>
@@ -272,17 +370,98 @@ export default function Navbar() {
               )}
             </div>
 
+            {/* ABOUT */}
+
             <Link href="/about" className={navItemClass("/about")}>
               About Us
             </Link>
 
-            <Link href="/wholesale" className={navItemClass("/wholesale")}>
-              Wholesale
-            </Link>
+            {/* =================================================
+                BUSINESS DROPDOWN
+            ================================================= */}
 
-            <Link href="/dealers" className={navItemClass("/dealers")}>
-              Dealers
-            </Link>
+            <div
+              className="relative"
+              onMouseEnter={() => setIsBusinessOpen(true)}
+              onMouseLeave={() => setIsBusinessOpen(false)}
+            >
+              <button
+                type="button"
+                className={businessNavClass()}
+                aria-haspopup="true"
+                aria-expanded={isBusinessOpen}
+              >
+                <span>Business</span>
+
+                <ChevronDown
+                  className={`h-4 w-4 text-slate-400 transition-transform duration-200 ${
+                    isBusinessOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {isBusinessOpen && (
+                <div className="absolute left-0 top-full z-50 mt-1.5 w-72 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-2xl shadow-slate-900/10">
+                  {/* DROPDOWN HEADER */}
+
+                  <div className="flex items-center gap-2 px-3 py-2">
+                    <BriefcaseBusiness className="h-3.5 w-3.5 text-slate-400" />
+
+                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-400">
+                      Business Opportunities
+                    </span>
+                  </div>
+
+                  {/* WHOLESALE */}
+
+                  <Link
+                    href="/wholesale"
+                    className={`group block rounded-xl px-3.5 py-3 transition-colors ${
+                      isActive("/wholesale")
+                        ? "bg-blue-50"
+                        : "hover:bg-blue-50"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="text-sm font-bold text-slate-900">
+                        Wholesale
+                      </div>
+
+                      <ArrowUpRight className="h-4 w-4 text-slate-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </div>
+
+                    <div className="mt-0.5 text-[11px] text-slate-500">
+                      Bulk orders & wholesale pricing
+                    </div>
+                  </Link>
+
+                  {/* DEALER */}
+
+                  <Link
+                    href="/dealers"
+                    className={`group mt-1 block rounded-xl px-3.5 py-3 transition-colors ${
+                      isActive("/dealers")
+                        ? "bg-blue-50"
+                        : "hover:bg-blue-50"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="text-sm font-bold text-slate-900">
+                        Become a Dealer
+                      </div>
+
+                      <ArrowUpRight className="h-4 w-4 text-slate-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </div>
+
+                    <div className="mt-0.5 text-[11px] text-slate-500">
+                      Join the LIMRA dealer network
+                    </div>
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* CONTACT */}
 
             <Link href="/contact" className={navItemClass("/contact")}>
               Contact
@@ -290,8 +469,9 @@ export default function Navbar() {
           </nav>
 
           {/* =================================================
-              DESKTOP ACTION BUTTONS
-          ================================================ */}
+              DESKTOP CTA
+          ================================================= */}
+
           <div className="hidden items-center gap-3 lg:flex">
             <Link
               href="/contact"
@@ -303,9 +483,11 @@ export default function Navbar() {
 
           {/* =================================================
               MOBILE CONTROLS
-          ================================================ */}
+          ================================================= */}
+
           <div className="flex items-center gap-2 lg:hidden">
             <button
+              type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="rounded-xl border border-slate-200 bg-slate-50 p-2.5 text-slate-700 transition-colors hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#0b2f5c]"
               aria-label="Toggle navigation menu"
@@ -318,15 +500,17 @@ export default function Navbar() {
               )}
             </button>
           </div>
-
         </div>
 
-        {/* =================================================
-            MOBILE MENU DRAWER
-        ================================================ */}
+        {/* =====================================================
+            MOBILE MENU
+        ===================================================== */}
+
         {isMobileMenuOpen && (
-          <div className="absolute inset-x-0 top-full border-b border-slate-200 bg-white px-4 pb-6 pt-4 shadow-2xl animate-in slide-in-from-top-2 duration-200 lg:hidden">
+          <div className="absolute inset-x-0 top-full border-b border-slate-200 bg-white px-4 pb-6 pt-4 shadow-2xl lg:hidden">
             <div className="space-y-1.5">
+              {/* HOME */}
+
               <Link
                 href="/"
                 className={`block rounded-xl px-4 py-3 text-sm font-bold ${
@@ -338,36 +522,45 @@ export default function Navbar() {
                 Home
               </Link>
 
-              {/* Mobile Products Section */}
-              <div className="rounded-xl bg-slate-50 p-2 space-y-1">
+              {/* =================================================
+                  MOBILE PRODUCTS
+              ================================================= */}
+
+              <div className="space-y-1 rounded-xl bg-slate-50 p-2">
                 <Link
                   href="/products"
                   className="flex items-center justify-between px-3 py-2 text-sm font-bold text-[#0b2f5c]"
                 >
                   <span>Products Catalog</span>
+
                   <ArrowUpRight className="h-4 w-4" />
                 </Link>
+
                 <div className="grid grid-cols-2 gap-1.5 pt-1">
                   <Link
                     href="/products?category=ceiling-fans"
-                    className="rounded-lg bg-white p-2.5 text-xs font-bold text-slate-700 border border-slate-200 shadow-sm text-center"
+                    className="rounded-lg border border-slate-200 bg-white p-2.5 text-center text-xs font-bold text-slate-700 shadow-sm transition-colors hover:bg-blue-50 hover:text-[#0b2f5c]"
                   >
                     Ceiling Fans
                   </Link>
+
                   <Link
                     href="/products?category=table-fans"
-                    className="rounded-lg bg-white p-2.5 text-xs font-bold text-slate-700 border border-slate-200 shadow-sm text-center"
+                    className="rounded-lg border border-slate-200 bg-white p-2.5 text-center text-xs font-bold text-slate-700 shadow-sm transition-colors hover:bg-blue-50 hover:text-[#0b2f5c]"
                   >
                     Table Fans
                   </Link>
+
                   <Link
                     href="/products?category=pedestal-fans"
-                    className="col-span-2 rounded-lg bg-white p-2.5 text-xs font-bold text-slate-700 border border-slate-200 shadow-sm text-center"
+                    className="col-span-2 rounded-lg border border-slate-200 bg-white p-2.5 text-center text-xs font-bold text-slate-700 shadow-sm transition-colors hover:bg-blue-50 hover:text-[#0b2f5c]"
                   >
                     Pedestal Fans
                   </Link>
                 </div>
               </div>
+
+              {/* ABOUT */}
 
               <Link
                 href="/about"
@@ -380,27 +573,84 @@ export default function Navbar() {
                 About Us
               </Link>
 
-              <Link
-                href="/wholesale"
-                className={`block rounded-xl px-4 py-3 text-sm font-bold ${
-                  isActive("/wholesale")
-                    ? "bg-blue-50 text-[#0b2f5c]"
-                    : "text-slate-700 hover:bg-slate-50"
-                }`}
-              >
-                Wholesale
-              </Link>
+              {/* =================================================
+                  MOBILE BUSINESS DROPDOWN
+              ================================================= */}
 
-              <Link
-                href="/dealers"
-                className={`block rounded-xl px-4 py-3 text-sm font-bold ${
-                  isActive("/dealers")
-                    ? "bg-blue-50 text-[#0b2f5c]"
-                    : "text-slate-700 hover:bg-slate-50"
-                }`}
-              >
-                Dealers
-              </Link>
+              <div className="overflow-hidden rounded-xl">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setIsMobileBusinessOpen(!isMobileBusinessOpen)
+                  }
+                  className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-bold ${
+                    isBusinessActive
+                      ? "bg-blue-50 text-[#0b2f5c]"
+                      : "text-slate-700 hover:bg-slate-50"
+                  }`}
+                  aria-expanded={isMobileBusinessOpen}
+                >
+                  <span>Business</span>
+
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-200 ${
+                      isMobileBusinessOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {isMobileBusinessOpen && (
+                  <div className="mt-1 space-y-1 rounded-xl bg-slate-50 p-2">
+                    {/* WHOLESALE */}
+
+                    <Link
+                      href="/wholesale"
+                      className={`block rounded-lg px-4 py-3 ${
+                        isActive("/wholesale")
+                          ? "bg-white text-[#0b2f5c] shadow-sm"
+                          : "text-slate-700 hover:bg-white"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-bold">
+                          Wholesale
+                        </span>
+
+                        <ArrowUpRight className="h-4 w-4 text-slate-400" />
+                      </div>
+
+                      <p className="mt-1 text-[11px] text-slate-500">
+                        Bulk orders & wholesale pricing
+                      </p>
+                    </Link>
+
+                    {/* DEALER */}
+
+                    <Link
+                      href="/dealers"
+                      className={`block rounded-lg px-4 py-3 ${
+                        isActive("/dealers")
+                          ? "bg-white text-[#0b2f5c] shadow-sm"
+                          : "text-slate-700 hover:bg-white"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-bold">
+                          Become a Dealer
+                        </span>
+
+                        <ArrowUpRight className="h-4 w-4 text-slate-400" />
+                      </div>
+
+                      <p className="mt-1 text-[11px] text-slate-500">
+                        Join the LIMRA dealer network
+                      </p>
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              {/* CONTACT */}
 
               <Link
                 href="/contact"
@@ -414,7 +664,10 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Mobile Action Buttons */}
+            {/* =================================================
+                MOBILE ACTION BUTTONS
+            ================================================= */}
+
             <div className="mt-4 flex flex-col gap-2.5 border-t border-slate-200 pt-4">
               <Link
                 href="/contact"
@@ -430,6 +683,7 @@ export default function Navbar() {
                 className="flex w-full items-center justify-center gap-2 rounded-xl border border-emerald-500/50 bg-emerald-50 py-3 text-center text-xs font-bold text-emerald-800"
               >
                 <MessageSquare className="h-4 w-4 text-emerald-600" />
+
                 <span>Chat on WhatsApp</span>
               </a>
             </div>
