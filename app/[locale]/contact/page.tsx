@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "../../../lib/navigation";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -19,25 +20,26 @@ import {
 } from "lucide-react";
 
 const enquiryTypes = [
-  "Product Enquiry",
-  "Catalogue Request",
-  "Dealer / Distributor Enquiry",
-  "Business Partnership",
-  "General Enquiry",
-];
+  "productEnquiry",
+  "catalogueRequest",
+  "dealerDistributorEnquiry",
+  "businessPartnership",
+  "generalEnquiry",
+] as const;
 
 const products = [
-  "Auro",
-  "High Breeze",
-  "Avencer",
-  "Enticer",
-  "Jazz",
-  "Fantasy",
-  "V130",
-  "Not Sure / General",
-];
+  "auro",
+  "highBreeze",
+  "avencer",
+  "enticer",
+  "jazz",
+  "fantasy",
+  "v130",
+  "notSureGeneral",
+] as const;
 
 export default function ContactPage() {
+  const t = useTranslations("Contact");
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -76,15 +78,15 @@ export default function ContactPage() {
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-cyan-400 backdrop-blur-md">
                 <Sparkles className="h-3.5 w-3.5" />
-                <span>Enterprise Support & Direct Enquiries</span>
+                <span>{t("hero.badge")}</span>
               </div>
 
               <h1 className="text-4xl font-bold tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl">
-                Let&apos;s talk <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">about airflow.</span>
+                {t("hero.title")} <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">{t("hero.titleHighlight")}</span>
               </h1>
 
               <p className="max-w-2xl text-base text-slate-300 sm:text-lg leading-relaxed font-normal">
-                Looking for premium ceiling fans, requesting bulk catalogues, or seeking partnership as a dealer? Our specialized team is here to assist you with precision.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -93,22 +95,22 @@ export default function ContactPage() {
                 <div className="absolute -top-3 -right-3 rounded-xl bg-cyan-500 px-3 py-1 text-[10px] font-black uppercase tracking-wider text-slate-950 shadow-md">
                   ISO 9001:2015
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Quick Assistance</h3>
+                <h3 className="text-lg font-bold text-white mb-2">{t("hero.quickAssistance.title")}</h3>
                 <p className="text-xs text-slate-300 mb-6 leading-relaxed">
-                  For immediate order support, dealership terms, or dispatch questions, reach out directly through our priority channels.
+                  {t("hero.quickAssistance.description")}
                 </p>
                 <div className="space-y-3.5 text-xs font-semibold">
                   <div className="flex items-center gap-3 text-slate-200">
                     <div className="rounded-lg bg-blue-500/20 p-2 text-cyan-400">
                       <Headphones className="h-4 w-4" />
                     </div>
-                    <span>Dedicated Support Team Available</span>
+                    <span>{t("hero.quickAssistance.supportTeam")}</span>
                   </div>
                   <div className="flex items-center gap-3 text-slate-200">
                     <div className="rounded-lg bg-blue-500/20 p-2 text-cyan-400">
                       <ShieldCheck className="h-4 w-4" />
                     </div>
-                    <span>Verified Manufacturer Direct Response</span>
+                    <span>{t("hero.quickAssistance.manufacturerResponse")}</span>
                   </div>
                 </div>
               </div>
@@ -130,18 +132,18 @@ export default function ContactPage() {
             ================================================ === */}
             <aside className="lg:col-span-4 space-y-4">
               <div className="mb-6">
-                <h2 className="text-xs font-black uppercase tracking-widest text-blue-600">Contact Channels</h2>
-                <h3 className="text-2xl font-bold tracking-tight text-slate-900 mt-1">Get in Touch</h3>
+                <h2 className="text-xs font-black uppercase tracking-widest text-blue-600">{t("contactInfo.channels")}</h2>
+                <h3 className="text-2xl font-bold tracking-tight text-slate-900 mt-1">{t("contactInfo.title")}</h3>
               </div>
 
-              {/* Office Address Card */}
+              {/* {t("contactInfo.officeAddress")} Card */}
               <div className="group rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm transition-all duration-200 hover:border-blue-500/50 hover:shadow-md">
                 <div className="flex gap-4 items-start">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#0b2f5c] group-hover:bg-[#0b2f5c] group-hover:text-white transition-colors">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Office Address</p>
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">{t("contactInfo.officeAddress")}</p>
                     <p className="mt-1.5 text-xs font-bold leading-relaxed text-slate-800">
                       H.No.10-1-31, Fathe Nagar,<br />
                       Balanagar, Hyderabad,<br />
@@ -158,8 +160,8 @@ export default function ContactPage() {
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Phone Enquiries</p>
-                    <p className="mt-1.5 text-xs font-bold text-slate-800">Contact number available on request</p>
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">{t("contactInfo.phoneEnquiries")}</p>
+                    <p className="mt-1.5 text-xs font-bold text-slate-800">{t("contactInfo.phoneText")}</p>
                   </div>
                 </div>
               </div>
@@ -171,8 +173,8 @@ export default function ContactPage() {
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Email Address</p>
-                    <p className="mt-1.5 text-xs font-bold text-slate-800">Official business mail configured via desk</p>
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">{t("form.email")}</p>
+                    <p className="mt-1.5 text-xs font-bold text-slate-800">{t("contactInfo.emailText")}</p>
                   </div>
                 </div>
               </div>
@@ -184,9 +186,9 @@ export default function ContactPage() {
                     <Building2 className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Dealer Network</p>
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">{t("contactInfo.dealerNetwork")}</p>
                     <p className="mt-1.5 text-xs font-medium leading-relaxed text-slate-600">
-                      Distributor partnerships & bulk orders are welcomed across regions.
+                      {t("contactInfo.dealerNetworkText")}
                     </p>
                   </div>
                 </div>
@@ -195,7 +197,7 @@ export default function ContactPage() {
               {/* Response Time Indicator */}
               <div className="flex items-center gap-3 rounded-xl border border-blue-100 bg-blue-50/60 p-4 text-xs text-blue-900 font-medium">
                 <Clock className="h-4 w-4 shrink-0 text-blue-600" />
-                <span>Our team reviews all requirements promptly within standard operational hours.</span>
+                <span>{t("contactInfo.responseTime")}</span>
               </div>
             </aside>
 
@@ -207,9 +209,9 @@ export default function ContactPage() {
                 <>
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
                     <div>
-                      <span className="text-[11px] font-black uppercase tracking-widest text-blue-600">Secure Dispatch</span>
+                      <span className="text-[11px] font-black uppercase tracking-widest text-blue-600">{t("form.secureDispatch")}</span>
                       <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">
-                        Send Your Requirement
+                        {t("form.title")}
                       </h2>
                     </div>
                     <div className="hidden sm:flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-[#0b2f5c]">
@@ -222,27 +224,27 @@ export default function ContactPage() {
                     <div className="grid gap-6 sm:grid-cols-2">
                       <div>
                         <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                          Full Name <span className="text-red-500">*</span>
+                          {t("form.fullName")} <span className="text-red-500">*</span>
                         </label>
                         <input
                           id="name"
                           name="name"
                           type="text"
                           required
-                          placeholder="e.g. Rajesh Kumar"
+                          placeholder={t("form.fullNamePlaceholder")}
                           className="mt-2 h-12 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 text-sm font-medium text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:bg-white focus:border-[#0b2f5c] focus:ring-4 focus:ring-[#0b2f5c]/10"
                         />
                       </div>
 
                       <div>
                         <label htmlFor="company" className="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                          Company / Firm Name
+                          {t("form.companyName")}
                         </label>
                         <input
                           id="company"
                           name="company"
                           type="text"
-                          placeholder="e.g. Kumar Agencies"
+                          placeholder={t("form.companyNamePlaceholder")}
                           className="mt-2 h-12 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 text-sm font-medium text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:bg-white focus:border-[#0b2f5c] focus:ring-4 focus:ring-[#0b2f5c]/10"
                         />
                       </div>
@@ -252,7 +254,7 @@ export default function ContactPage() {
                     <div className="grid gap-6 sm:grid-cols-2">
                       <div>
                         <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                          Email Address <span className="text-red-500">*</span>
+                          {t("form.email")} <span className="text-red-500">*</span>
                         </label>
                         <input
                           id="email"
@@ -266,7 +268,7 @@ export default function ContactPage() {
 
                       <div>
                         <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                          Phone Number <span className="text-red-500">*</span>
+                          {t("form.phone")} <span className="text-red-500">*</span>
                         </label>
                         <input
                           id="phone"
@@ -279,11 +281,11 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    {/* Row 3: Enquiry Type & Product Model */}
+                    {/* Row 3: {t("form.enquiryType")} & Product Model */}
                     <div className="grid gap-6 sm:grid-cols-2">
                       <div>
                         <label htmlFor="enquiry" className="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                          Enquiry Type <span className="text-red-500">*</span>
+                          {t("form.enquiryType")} <span className="text-red-500">*</span>
                         </label>
                         <select
                           id="enquiry"
@@ -292,16 +294,16 @@ export default function ContactPage() {
                           defaultValue=""
                           className="mt-2 h-12 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 text-sm font-medium text-slate-900 outline-none transition-all focus:bg-white focus:border-[#0b2f5c] focus:ring-4 focus:ring-[#0b2f5c]/10"
                         >
-                          <option value="" disabled>Select enquiry category</option>
+                          <option value="" disabled>{t("form.selectEnquiry")}</option>
                           {enquiryTypes.map((type) => (
-                            <option key={type} value={type}>{type}</option>
+                            <option key={type} value={type}>{t(`enquiryTypes.${type}`)}</option>
                           ))}
                         </select>
                       </div>
 
                       <div>
                         <label htmlFor="product" className="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                          Target Product / Model
+                          {t("form.targetProduct")}
                         </label>
                         <select
                           id="product"
@@ -309,9 +311,9 @@ export default function ContactPage() {
                           defaultValue=""
                           className="mt-2 h-12 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 text-sm font-medium text-slate-900 outline-none transition-all focus:bg-white focus:border-[#0b2f5c] focus:ring-4 focus:ring-[#0b2f5c]/10"
                         >
-                          <option value="">Select a model</option>
+                          <option value="">{t("form.selectModel")}</option>
                           {products.map((product) => (
-                            <option key={product} value={product}>{product}</option>
+                            <option key={product} value={product}>{t(`products.${product}`)}</option>
                           ))}
                         </select>
                       </div>
@@ -320,14 +322,14 @@ export default function ContactPage() {
                     {/* Row 4: Message */}
                     <div>
                       <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                        Detailed Message / Requirements <span className="text-red-500">*</span>
+                        {t("form.message")} <span className="text-red-500">*</span>
                       </label>
                       <textarea
                         id="message"
                         name="message"
                         required
                         rows={5}
-                        placeholder="Mention quantities, location, or specific configuration requirements..."
+                        placeholder={t("form.messagePlaceholder")}
                         className="mt-2 w-full resize-none rounded-xl border border-slate-200 bg-slate-50/50 p-4 text-sm font-medium text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:bg-white focus:border-[#0b2f5c] focus:ring-4 focus:ring-[#0b2f5c]/10"
                       />
                     </div>
@@ -339,17 +341,17 @@ export default function ContactPage() {
                       className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#0b2f5c] px-8 py-4 text-sm font-bold tracking-wide text-white shadow-lg shadow-blue-900/20 transition-all hover:bg-[#07192f] hover:shadow-xl hover:shadow-blue-900/30 active:scale-[0.99] disabled:opacity-70"
                     >
                       {isSubmitting ? (
-                        <span>Submitting Details...</span>
+                        <span>{t("form.submitting")}</span>
                       ) : (
                         <>
-                          <span>Send Enquiry</span>
+                          <span>{t("form.send")}</span>
                           <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </>
                       )}
                     </button>
 
                     <p className="text-center text-[11px] text-slate-400">
-                      By submitting this form, you authorize LIMRA INDUSTRY to contact you regarding your trade requirements.
+                      {t("form.authorization")}
                     </p>
                   </form>
                 </>
@@ -361,22 +363,22 @@ export default function ContactPage() {
                   </div>
 
                   <span className="mt-6 rounded-full bg-emerald-50 px-3.5 py-1 text-xs font-bold text-emerald-700 uppercase tracking-widest">
-                    Successfully Transmitted
+                    {t("success.badge")}
                   </span>
 
                   <h3 className="mt-3 text-3xl font-bold text-slate-900 tracking-tight">
-                    Thank you for reaching out.
+                    {t("success.title")}
                   </h3>
 
                   <p className="mt-3 max-w-md text-sm text-slate-600 leading-relaxed font-normal">
-                    Your enquiry has been securely received by our desk. A representative from LIMRA INDUSTRY will review your specifications and get back to you shortly.
+                    {t("success.description")}
                   </p>
 
                   <Link
                     href="/products"
                     className="group mt-8 inline-flex items-center gap-2 rounded-xl bg-[#0b2f5c] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:bg-[#07192f]"
                   >
-                    <span>Explore Products Catalog</span>
+                    <span>{t("success.products")}</span>
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
@@ -396,14 +398,14 @@ export default function ContactPage() {
 
             <div className="lg:col-span-5 space-y-6">
               <div>
-                <span className="text-[11px] font-black uppercase tracking-widest text-blue-600">Geographical Reach</span>
+                <span className="text-[11px] font-black uppercase tracking-widest text-blue-600">{t("location.label")}</span>
                 <h2 className="text-3xl font-bold text-slate-900 tracking-tight mt-1">
-                  Visit or Connect With Us
+                  {t("location.title")}
                 </h2>
               </div>
 
               <p className="text-sm leading-relaxed text-slate-600">
-                Our main office and manufacturing coordination hub is centrally situated in Balanagar, Hyderabad, offering seamless logistics and transport access.
+                {t("location.description")}
               </p>
 
               <div className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-slate-50/50 p-5">
@@ -411,7 +413,7 @@ export default function ContactPage() {
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">Registered Office</h4>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">{t("location.registeredOffice")}</h4>
                   <p className="mt-1 text-sm font-bold text-slate-900 leading-relaxed">
                     H.No.10-1-31, Fathe Nagar,<br />
                     Balanagar, Hyderabad,<br />
@@ -447,44 +449,12 @@ export default function ContactPage() {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="strict-origin-when-cross-origin"
-                    title="LIMRA INDUSTRY location"
+                    title={t("location.mapTitle")}
                     className="relative z-10"
                   />
                 </div>
 
-                {/* Location information overlay */}
-                {/* <div className="absolute bottom-4 left-4 right-4 z-20 rounded-2xl border border-white/60 bg-white/95 p-4 shadow-lg backdrop-blur-md sm:left-6 sm:right-auto sm:max-w-sm">
-
-                  <div className="flex items-start gap-3">
-
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0b2f5c] text-white">
-                      <MapPin className="h-5 w-5 text-cyan-400" />
-                    </div>
-
-                    <div>
-                      <h3 className="text-sm font-black text-slate-900">
-                        LIMRA INDUSTRY
-                      </h3>
-
-                      <p className="mt-1 text-xs leading-5 text-slate-600">
-                        H.No.10-1-31, Fathe Nagar, Balanagar,
-                        Hyderabad, Telangana
-                      </p>
-
-                      <a
-                        href="https://www.google.com/maps/search/?api=1&query=LIMRA+INDUSTRY+Fathe+Nagar+Balanagar+Hyderabad"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group mt-2 inline-flex items-center gap-1 text-xs font-bold text-[#0b5cab]"
-                      >
-                        Open in Google Maps
-
-                        <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                      </a>
-                    </div>
-
-                  </div>
-                </div> */}
+            
 
               </div>
             </div>
@@ -511,12 +481,12 @@ export default function ContactPage() {
           <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
 
             <div className="lg:col-span-8">
-              <span className="text-[11px] font-black uppercase tracking-widest text-cyan-400">Network Growth</span>
+              <span className="text-[11px] font-black uppercase tracking-widest text-cyan-400">{t("network.label")}</span>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl mt-2">
-                Interested in working with LIMRA?
+                {t("network.title")}
               </h2>
               <p className="mt-3 max-w-xl text-sm sm:text-base text-slate-300 leading-relaxed">
-                Join our expanding network of authorized distributors, wholesalers, and retail dealers. Benefit from high-margin pricing and certified reliability.
+                {t("network.description")}
               </p>
             </div>
 
@@ -525,7 +495,7 @@ export default function ContactPage() {
                 href="#enquiry"
                 className="group inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-7 py-4 text-xs font-black uppercase tracking-wider text-slate-950 shadow-lg shadow-cyan-400/20 transition-all hover:bg-cyan-300 hover:shadow-cyan-400/30"
               >
-                <span>Start Trade Enquiry</span>
+                <span>{t("network.button")}</span>
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
             </div>

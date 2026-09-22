@@ -1,0 +1,379 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About Us",
+    "business": "Business",
+    "wholesale": "Wholesale",
+    "dealer": "Become a Dealer",
+    "contact": "Contact",
+    "quote": "Get a Quote"
+  },
+   "Home": {
+    "hero": {
+      "badge": "For Dealers & Wholesale",
+      "title": "Premium Fans.",
+      "titleHighlight": "Wholesale Supply.",
+      "description": "Ceiling, table and pedestal fans for dealers, distributors and bulk buyers.",
+      "viewProducts": "View Products",
+      "wholesalePrice": "Wholesale Price",
+      "factoryDirect": "Factory Direct",
+      "bulkOrders": "Bulk Orders",
+      "dealerSupply": "Dealer Supply",
+      "imageAlt": "LIMRA Auro Ceiling Fan"
+    },
+    "featuredModel": "Featured Model",
+    "view": "View",
+    "highlights": {
+      "title": "Built for Performance",
+      "description": "A premium 1200 mm decorative ceiling fan designed for strong airflow, reliable performance and everyday use."
+    },
+    "specs": {
+      "airflow": "Airflow",
+      "airflowDesc": "Powerful air delivery",
+      "motorSpeed": "Motor Speed",
+      "motorSpeedDesc": "High-speed performance",
+      "powerUsage": "Power Usage",
+      "powerUsageDesc": "Efficient operation",
+      "warranty": "Warranty",
+      "twoYears": "2 Years",
+      "warrantyDesc": "Warranty coverage",
+      "size": "Size",
+      "body": "Body",
+      "motorWinding": "Motor Winding"
+    },
+    "featuredProduct": {
+      "name": "Avencer Prime",
+      "viewAll": "View All Products",
+      "colour": "Colour",
+      "colours": "Colours",
+      "category": "Decorative Ceiling Fan",
+      "size": "1200 mm / 48 inch",
+      "blades": "Blades",
+      "threeBlades": "3 Blades",
+      "bodyMaterial": "Body Material",
+      "aluminiumWinding": "Aluminium Winding",
+      "twoYearWarranty": "2 Year Warranty",
+      "viewProduct": "View Product",
+      "getWholesalePrice": "Get Wholesale Price",
+      "selectColor": "Select {color}",
+      "colors": {
+        "violaBlue": "Viola Blue",
+        "pearlIvory": "Pearl Ivory",
+        "bakersBrown": "Baker's Brown",
+        "satinGold": "Satin Gold"
+      }
+    },
+    "business": {
+      "eyebrow": "Why LIMRA",
+      "title": "Built for Business",
+      "description": "Reliable support and supply solutions for dealers, wholesalers, distributors and bulk buyers.",
+      "forBusiness": "For Business",
+      "benefits": {
+        "factoryDirect": "Factory Direct",
+        "bulkSupply": "Bulk Supply",
+        "dealerPricing": "Dealer Pricing",
+        "panIndiaSupply": "Pan-India Supply"
+      }
+    },
+    "wholesaleCta": {
+      "eyebrow": "Dealers • Distributors • Wholesalers",
+      "title": "Get Wholesale Pricing",
+      "description": "Tell us what you need and our team will contact you.",
+      "button": "Send Wholesale Enquiry"
+    },
+    "dealerCta": {
+      "eyebrow": "Dealer Network",
+      "title": "Grow your business with",
+      "description": "Become a LIMRA dealer and connect your business with our growing fan distribution network.",
+      "dealerSupport": "Dealer Support",
+      "businessOpportunities": "Business Opportunities",
+      "directEnquiry": "Direct Enquiry",
+      "button": "Become a Dealer",
+      "note": "Start your dealership enquiry"
+    },
+    "categories": {
+      "ceilingFans": "Ceiling Fans",
+      "tableFans": "Table Fans",
+      "pedestalFans": "Pedestal Fans"
+    },
+    "whatsappMessage": "Hello LIMRA INDUSTRY, I am interested in wholesale fan pricing."
+  },
+
+  "Hero": {
+    "badge": "For Dealers & Wholesale",
+    "title": "Premium Fans.",
+    "titleHighlight": "Wholesale Supply.",
+    "description": "Ceiling, table and pedestal fans for dealers, distributors and bulk buyers.",
+    "viewProducts": "View Products",
+    "wholesalePrice": "Wholesale Price",
+    "factoryDirect": "Factory Direct",
+    "bulkOrders": "Bulk Orders",
+    "dealerSupply": "Dealer Supply",
+    "featuredModel": "Featured Model",
+    "view": "View"
+  },
+
+  "ProductHighlights": {
+    "model": "Avencer Prime",
+    "title": "Built for Performance",
+    "description": "A premium 1200 mm decorative ceiling fan designed for strong airflow, reliable performance and everyday use.",
+    "airflow": "Airflow",
+    "motorSpeed": "Motor Speed",
+    "powerUsage": "Power Usage",
+    "warranty": "Warranty",
+    "size": "Size",
+    "body": "Body",
+    "motorWinding": "Motor Winding"
+  },
+
+  "FeaturedProduct": {
+    "featuredModel": "Featured Model",
+    "viewAllProducts": "View All Products",
+    "colour": "Colour",
+    "colours": "Colours",
+    "decorativeCeilingFan": "Decorative Ceiling Fan",
+    "size": "1200 mm / 48 inch",
+    "airflow": "Airflow",
+    "motorSpeed": "Motor Speed",
+    "powerUsage": "Power Usage",
+    "blades": "Blades",
+    "bodyMaterial": "Body Material",
+    "motor": "Motor",
+    "warranty": "2 Year Warranty",
+    "viewProduct": "View Product",
+    "wholesalePrice": "Get Wholesale Price"
+  },
+
+  "Business": {
+    "whyLimra": "Why LIMRA",
+    "builtForBusiness": "Built for Business",
+    "description": "Reliable support and supply solutions for dealers, wholesalers, distributors and bulk buyers.",
+    "factoryDirect": "Factory Direct",
+    "bulkSupply": "Bulk Supply",
+    "dealerPricing": "Dealer Pricing",
+    "panIndiaSupply": "Pan-India Supply"
+  },
+
+  "WholesaleCTA": {
+    "audience": "Dealers • Distributors • Wholesalers",
+    "title": "Get Wholesale Pricing",
+    "description": "Tell us what you need and our team will contact you.",
+    "button": "Send Wholesale Enquiry"
+  },
+
+  "DealerCTA": {
+    "network": "Dealer Network",
+    "title": "Grow your business with LIMRA",
+    "description": "Become a LIMRA dealer and connect your business with our growing fan distribution network.",
+    "dealerSupport": "Dealer Support",
+    "businessOpportunities": "Business Opportunities",
+    "directEnquiry": "Direct Enquiry",
+    "button": "Become a Dealer",
+    "subtext": "Start your dealership enquiry"
+  },
+
+ "About": {
+  "hero": {
+    "badge": "About LIMRA Industry",
+    "title": "Engineered for",
+    "titleHighlight": "better airflow.",
+    "description": "We develop and engineer ceiling fans with a focus on performance, reliability, design, and everyday comfort.",
+    "approach": "Our Approach",
+    "precision": "Precision & Intent",
+    "approachDescription": "Every LIMRA fan is developed with attention to airflow, motor performance, materials, finish, and long-term reliability."
+  },
+
+  "metrics": {
+    "fullSize": "48\" Premium",
+    "compact": "24\" Compact",
+    "models": "Product Models"
+  },
+
+  "company": {
+    "imageAlt": "LIMRA Industry manufacturing facility",
+    "excellence": "Excellence in Motion",
+    "imageCaption": "Engineered for better airflow",
+    "label": "Who We Are",
+    "title": "Built around better airflow.",
+    "paragraph1": "LIMRA Industry develops ceiling fans designed to deliver dependable airflow, efficient performance, and a refined appearance for modern spaces.",
+    "paragraph2": "Our approach combines product development, performance-focused engineering, quality materials, and attention to finish to create fans suited for everyday use.",
+    "exploreProducts": "Explore Our Products"
+  },
+
+  "mission": {
+    "label": "Our Mission",
+    "title": "Better products. Better airflow. Better everyday comfort.",
+    "description": "Our mission is to develop reliable and thoughtfully designed ceiling fans that combine performance, durability, and modern design."
+  },
+
+  "vision": {
+    "label": "Our Vision",
+    "title": "Building a trusted fan brand.",
+    "description": "We aim to build a trusted presence in the fan industry through consistent product quality, practical innovation, and customer-focused solutions."
+  },
+
+  "values": {
+    "label": "Our Core Values",
+    "title": "What guides us",
+
+    "items": {
+      "productFocus": "Product Focus",
+      "productFocusDescription": "We keep product performance and usability at the centre of our development process.",
+
+      "qualityMindset": "Quality Mindset",
+      "qualityMindsetDescription": "We focus on materials, construction, finish, and reliability across our products.",
+
+      "customerFirst": "Customer First",
+      "customerFirstDescription": "We design products and solutions with customer needs and everyday use in mind.",
+
+      "responsibleApproach": "Responsible Approach",
+      "responsibleApproachDescription": "We work toward practical and responsible product development for long-term value."
+    }
+  },
+
+  "capabilities": {
+    "label": "Technical Capabilities",
+    "title": "Performance built into every detail.",
+    "description": "Our product development approach combines engineering, airflow performance, reliable construction, and attention to detail.",
+    "catalogue": "View Full Catalogue",
+
+    "items": {
+      "productDevelopment": "Product Development",
+      "productDevelopmentDescription": "Focused development of ceiling fan models for different spaces and requirements.",
+
+      "airflowPerformance": "Airflow & Performance",
+      "airflowPerformanceDescription": "Attention to airflow, motor performance, speed, and overall fan efficiency.",
+
+      "performanceFocus": "Performance Focus",
+      "performanceFocusDescription": "Products developed with dependable everyday performance as a key priority.",
+
+      "finishDetail": "Finish & Detail",
+      "finishDetailDescription": "Careful attention to product appearance, materials, colours, and finishing."
+    }
+  },
+
+  "ranges": {
+    "label": "Our Product Ranges",
+    "title": "Designed for different spaces.",
+    "exploreAll": "Explore All Products",
+    "catalogTier": "Premium Range",
+    "featuredModels": "Featured Models",
+    "exploreRange": "Explore Range",
+
+    "items": {
+      "fullSize": "48\" Premium Range",
+      "compactSize": "24\" Premium Range"
+    }
+  },
+
+  "applications": {
+    "label": "Applications",
+    "title": "Made for everyday spaces.",
+
+    "items": {
+      "homes": "Homes",
+      "commercial": "Commercial Spaces",
+      "workspaces": "Workspaces",
+      "largeSpaces": "Large Spaces"
+    }
+  },
+
+  "cta": {
+    "label": "Work With LIMRA",
+    "title": "Looking for the right fan solution?",
+    "description": "Explore our products or get in touch with our team for product and business enquiries.",
+    "exploreProducts": "Explore Products",
+    "contact": "Contact Us"
+  }
+},
+
+"Contact": {
+  "hero": {
+    "badge": "Enterprise Support & Direct Enquiries",
+    "title": "Let's talk",
+    "titleHighlight": "about airflow.",
+    "description": "Looking for premium ceiling fans, requesting bulk catalogues, or seeking partnership as a dealer? Our specialized team is here to assist you with precision.",
+    "quickAssistance": {
+      "title": "Quick Assistance",
+      "description": "For immediate order support, dealership terms, or dispatch questions, reach out directly through our priority channels.",
+      "supportTeam": "Dedicated Support Team Available",
+      "manufacturerResponse": "Verified Manufacturer Direct Response"
+    }
+  },
+
+  "contactInfo": {
+    "channels": "Contact Channels",
+    "title": "Get in Touch",
+    "officeAddress": "Office Address",
+    "phoneEnquiries": "Phone Enquiries",
+    "phoneText": "Contact number available on request",
+    "emailAddress": "Email Address",
+    "emailText": "Official business mail configured via desk",
+    "dealerNetwork": "Dealer Network",
+    "dealerNetworkText": "Distributor partnerships & bulk orders are welcomed across regions.",
+    "responseTime": "Our team reviews all requirements promptly within standard operational hours."
+  },
+
+  "form": {
+    "secureDispatch": "Secure Dispatch",
+    "title": "Send Your Requirement",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "e.g. Rajesh Kumar",
+    "companyName": "Company / Firm Name",
+    "companyNamePlaceholder": "e.g. Kumar Agencies",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "enquiryType": "Enquiry Type",
+    "selectEnquiry": "Select enquiry category",
+    "targetProduct": "Target Product / Model",
+    "selectModel": "Select a model",
+    "message": "Detailed Message / Requirements",
+    "messagePlaceholder": "Mention quantities, location, or specific configuration requirements...",
+    "submitting": "Submitting Details...",
+    "send": "Send Enquiry",
+    "authorization": "By submitting this form, you authorize LIMRA INDUSTRY to contact you regarding your trade requirements."
+  },
+
+  "enquiryTypes": {
+    "productEnquiry": "Product Enquiry",
+    "catalogueRequest": "Catalogue Request",
+    "dealerDistributorEnquiry": "Dealer / Distributor Enquiry",
+    "businessPartnership": "Business Partnership",
+    "generalEnquiry": "General Enquiry"
+  },
+
+  "products": {
+    "auro": "Auro",
+    "highBreeze": "High Breeze",
+    "avencer": "Avencer",
+    "enticer": "Enticer",
+    "jazz": "Jazz",
+    "fantasy": "Fantasy",
+    "v130": "V130",
+    "notSureGeneral": "Not Sure / General"
+  },
+
+  "success": {
+    "badge": "Successfully Transmitted",
+    "title": "Thank you for reaching out.",
+    "description": "Your enquiry has been securely received by our desk. A representative from LIMRA INDUSTRY will review your specifications and get back to you shortly.",
+    "products": "Explore Products Catalog"
+  },
+
+  "location": {
+    "label": "Geographical Reach",
+    "title": "Visit or Connect With Us",
+    "description": "Our main office and manufacturing coordination hub is centrally situated in Balanagar, Hyderabad, offering seamless logistics and transport access.",
+    "registeredOffice": "Registered Office",
+    "mapTitle": "LIMRA INDUSTRY location"
+  },
+
+  "network": {
+    "label": "Network Growth",
+    "title": "Interested in working with LIMRA?",
+    "description": "Join our expanding network of authorized distributors, wholesalers, and retail dealers. Benefit from high-margin pricing and certified reliability.",
+    "button": "Start Trade Enquiry"
+  }
+}
+}

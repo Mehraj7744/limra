@@ -1,8 +1,7 @@
 "use client";
-
+import { Link } from "../../../lib/navigation";
 import WhatsappIcon from "@mui/icons-material/WhatsApp";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
@@ -18,6 +17,7 @@ import {
   ArrowUpRight,
   BriefcaseBusiness,
 } from "lucide-react";
+import LanguageSwitcher from "../ui/LanguageSwitcher";
 
 const WHATSAPP_NUMBER = "910000000000";
 
@@ -96,17 +96,15 @@ export default function Navbar() {
     pathname.startsWith("/wholesale") || pathname.startsWith("/dealers");
 
   const navItemClass = (path: string) =>
-    `rounded-lg px-3.5 py-2 text-sm font-bold tracking-tight transition-all duration-200 ${
-      isActive(path)
-        ? "bg-blue-50 text-[#0b2f5c] shadow-sm"
-        : "text-slate-600 hover:bg-slate-50 hover:text-[#0b2f5c]"
+    `rounded-lg px-3.5 py-2 text-sm font-bold tracking-tight transition-all duration-200 ${isActive(path)
+      ? "bg-blue-50 text-[#0b2f5c] shadow-sm"
+      : "text-slate-600 hover:bg-slate-50 hover:text-[#0b2f5c]"
     }`;
 
   const businessNavClass = () =>
-    `inline-flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-bold tracking-tight transition-all duration-200 ${
-      isBusinessActive
-        ? "bg-blue-50 text-[#0b2f5c] shadow-sm"
-        : "text-slate-600 hover:bg-slate-50 hover:text-[#0b2f5c]"
+    `inline-flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-bold tracking-tight transition-all duration-200 ${isBusinessActive
+      ? "bg-blue-50 text-[#0b2f5c] shadow-sm"
+      : "text-slate-600 hover:bg-slate-50 hover:text-[#0b2f5c]"
     }`;
 
   const currentLanguageLabel =
@@ -187,9 +185,8 @@ export default function Navbar() {
                 </span>
 
                 <ChevronDown
-                  className={`h-3 w-3 transition-transform ${
-                    isLanguageOpen ? "rotate-180" : ""
-                  }`}
+                  className={`h-3 w-3 transition-transform ${isLanguageOpen ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 
@@ -203,11 +200,10 @@ export default function Navbar() {
                         setLanguage(item.code);
                         setIsLanguageOpen(false);
                       }}
-                      className={`block w-full px-3 py-2 text-left text-xs font-semibold transition-colors ${
-                        language === item.code
+                      className={`block w-full px-3 py-2 text-left text-xs font-semibold transition-colors ${language === item.code
                           ? "bg-blue-50 text-[#0b2f5c]"
                           : "text-slate-700 hover:bg-slate-50"
-                      }`}
+                        }`}
                     >
                       {item.label}
                     </button>
@@ -224,11 +220,10 @@ export default function Navbar() {
       ===================================================== */}
 
       <header
-        className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md transition-all duration-300 ${
-          isScrolled
+        className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md transition-all duration-300 ${isScrolled
             ? "border-b border-slate-200 py-2.5 shadow-lg shadow-slate-900/5"
             : "border-b border-slate-200 py-3.5"
-        }`}
+          }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-2 sm:px-3 lg:gap-8 lg:px-8">
           {/* =================================================
@@ -279,9 +274,8 @@ export default function Navbar() {
                 <span>Products</span>
 
                 <ChevronDown
-                  className={`h-4 w-4 text-slate-400 transition-transform duration-200 ${
-                    isProductsOpen ? "rotate-180" : ""
-                  }`}
+                  className={`h-4 w-4 text-slate-400 transition-transform duration-200 ${isProductsOpen ? "rotate-180" : ""
+                    }`}
                 />
               </Link>
 
@@ -394,9 +388,8 @@ export default function Navbar() {
                 <span>Business</span>
 
                 <ChevronDown
-                  className={`h-4 w-4 text-slate-400 transition-transform duration-200 ${
-                    isBusinessOpen ? "rotate-180" : ""
-                  }`}
+                  className={`h-4 w-4 text-slate-400 transition-transform duration-200 ${isBusinessOpen ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 
@@ -416,11 +409,10 @@ export default function Navbar() {
 
                   <Link
                     href="/wholesale"
-                    className={`group block rounded-xl px-3.5 py-3 transition-colors ${
-                      isActive("/wholesale")
+                    className={`group block rounded-xl px-3.5 py-3 transition-colors ${isActive("/wholesale")
                         ? "bg-blue-50"
                         : "hover:bg-blue-50"
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="text-sm font-bold text-slate-900">
@@ -439,11 +431,10 @@ export default function Navbar() {
 
                   <Link
                     href="/dealers"
-                    className={`group mt-1 block rounded-xl px-3.5 py-3 transition-colors ${
-                      isActive("/dealers")
+                    className={`group mt-1 block rounded-xl px-3.5 py-3 transition-colors ${isActive("/dealers")
                         ? "bg-blue-50"
                         : "hover:bg-blue-50"
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="text-sm font-bold text-slate-900">
@@ -472,10 +463,12 @@ export default function Navbar() {
               DESKTOP CTA
           ================================================= */}
 
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="flex items-center gap-3">
+            <LanguageSwitcher />
+
             <Link
               href="/contact"
-              className="rounded-xl bg-[#0b2f5c] px-5 py-3 text-xs font-bold tracking-wide text-white shadow-md shadow-blue-900/20 transition-all hover:bg-[#07192f] hover:shadow-blue-900/30"
+              className="rounded-lg bg-[#0b2f5c] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#07192f]"
             >
               Get a Quote
             </Link>
@@ -513,11 +506,10 @@ export default function Navbar() {
 
               <Link
                 href="/"
-                className={`block rounded-xl px-4 py-3 text-sm font-bold ${
-                  isActive("/")
+                className={`block rounded-xl px-4 py-3 text-sm font-bold ${isActive("/")
                     ? "bg-blue-50 text-[#0b2f5c]"
                     : "text-slate-700 hover:bg-slate-50"
-                }`}
+                  }`}
               >
                 Home
               </Link>
@@ -564,11 +556,10 @@ export default function Navbar() {
 
               <Link
                 href="/about"
-                className={`block rounded-xl px-4 py-3 text-sm font-bold ${
-                  isActive("/about")
+                className={`block rounded-xl px-4 py-3 text-sm font-bold ${isActive("/about")
                     ? "bg-blue-50 text-[#0b2f5c]"
                     : "text-slate-700 hover:bg-slate-50"
-                }`}
+                  }`}
               >
                 About Us
               </Link>
@@ -583,19 +574,17 @@ export default function Navbar() {
                   onClick={() =>
                     setIsMobileBusinessOpen(!isMobileBusinessOpen)
                   }
-                  className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-bold ${
-                    isBusinessActive
+                  className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-bold ${isBusinessActive
                       ? "bg-blue-50 text-[#0b2f5c]"
                       : "text-slate-700 hover:bg-slate-50"
-                  }`}
+                    }`}
                   aria-expanded={isMobileBusinessOpen}
                 >
                   <span>Business</span>
 
                   <ChevronDown
-                    className={`h-4 w-4 transition-transform duration-200 ${
-                      isMobileBusinessOpen ? "rotate-180" : ""
-                    }`}
+                    className={`h-4 w-4 transition-transform duration-200 ${isMobileBusinessOpen ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
 
@@ -605,11 +594,10 @@ export default function Navbar() {
 
                     <Link
                       href="/wholesale"
-                      className={`block rounded-lg px-4 py-3 ${
-                        isActive("/wholesale")
+                      className={`block rounded-lg px-4 py-3 ${isActive("/wholesale")
                           ? "bg-white text-[#0b2f5c] shadow-sm"
                           : "text-slate-700 hover:bg-white"
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center justify-between">
                         <span className="text-sm font-bold">
@@ -628,11 +616,10 @@ export default function Navbar() {
 
                     <Link
                       href="/dealers"
-                      className={`block rounded-lg px-4 py-3 ${
-                        isActive("/dealers")
+                      className={`block rounded-lg px-4 py-3 ${isActive("/dealers")
                           ? "bg-white text-[#0b2f5c] shadow-sm"
                           : "text-slate-700 hover:bg-white"
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center justify-between">
                         <span className="text-sm font-bold">
@@ -654,11 +641,10 @@ export default function Navbar() {
 
               <Link
                 href="/contact"
-                className={`block rounded-xl px-4 py-3 text-sm font-bold ${
-                  isActive("/contact")
+                className={`block rounded-xl px-4 py-3 text-sm font-bold ${isActive("/contact")
                     ? "bg-blue-50 text-[#0b2f5c]"
                     : "text-slate-700 hover:bg-slate-50"
-                }`}
+                  }`}
               >
                 Contact
               </Link>

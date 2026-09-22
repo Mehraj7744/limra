@@ -1,4 +1,3 @@
-import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Marquee from "@/components/layout/Marquee";
 import ThemeProvider from "@/components/providers/ThemeProvider";
@@ -16,9 +15,9 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <ScrollProgress />
-          <Header />
 
           {children}
+
           <FloatingActions />
 
           <Marquee />

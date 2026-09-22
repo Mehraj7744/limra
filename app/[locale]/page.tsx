@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "../../lib/navigation";
 import {
   ArrowRight,
   ChevronRight,
@@ -17,24 +17,26 @@ import {
   Zap,
 } from "lucide-react";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import FAQ from "@/components/home/FAQ";
+import WholesaleEnquiry from "@/components/home/WholesaleEnquiry";
 
 const categories = [
   {
     id: "ceiling-fans",
-    title: "Ceiling Fans",
+    titleKey: "ceilingFans",
     image: "/images/products/hero.png",
     href: "/products/ceiling-fans",
   },
   {
     id: "table-fans",
-    title: "Table Fans",
+    titleKey: "tableFans",
     image: "/images/products/table-fan-01.jpg",
     href: "/products/table-fans",
   },
   {
     id: "pedestal-fans",
-    title: "Pedestal Fans",
+    titleKey: "pedestalFans",
     image: "/images/products/pedestal-fan-01.jpg",
     href: "/products/pedestal-fans",
   },
@@ -44,44 +46,44 @@ const featuredProducts = [
   {
     id: 1,
     name: "Auro",
-    category: "Ceiling Fan",
+    categoryKey: "ceilingFan",
     image: "/images/products/auro.jpg",
     href: "/products?model=Auro",
-    tag: "FEATURED",
+    tagKey: "featured",
   },
   {
     id: 2,
     name: "High Breeze",
-    category: "Ceiling Fan",
+    categoryKey: "ceilingFan",
     image: "/images/products/hero.png",
     href: "/products?model=High%20Breeze",
-    tag: "POPULAR",
+    tagKey: "popular",
   },
   {
     id: 3,
     name: "Avencer",
-    category: "Ceiling Fan",
+    categoryKey: "ceilingFan",
     image: "/images/products/hero.png",
     href: "/products?model=Avencer",
-    tag: "PREMIUM",
+    tagKey: "premium",
   },
 ];
 
 const avencerColors = [
   {
-    name: "Viola Blue",
+    nameKey: "violaBlue",
     image: "/images/products/violablue.jpeg",
   },
   {
-    name: "Pearl Ivory",
+    nameKey: "pearlIvory",
     image: "/images/products/pearlivory.jpeg",
   },
   {
-    name: "Baker's Brown",
+    nameKey: "bakersBrown",
     image: "/images/products/bakersbrown.jpeg",
   },
   {
-    name: "Satin Gold",
+    nameKey: "satinGold",
     image: "/images/products/satingold.jpeg",
   },
 ];
@@ -90,35 +92,35 @@ const avencerColors = [
 const businessBenefits = [
   {
     icon: Factory,
-    title: "Factory Direct",
+    titleKey: "factoryDirect",
   },
   {
     icon: ShoppingBag,
-    title: "Bulk Supply",
+    titleKey: "bulkSupply",
   },
   {
     icon: Users,
-    title: "Dealer Pricing",
+    titleKey: "dealerPricing",
   },
   {
     icon: Truck,
-    title: "Pan-India Supply",
+    titleKey: "panIndiaSupply",
   },
 ];
 
 const WHATSAPP_NUMBER = "910000000000";
 
-function getWhatsAppUrl() {
-  const message = encodeURIComponent(
-    "Hello LIMRA INDUSTRY, I am interested in wholesale fan pricing."
-  );
+function getWhatsAppUrl(message: string) {
+  const encodedMessage = encodeURIComponent(message);
 
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
 }
 
 export default function HomePage() {
   const [showEnquiry, setShowEnquiry] = useState(false);
   const [selectedAvencerColor, setSelectedAvencerColor] = useState(0);
+  const t = useTranslations("Home");
+  const categoryLabel = (key: string) => t(`categories.${key}`);
 
 
   return (
@@ -131,18 +133,17 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 sm:px-6 sm:py-16 lg:grid-cols-2 lg:px-8 lg:py-20">
           <div className="order-2 lg:order-1">
             <span className="mb-4 inline-flex rounded-full bg-blue-100 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#0b2f5c]">
-              For Dealers & Wholesale
+              {t("hero.badge")}
             </span>
 
             <h1 className="max-w-xl text-3xl font-black leading-[1.05] tracking-tight text-[#07192f] sm:text-4xl lg:text-5xl">
-              Premium Fans.
+              {t("hero.title")}
               <br />
-              <span className="text-[#0b5cab]">Wholesale Supply.</span>
+              <span className="text-[#0b5cab]">{t("hero.titleHighlight")}</span>
             </h1>
 
             <p className="mt-5 max-w-md text-base font-medium text-slate-600">
-              Ceiling, table and pedestal fans for dealers, distributors and
-              bulk buyers.
+              {t("hero.description")}
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">
@@ -150,7 +151,7 @@ export default function HomePage() {
                 href="/products"
                 className="inline-flex items-center gap-2 rounded-lg bg-[#0b2f5c] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#07192f]"
               >
-                View Products
+                {t("hero.viewProducts")}
                 <ArrowRight className="h-4 w-4" />
               </Link>
 
@@ -158,14 +159,14 @@ export default function HomePage() {
                 onClick={() => setShowEnquiry(true)}
                 className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-[#0b2f5c] transition hover:border-[#0b2f5c]"
               >
-                Wholesale Price
+                {t("hero.wholesalePrice")}
               </button>
             </div>
 
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-xs font-bold uppercase tracking-wide text-slate-500">
-              <span>✓ Factory Direct</span>
-              <span>✓ Bulk Orders</span>
-              <span>✓ Dealer Supply</span>
+              <span>✓ {t("hero.factoryDirect")}</span>
+              <span>✓ {t("hero.bulkOrders")}</span>
+              <span>✓ {t("hero.dealerSupply")}</span>
             </div>
           </div>
 
@@ -176,14 +177,14 @@ export default function HomePage() {
               <div className="relative overflow-hidden rounded-3xl bg-white shadow-xl">
                 <img
                   src="/images/products/hero.png"
-                  alt="LIMRA Auro Ceiling Fan"
+                  alt={t("hero.imageAlt")}
                   className="h-[340px] w-full object-cover sm:h-[440px]"
                 />
 
                 <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-xl bg-white/95 p-4 shadow-lg backdrop-blur">
                   <div>
                     <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                      Featured Model
+                      {t("featuredModel")}
                     </p>
                     <p className="text-xl font-black text-[#0b2f5c]">
                       Auro
@@ -194,7 +195,7 @@ export default function HomePage() {
                     href="/products?model=Auro"
                     className="rounded-lg bg-[#0b2f5c] px-4 py-2 text-xs font-bold text-white"
                   >
-                    View
+                    {t("view")}
                   </Link>
                 </div>
               </div>
@@ -212,16 +213,15 @@ export default function HomePage() {
     {/* SECTION HEADER */}
     <div className="mb-8 text-center">
       <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0b5cab]">
-        Avencer Prime
+        {t("featuredProduct.name")}
       </p>
 
       <h2 className="mt-2 text-3xl font-black tracking-tight text-[#07192f] sm:text-4xl">
-        Built for Performance
+        {t("highlights.title")}
       </h2>
 
       <p className="mx-auto mt-3 max-w-xl text-sm text-slate-500">
-        A premium 1200 mm decorative ceiling fan designed for strong airflow,
-        reliable performance and everyday use.
+        {t("highlights.description")}
       </p>
     </div>
 
@@ -237,7 +237,7 @@ export default function HomePage() {
         </div>
 
         <p className="mt-4 text-xs font-bold uppercase tracking-wider text-slate-400">
-          Airflow
+          {t("specs.airflow")}
         </p>
 
         <p className="mt-1 text-2xl font-black text-[#07192f]">
@@ -245,7 +245,7 @@ export default function HomePage() {
         </p>
 
         <p className="mt-1 text-xs text-slate-500">
-          Powerful air delivery
+          {t("specs.airflowDesc")}
         </p>
       </div>
 
@@ -258,7 +258,7 @@ export default function HomePage() {
         </div>
 
         <p className="mt-4 text-xs font-bold uppercase tracking-wider text-slate-400">
-          Motor Speed
+          {t("specs.motorSpeed")}
         </p>
 
         <p className="mt-1 text-2xl font-black text-[#07192f]">
@@ -266,7 +266,7 @@ export default function HomePage() {
         </p>
 
         <p className="mt-1 text-xs text-slate-500">
-          High-speed performance
+          {t("specs.motorSpeedDesc")}
         </p>
       </div>
 
@@ -279,7 +279,7 @@ export default function HomePage() {
         </div>
 
         <p className="mt-4 text-xs font-bold uppercase tracking-wider text-slate-400">
-          Power Usage
+          {t("specs.powerUsage")}
         </p>
 
         <p className="mt-1 text-2xl font-black text-[#07192f]">
@@ -287,7 +287,7 @@ export default function HomePage() {
         </p>
 
         <p className="mt-1 text-xs text-slate-500">
-          Efficient operation
+          {t("specs.powerUsageDesc")}
         </p>
       </div>
 
@@ -300,15 +300,15 @@ export default function HomePage() {
         </div>
 
         <p className="mt-4 text-xs font-bold uppercase tracking-wider text-slate-400">
-          Warranty
+          {t("specs.warranty")}
         </p>
 
         <p className="mt-1 text-2xl font-black text-[#07192f]">
-          2 Years
+          {t("specs.twoYears")}
         </p>
 
         <p className="mt-1 text-xs text-slate-500">
-          Warranty coverage
+          {t("specs.warranty")} coverage
         </p>
       </div>
 
@@ -320,7 +320,7 @@ export default function HomePage() {
 
       <div className="text-center sm:border-r sm:border-white/10">
         <p className="text-[10px] font-bold uppercase tracking-widest text-blue-300">
-          Size
+          {t("specs.size")}
         </p>
 
         <p className="mt-1 text-sm font-black text-white">
@@ -331,7 +331,7 @@ export default function HomePage() {
 
       <div className="text-center sm:border-r sm:border-white/10">
         <p className="text-[10px] font-bold uppercase tracking-widest text-blue-300">
-          Body
+          {t("specs.body")}
         </p>
 
         <p className="mt-1 text-sm font-black text-white">
@@ -342,7 +342,7 @@ export default function HomePage() {
 
       <div className="text-center">
         <p className="text-[10px] font-bold uppercase tracking-widest text-blue-300">
-          Motor Winding
+          {t("specs.motorWinding")}
         </p>
 
         <p className="mt-1 text-sm font-black text-white">
@@ -366,11 +366,11 @@ export default function HomePage() {
     <div className="mb-6 flex items-end justify-between sm:mb-8">
       <div>
         <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#0b5cab] sm:text-xs">
-          Featured Model
+          {t("featuredModel")}
         </p>
 
         <h2 className="mt-1 text-2xl font-black tracking-tight text-[#07192f] sm:text-3xl lg:text-4xl">
-          Avencer Prime
+          {t("featuredProduct.name")}
         </h2>
       </div>
 
@@ -378,7 +378,7 @@ export default function HomePage() {
         href="/products"
         className="hidden items-center gap-1 text-sm font-bold text-[#0b2f5c] sm:flex"
       >
-        View All Products
+        {t("view")} All Products
         <ArrowRight className="h-4 w-4" />
       </Link>
     </div>
@@ -400,12 +400,12 @@ export default function HomePage() {
           >
             <img
               src={avencerColors[selectedAvencerColor].image}
-              alt={`Avencer Prime - ${avencerColors[selectedAvencerColor].name}`}
+              alt={`${t("featuredProduct.name")} - ${t(`featuredProduct.colors.${avencerColors[selectedAvencerColor].nameKey}`)}`}
               className="h-full w-full bg-white object-contain transition duration-500 group-hover:scale-[1.03]"
             />
 
             <span className="absolute left-3 top-3 rounded-md bg-[#0b2f5c] px-2.5 py-1 text-[9px] font-black uppercase tracking-wider text-white sm:left-4 sm:top-4 sm:px-3 sm:py-1.5 sm:text-[10px]">
-              Featured Model
+              {t("featuredModel")}
             </span>
           </Link>
 
@@ -415,16 +415,16 @@ export default function HomePage() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500 sm:text-xs">
-                  Colour
+                  {t("featuredProduct.colour")}
                 </p>
 
                 <p className="mt-0.5 text-xs font-black text-[#07192f] sm:mt-1 sm:text-sm">
-                  {avencerColors[selectedAvencerColor].name}
+                  {t(`featuredProduct.colors.${avencerColors[selectedAvencerColor].nameKey}`)}
                 </p>
               </div>
 
               <span className="text-[10px] font-medium text-slate-400 sm:text-xs">
-                {avencerColors.length} Colours
+                {avencerColors.length} {t("featuredProduct.colour")}s
               </span>
             </div>
 
@@ -437,12 +437,12 @@ export default function HomePage() {
 
                 return (
                   <button
-                    key={color.name}
+                    key={t(`featuredProduct.colors.${color.nameKey}`)}
                     type="button"
                     onClick={() =>
                       setSelectedAvencerColor(index)
                     }
-                    aria-label={`Select ${color.name}`}
+                    aria-label={`Select ${t(`featuredProduct.colors.${color.nameKey}`)}`}
                     aria-pressed={isSelected}
                     className={`shrink-0 rounded-lg border-2 bg-white p-1 transition-all duration-200 sm:rounded-xl ${
                       isSelected
@@ -453,7 +453,7 @@ export default function HomePage() {
                     <div className="relative h-16 w-16 overflow-hidden rounded-md bg-slate-100 sm:h-20 sm:w-20">
                       <img
                         src={color.image}
-                        alt={color.name}
+                        alt={t(`featuredProduct.colors.${color.nameKey}`)}
                         className="h-full w-full object-contain"
                       />
                     </div>
@@ -467,7 +467,7 @@ export default function HomePage() {
             <div className="mt-2 grid grid-cols-4 gap-1.5 sm:mt-3 sm:gap-2">
               {avencerColors.map((color, index) => (
                 <button
-                  key={color.name}
+                  key={t(`featuredProduct.colors.${color.nameKey}`)}
                   type="button"
                   onClick={() =>
                     setSelectedAvencerColor(index)
@@ -478,7 +478,7 @@ export default function HomePage() {
                       : "text-slate-500"
                   }`}
                 >
-                  {color.name}
+                  {t(`featuredProduct.colors.${color.nameKey}`)}
                 </button>
               ))}
             </div>
@@ -493,17 +493,17 @@ export default function HomePage() {
 
           {/* CATEGORY */}
           <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500 sm:text-xs sm:tracking-widest">
-            Decorative Ceiling Fan
+            {t("featuredProduct.category")}
           </p>
 
           {/* PRODUCT NAME */}
           <h3 className="mt-1 text-2xl font-black tracking-tight text-[#07192f] sm:mt-2 sm:text-4xl">
-            Avencer Prime
+            {t("featuredProduct.name")}
           </h3>
 
           {/* SIZE */}
           <p className="mt-1 text-xs font-semibold text-slate-500 sm:mt-2 sm:text-sm">
-            1200 mm / 48 inch
+            {t("featuredProduct.size")}
           </p>
 
           {/* PRODUCT FEATURES */}
@@ -511,7 +511,7 @@ export default function HomePage() {
 
             <div className="rounded-lg bg-slate-50 p-3 sm:rounded-xl sm:p-4">
               <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400 sm:text-[10px]">
-                Airflow
+                {t("specs.airflow")}
               </p>
 
               <p className="mt-0.5 text-base font-black text-[#07192f] sm:mt-1 sm:text-lg">
@@ -521,7 +521,7 @@ export default function HomePage() {
 
             <div className="rounded-lg bg-slate-50 p-3 sm:rounded-xl sm:p-4">
               <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400 sm:text-[10px]">
-                Motor Speed
+                {t("specs.motorSpeed")}
               </p>
 
               <p className="mt-0.5 text-base font-black text-[#07192f] sm:mt-1 sm:text-lg">
@@ -531,7 +531,7 @@ export default function HomePage() {
 
             <div className="rounded-lg bg-slate-50 p-3 sm:rounded-xl sm:p-4">
               <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400 sm:text-[10px]">
-                Power Usage
+                {t("specs.powerUsage")}
               </p>
 
               <p className="mt-0.5 text-base font-black text-[#07192f] sm:mt-1 sm:text-lg">
@@ -541,11 +541,11 @@ export default function HomePage() {
 
             <div className="rounded-lg bg-slate-50 p-3 sm:rounded-xl sm:p-4">
               <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400 sm:text-[10px]">
-                Blades
+                {t("featuredProduct.blades")}
               </p>
 
               <p className="mt-0.5 text-base font-black text-[#07192f] sm:mt-1 sm:text-lg">
-                3 Blades
+                3 {t("featuredProduct.blades")}
               </p>
             </div>
 
@@ -556,7 +556,7 @@ export default function HomePage() {
 
             <div className="rounded-lg border border-slate-200 p-3 sm:rounded-xl sm:p-4">
               <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400 sm:text-[10px]">
-                Body Material
+                {t("specs.body")} Material
               </p>
 
               <p className="mt-0.5 text-xs font-black text-[#07192f] sm:mt-1 sm:text-sm">
@@ -570,7 +570,7 @@ export default function HomePage() {
               </p>
 
               <p className="mt-0.5 text-xs font-black text-[#07192f] sm:mt-1 sm:text-sm">
-                Aluminium Winding
+                {t("featuredProduct.aluminiumWinding")}
               </p>
             </div>
 
@@ -581,7 +581,7 @@ export default function HomePage() {
             <ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5" />
 
             <span>
-              2 Year Warranty
+              2 Year {t("specs.warranty")}
             </span>
           </div>
 
@@ -592,7 +592,7 @@ export default function HomePage() {
               href="/products?model=Avencer%20Prime"
               className="flex items-center justify-center gap-2 rounded-lg bg-[#0b2f5c] px-4 py-3 text-xs font-bold text-white transition hover:bg-[#07192f] sm:rounded-xl sm:px-5 sm:py-3.5 sm:text-sm"
             >
-              View Product
+              {t("view")} Product
               <ArrowRight className="h-4 w-4" />
             </Link>
 
@@ -601,7 +601,7 @@ export default function HomePage() {
               onClick={() => setShowEnquiry(true)}
               className="flex items-center justify-center gap-2 rounded-lg border border-[#0b2f5c] px-4 py-3 text-xs font-bold text-[#0b2f5c] transition hover:bg-[#0b2f5c] hover:text-white sm:rounded-xl sm:px-5 sm:py-3.5 sm:text-sm"
             >
-              Get Wholesale Price
+              Get {t("hero.wholesalePrice")}
             </button>
 
           </div>
@@ -618,204 +618,9 @@ export default function HomePage() {
 ===================================================== */}
 <section
   id="wholesale-enquiry"
-  className="relative overflow-hidden border-y border-slate-200/80 bg-gradient-to-b from-white via-slate-50/50 to-white py-16 sm:py-24"
+  className="relative overflow-hidden border-y border-slate-200/80 bg-gradient-to-b from-white via-slate-50/50 to-white"
 >
-  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-
-      {/* LEFT: VALUE PROPOSITION */}
-      <div className="lg:col-span-5 space-y-6">
-        <div>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 border border-blue-200 px-3.5 py-1 text-xs font-black uppercase tracking-widest text-[#0b5cab]">
-            <Factory className="h-3.5 w-3.5" />
-            B2B Procurement Portal
-          </span>
-
-          <h2 className="mt-4 text-3xl font-black tracking-tight text-[#07192f] sm:text-4xl lg:text-5xl leading-tight">
-            Get Direct Wholesale Pricing
-          </h2>
-
-          <p className="mt-3 text-base leading-relaxed text-slate-600">
-            Scale your retail or distribution business with factory-direct margins. Submit your requirements and our B2B desk will share custom price lists within 2 hours.
-          </p>
-        </div>
-
-        {/* FEATURE HIGHLIGHTS GRID */}
-        <div className="grid grid-cols-2 gap-4 pt-2">
-          <div className="group rounded-2xl border border-slate-200/80 bg-white p-4.5 shadow-sm transition hover:border-blue-300 hover:shadow-md">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-[#0b5cab] transition group-hover:bg-[#0b2f5c] group-hover:text-white">
-              <Factory className="h-5 w-5" />
-            </div>
-            <p className="mt-3 text-sm font-black text-[#07192f]">
-              Factory Direct
-            </p>
-            <p className="mt-0.5 text-xs text-slate-500">Zero middleman markup</p>
-          </div>
-
-          <div className="group rounded-2xl border border-slate-200/80 bg-white p-4.5 shadow-sm transition hover:border-blue-300 hover:shadow-md">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-[#0b5cab] transition group-hover:bg-[#0b2f5c] group-hover:text-white">
-              <ShoppingBag className="h-5 w-5" />
-            </div>
-            <p className="mt-3 text-sm font-black text-[#07192f]">
-              Bulk Orders
-            </p>
-            <p className="mt-0.5 text-xs text-slate-500">Flexible tier discounts</p>
-          </div>
-
-          <div className="group rounded-2xl border border-slate-200/80 bg-white p-4.5 shadow-sm transition hover:border-blue-300 hover:shadow-md">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-[#0b5cab] transition group-hover:bg-[#0b2f5c] group-hover:text-white">
-              <Users className="h-5 w-5" />
-            </div>
-            <p className="mt-3 text-sm font-black text-[#07192f]">
-              Dealer Support
-            </p>
-            <p className="mt-0.5 text-xs text-slate-500">Regional protection</p>
-          </div>
-
-          <div className="group rounded-2xl border border-slate-200/80 bg-white p-4.5 shadow-sm transition hover:border-blue-300 hover:shadow-md">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-[#0b5cab] transition group-hover:bg-[#0b2f5c] group-hover:text-white">
-              <Truck className="h-5 w-5" />
-            </div>
-            <p className="mt-3 text-sm font-black text-[#07192f]">
-              Pan-India Supply
-            </p>
-            <p className="mt-0.5 text-xs text-slate-500">Safe transit dispatch</p>
-          </div>
-        </div>
-      </div>
-
-      {/* RIGHT: PROFESSIONAL ENQUIRY FORM */}
-      <div className="lg:col-span-7">
-        <div className="relative rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50">
-          <div className="absolute top-0 right-0 -mt-3 -mr-3 hidden sm:block rounded-full bg-blue-600 px-4 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-md">
-            Fast Quote Reply
-          </div>
-
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              console.log("Wholesale enquiry submitted");
-              alert("Enquiry submitted successfully! Our wholesale team will contact you shortly.");
-            }}
-            className="space-y-5"
-          >
-            <div className="grid gap-5 sm:grid-cols-2">
-              {/* NAME */}
-              <div>
-                <label
-                  htmlFor="name"
-                  className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-600"
-                >
-                  Full Name <span className="text-red-500">*</span>
-                </label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  placeholder="e.g. Rajesh Kumar"
-                  className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-3.5 text-sm text-slate-900 outline-none transition focus:border-[#0b2f5c] focus:bg-white focus:ring-4 focus:ring-blue-100"
-                />
-              </div>
-
-              {/* WHATSAPP */}
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-600"
-                >
-                  WhatsApp Number <span className="text-red-500">*</span>
-                </label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  required
-                  placeholder="+91 98765 43210"
-                  className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-3.5 text-sm text-slate-900 outline-none transition focus:border-[#0b2f5c] focus:bg-white focus:ring-4 focus:ring-blue-100"
-                />
-              </div>
-
-              {/* PRODUCT */}
-              <div>
-                <label
-                  htmlFor="product"
-                  className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-600"
-                >
-                  Product Category <span className="text-red-500">*</span>
-                </label>
-                <select
-                  id="product"
-                  name="product"
-                  required
-                  defaultValue=""
-                  className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-3.5 text-sm text-slate-700 outline-none transition focus:border-[#0b2f5c] focus:bg-white focus:ring-4 focus:ring-blue-100"
-                >
-                  <option value="" disabled>
-                    Select fan category
-                  </option>
-                  <option value="ceiling-fans">Ceiling Fans (High-Speed & Decorative)</option>
-                  <option value="table-fans">Table Fans (Portable Airflow)</option>
-                  <option value="pedestal-fans">Pedestal Fans (Heavy-Duty)</option>
-                </select>
-              </div>
-
-              {/* QUANTITY */}
-              <div>
-                <label
-                  htmlFor="quantity"
-                  className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-600"
-                >
-                  Approx. Quantity (Units) <span className="text-red-500">*</span>
-                </label>
-                <input
-                  id="quantity"
-                  name="quantity"
-                  type="number"
-                  min="1"
-                  required
-                  placeholder="e.g. 50 units"
-                  className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-3.5 text-sm text-slate-900 outline-none transition focus:border-[#0b2f5c] focus:bg-white focus:ring-4 focus:ring-blue-100"
-                />
-              </div>
-
-              {/* LOCATION */}
-              <div className="sm:col-span-2">
-                <label
-                  htmlFor="location"
-                  className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-600"
-                >
-                  Delivery Destination (City / State) <span className="text-red-500">*</span>
-                </label>
-                <input
-                  id="location"
-                  name="location"
-                  type="text"
-                  required
-                  placeholder="e.g. Pune, Maharashtra"
-                  className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-3.5 text-sm text-slate-900 outline-none transition focus:border-[#0b2f5c] focus:bg-white focus:ring-4 focus:ring-blue-100"
-                />
-              </div>
-            </div>
-
-            {/* SUBMIT BUTTON */}
-            <button
-              type="submit"
-              className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-[#0b2f5c] px-6 py-4 text-sm font-black text-white shadow-lg shadow-blue-900/20 transition hover:bg-[#07192f] hover:scale-[1.01]"
-            >
-              Get Wholesale Price Sheet
-              <ArrowRight className="h-4 w-4" />
-            </button>
-
-            <p className="text-center text-xs text-slate-400">
-              🔒 Your details are safe with us. No spam, direct dealer correspondence only.
-            </p>
-          </form>
-        </div>
-      </div>
-
-    </div>
-  </div>
+  <WholesaleEnquiry />
 </section>
 
 {/* =====================================================
@@ -831,17 +636,16 @@ export default function HomePage() {
     <div className="mb-8 flex flex-col justify-between gap-3 sm:mb-10 sm:flex-row sm:items-end">
       <div>
         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0b5cab] sm:text-xs">
-          Why LIMRA
+          {t("business.eyebrow")}
         </p>
 
         <h2 className="mt-1 text-2xl font-black tracking-tight text-[#07192f] sm:text-3xl">
-          Built for Business
+          {t("business.title")}
         </h2>
       </div>
 
       <p className="max-w-md text-sm leading-6 text-slate-500 sm:text-right">
-        Reliable support and supply solutions for dealers, wholesalers,
-        distributors and bulk buyers.
+        {t("business.description")}
       </p>
     </div>
 
@@ -854,7 +658,7 @@ export default function HomePage() {
 
           return (
             <div
-              key={item.title}
+              key={t(`business.benefits.${item.titleKey}`)}
               className={`group relative p-6 transition-all duration-300 hover:bg-slate-50 sm:p-7 lg:p-8 ${
                 index !== 0
                   ? "border-t border-slate-200 sm:border-l sm:border-t-0"
@@ -880,11 +684,11 @@ export default function HomePage() {
               <div className="mt-5">
 
                 <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">
-                  For Business
+                  {t("business.forBusiness")}
                 </p>
 
                 <h3 className="mt-1.5 text-base font-black text-[#07192f]">
-                  {item.title}
+                  {t(`business.benefits.${item.titleKey}`)}
                 </h3>
 
                 <div className="mt-4 h-px w-8 bg-[#0b5cab] transition-all duration-300 group-hover:w-14" />
@@ -911,22 +715,22 @@ export default function HomePage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-3xl bg-gradient-to-r from-[#0b2f5c] to-[#0b5cab] p-7 text-center shadow-2xl sm:p-12">
             <p className="text-xs font-bold uppercase tracking-widest text-blue-200">
-              Dealers • Distributors • Wholesalers
+              {t("wholesaleCta.eyebrow")}
             </p>
 
             <h2 className="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl">
-              Get Wholesale Pricing
+              {t("wholesaleCta.title")}
             </h2>
 
             <p className="mx-auto mt-3 max-w-lg text-sm text-blue-100">
-              Tell us what you need and our team will contact you.
+              {t("wholesaleCta.description")}
             </p>
 
             <button
               onClick={() => setShowEnquiry(true)}
               className="mt-7 rounded-lg bg-white px-7 py-3.5 text-sm font-black text-[#0b2f5c] shadow-lg transition hover:bg-slate-100"
             >
-              Send Wholesale Enquiry
+              {t("wholesaleCta.button")}
             </button>
           </div>
         </div>
@@ -981,13 +785,13 @@ export default function HomePage() {
             <span className="h-1.5 w-1.5 rounded-full bg-[#0b5cab]" />
 
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0b5cab] sm:text-xs">
-              Dealer Network
+              {t("dealerCta.eyebrow")}
             </span>
           </div>
 
           {/* Heading */}
           <h2 className="text-2xl font-black tracking-tight text-[#07192f] sm:text-3xl lg:text-4xl">
-            Grow your business with{" "}
+            {t("dealerCta.title")}{" "}
             <span className="text-[#0b5cab]">
               LIMRA
             </span>
@@ -1006,21 +810,21 @@ export default function HomePage() {
               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-50 text-[#0b5cab]">
                 ✓
               </span>
-              Dealer Support
+              {t("dealerCta.dealerSupport")}
             </div>
 
             <div className="flex items-center gap-2 text-xs font-semibold text-slate-600">
               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-50 text-[#0b5cab]">
                 ✓
               </span>
-              Business Opportunities
+              {t("dealerCta.businessOpportunities")}
             </div>
 
             <div className="flex items-center gap-2 text-xs font-semibold text-slate-600">
               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-50 text-[#0b5cab]">
                 ✓
               </span>
-              Direct Enquiry
+              {t("dealerCta.directEnquiry")}
             </div>
 
           </div>
@@ -1034,7 +838,7 @@ export default function HomePage() {
             className="group inline-flex w-full items-center justify-center gap-3 rounded-xl bg-[#0b2f5c] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#0b2f5c]/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#07192f] hover:shadow-xl sm:w-auto sm:px-7"
           >
             <span>
-              Become a Dealer
+              {t("dealerCta.button")}
             </span>
 
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 transition-transform duration-300 group-hover:translate-x-1">
@@ -1043,7 +847,7 @@ export default function HomePage() {
           </Link>
 
           <p className="mt-2 text-center text-[10px] font-medium text-slate-400">
-            Start your dealership enquiry
+            {t("dealerCta.note")}
           </p>
 
         </div>
