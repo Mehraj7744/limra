@@ -44,7 +44,7 @@ export default function ContactPage() {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate network submission delay for high-end UX feedback
     setTimeout(() => {
       setIsSubmitting(false);
@@ -72,7 +72,7 @@ export default function ContactPage() {
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-            
+
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-cyan-400 backdrop-blur-md">
                 <Sparkles className="h-3.5 w-3.5" />
@@ -393,7 +393,7 @@ export default function ContactPage() {
       <section className="border-t border-slate-200 bg-white py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-            
+
             <div className="lg:col-span-5 space-y-6">
               <div>
                 <span className="text-[11px] font-black uppercase tracking-widest text-blue-600">Geographical Reach</span>
@@ -423,40 +423,69 @@ export default function ContactPage() {
 
             <div className="lg:col-span-7">
               <div className="relative min-h-[380px] overflow-hidden rounded-3xl border border-slate-200/85 bg-slate-100 shadow-xl shadow-slate-900/5">
+
+                {/* Subtle background pattern */}
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 opacity-[0.06]"
+                  className="pointer-events-none absolute inset-0 opacity-[0.06]"
                   style={{
                     backgroundImage:
                       "linear-gradient(45deg, #0b2f5c 25%, transparent 25%), linear-gradient(-45deg, #0b2f5c 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #0b2f5c 75%), linear-gradient(-45deg, transparent 75%, #0b2f5c 75%)",
                     backgroundSize: "40px 40px",
-                    backgroundPosition: "0 0, 0 20px, 20px -20px, -20px 0px",
+                    backgroundPosition:
+                      "0 0, 0 20px, 20px -20px, -20px 0px",
                   }}
                 />
 
-                <div className="relative flex min-h-[380px] flex-col items-center justify-center p-8 text-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#0b2f5c] text-white shadow-xl shadow-blue-900/20">
-                    <MapPin className="h-7 w-7 text-cyan-400" />
-                  </div>
-
-                  <h3 className="mt-6 text-xl font-bold text-slate-900">
-                    LIMRA INDUSTRY
-                  </h3>
-
-                  <p className="mt-2 max-w-sm text-xs leading-relaxed text-slate-600">
-                    H.No.10-1-31, Fathe Nagar, Balanagar, Hyderabad, Telangana
-                  </p>
-
-                  <a
-                    href="https://www.google.com/maps/search/?api=1&query=H.No.10-1-31%2C%20Fathe%20Nagar%2C%20Balanagar%2C%20Hyderabad"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group mt-6 inline-flex items-center gap-2 rounded-xl bg-white border border-slate-200 px-5 py-3 text-xs font-bold text-[#0b2f5c] shadow-sm transition-all hover:bg-slate-50 hover:border-blue-300"
-                  >
-                    <span>Open in Google Maps</span>
-                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                  </a>
+                {/* Map */}
+                <div className="relative h-[380px] w-full">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.9813608938875!2d78.45067619999999!3d17.4606062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90ed63dfdccf%3A0xa80e6d972e25096e!2sH.no%2C%2010-2-158%2C%20Fatehnagar%2C%20Balanagar%2C%20Hyderabad%2C%20Telangana%20500018!5e0!3m2!1sen!2sin!4v1790078238255!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    title="LIMRA INDUSTRY location"
+                    className="relative z-10"
+                  />
                 </div>
+
+                {/* Location information overlay */}
+                {/* <div className="absolute bottom-4 left-4 right-4 z-20 rounded-2xl border border-white/60 bg-white/95 p-4 shadow-lg backdrop-blur-md sm:left-6 sm:right-auto sm:max-w-sm">
+
+                  <div className="flex items-start gap-3">
+
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0b2f5c] text-white">
+                      <MapPin className="h-5 w-5 text-cyan-400" />
+                    </div>
+
+                    <div>
+                      <h3 className="text-sm font-black text-slate-900">
+                        LIMRA INDUSTRY
+                      </h3>
+
+                      <p className="mt-1 text-xs leading-5 text-slate-600">
+                        H.No.10-1-31, Fathe Nagar, Balanagar,
+                        Hyderabad, Telangana
+                      </p>
+
+                      <a
+                        href="https://www.google.com/maps/search/?api=1&query=LIMRA+INDUSTRY+Fathe+Nagar+Balanagar+Hyderabad"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group mt-2 inline-flex items-center gap-1 text-xs font-bold text-[#0b5cab]"
+                      >
+                        Open in Google Maps
+
+                        <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                      </a>
+                    </div>
+
+                  </div>
+                </div> */}
+
               </div>
             </div>
 
@@ -480,7 +509,7 @@ export default function ContactPage() {
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
-            
+
             <div className="lg:col-span-8">
               <span className="text-[11px] font-black uppercase tracking-widest text-cyan-400">Network Growth</span>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl mt-2">

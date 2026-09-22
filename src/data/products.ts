@@ -10,20 +10,20 @@ export const products: Product[] = [
     description:
       "A premium 48-inch ceiling fan designed for dependable everyday airflow and a refined interior finish.",
 
-    image: "/images/products/demo.png",
+    image: "/images/products/hero.png",
 
     variants: [
       {
         finish: "Satin Gold",
-        image: "/images/products/demo.png",
+        image: "/images/products/hero.png",
       },
       {
         finish: "Baker's Brown",
-        image: "/images/products/demo.png",
+        image: "/images/products/hero.png",
       },
       {
         finish: "Pearl Ivory",
-        image: "/images/products/demo.png",
+        image: "/images/products/hero.png",
       },
     ],
 
@@ -43,12 +43,12 @@ export const products: Product[] = [
     description:
       "A 48-inch premium ceiling fan designed for strong airflow and reliable performance.",
 
-    image: "/images/products/demo.png",
+    image: "/images/products/hero.png",
 
     variants: [
       {
         finish: "Baker's Brown",
-        image: "/images/products/demo.png",
+        image: "/images/products/hero.png",
       },
      
     ],
@@ -69,24 +69,24 @@ export const products: Product[] = [
     description:
       "A premium 48-inch ceiling fan combining a distinctive blade design with contemporary finishes.",
 
-    image: "/images/products/demo.png",
+    image: "/images/products/hero.png",
 
     variants: [
       {
         finish: "Viola Blue",
-        image: "/images/products/demo.png",
+        image: "/images/products/hero.png",
       },
       {
         finish: "Baker's Brown",
-        image: "/images/products/demo.png",
+        image: "/images/products/hero.png",
       },
       {
         finish: "Pearl Ivory",
-        image: "/images/products/demo.png",
+        image: "/images/products/hero.png",
       },
       {
         finish: "Satin Gold",
-        image: "/images/products/demo.png",
+        image: "/images/products/hero.png",
       },
     ],
 
@@ -106,20 +106,20 @@ export const products: Product[] = [
     description:
       "A premium ceiling fan available in elegant finishes for contemporary residential interiors.",
 
-    image: "/images/products/demo.png",
+    image: "/images/products/hero.png",
 
     variants: [
       {
         finish: "Satin Gold",
-        image: "/images/products/demo.png",
+        image: "/images/products/hero.png",
       },
       {
         finish: "Pearl White",
-        image: "/images/products/demo.png",
+        image: "/images/products/hero.png",
       },
       {
         finish: "Rose Gold",
-        image: "/images/products/demo.png",
+        image: "/images/products/hero.png",
       },
     ],
 
@@ -139,20 +139,20 @@ export const products: Product[] = [
     description:
       "A stylish 48-inch premium ceiling fan with multiple decorative finish options.",
 
-    image: "/images/products/demo.png",
+    image: "/images/products/hero.png",
 
     variants: [
       {
         finish: "Matt Black",
-        image: "/images/products/demo.png",
+        image: "/images/products/hero.png",
       },
       {
         finish: "Satin Gold",
-        image: "/images/products/demo.png",
+        image: "/images/products/hero.png",
       },
       {
         finish: "Pearl White",
-        image: "/images/products/demo.png",
+        image: "/images/products/hero.png",
       },
     ],
 
@@ -172,7 +172,7 @@ export const products: Product[] = [
     description:
       "A compact premium fan designed for spaces where a smaller sweep size is required.",
 
-    image: "/images/products/demo.png",
+    image: "/images/products/hero.png",
 
     variants: [],
 
@@ -192,7 +192,7 @@ export const products: Product[] = [
     description:
       "A compact Auro model from the 24-inch premium range.",
 
-    image: "/images/products/demo.png",
+    image: "/images/products/hero.png",
 
     variants: [],
 
@@ -212,7 +212,7 @@ export const products: Product[] = [
     description:
       "A compact decorative fan from the 24-inch premium range.",
 
-    image: "/images/products/demo.png",
+    image: "/images/products/hero.png",
 
     variants: [],
 
@@ -232,7 +232,7 @@ export const products: Product[] = [
     description:
       "A compact premium model designed for smaller spaces.",
 
-    image: "/images/products/demo.png",
+    image: "/images/products/hero.png",
 
     variants: [],
 

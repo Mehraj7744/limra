@@ -23,7 +23,7 @@ const categories = [
   {
     id: "ceiling-fans",
     title: "Ceiling Fans",
-    image: "/images/products/demo.png",
+    image: "/images/products/hero.png",
     href: "/products/ceiling-fans",
   },
   {
@@ -53,7 +53,7 @@ const featuredProducts = [
     id: 2,
     name: "High Breeze",
     category: "Ceiling Fan",
-    image: "/images/products/demo.png",
+    image: "/images/products/hero.png",
     href: "/products?model=High%20Breeze",
     tag: "POPULAR",
   },
@@ -61,7 +61,7 @@ const featuredProducts = [
     id: 3,
     name: "Avencer",
     category: "Ceiling Fan",
-    image: "/images/products/demo.png",
+    image: "/images/products/hero.png",
     href: "/products?model=Avencer",
     tag: "PREMIUM",
   },
@@ -175,7 +175,7 @@ export default function HomePage() {
 
               <div className="relative overflow-hidden rounded-3xl bg-white shadow-xl">
                 <img
-                  src="/images/products/demo.png"
+                  src="/images/products/hero.png"
                   alt="LIMRA Auro Ceiling Fan"
                   className="h-[340px] w-full object-cover sm:h-[440px]"
                 />
@@ -401,7 +401,7 @@ export default function HomePage() {
             <img
               src={avencerColors[selectedAvencerColor].image}
               alt={`Avencer Prime - ${avencerColors[selectedAvencerColor].name}`}
-              className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.03]"
+              className="h-full w-full bg-white object-contain transition duration-500 group-hover:scale-[1.03]"
             />
 
             <span className="absolute left-3 top-3 rounded-md bg-[#0b2f5c] px-2.5 py-1 text-[9px] font-black uppercase tracking-wider text-white sm:left-4 sm:top-4 sm:px-3 sm:py-1.5 sm:text-[10px]">
@@ -821,33 +821,86 @@ export default function HomePage() {
 {/* =====================================================
     B2B BENEFITS MATRIX
 ===================================================== */}
-<section className="border-b border-slate-200 bg-slate-50/60 py-12">
+{/* =====================================================
+    B2B BENEFITS
+===================================================== */}
+<section className="border-b border-slate-200 bg-white py-12 sm:py-16">
   <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {businessBenefits.map((item) => {
-        const Icon = item.icon;
 
-        return (
-          <div
-            key={item.title}
-            className="group flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-md"
-          >
-            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#0b5cab] transition group-hover:bg-[#0b2f5c] group-hover:text-white">
-              <Icon className="h-6 w-6" />
-            </div>
+    {/* Section heading */}
+    <div className="mb-8 flex flex-col justify-between gap-3 sm:mb-10 sm:flex-row sm:items-end">
+      <div>
+        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0b5cab] sm:text-xs">
+          Why LIMRA
+        </p>
 
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                Guaranteed
-              </span>
-              <h3 className="text-sm font-black text-[#07192f] mt-0.5">
-                {item.title}
-              </h3>
-            </div>
-          </div>
-        );
-      })}
+        <h2 className="mt-1 text-2xl font-black tracking-tight text-[#07192f] sm:text-3xl">
+          Built for Business
+        </h2>
+      </div>
+
+      <p className="max-w-md text-sm leading-6 text-slate-500 sm:text-right">
+        Reliable support and supply solutions for dealers, wholesalers,
+        distributors and bulk buyers.
+      </p>
     </div>
+
+    {/* Benefits */}
+    <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm sm:rounded-3xl">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4">
+
+        {businessBenefits.map((item, index) => {
+          const Icon = item.icon;
+
+          return (
+            <div
+              key={item.title}
+              className={`group relative p-6 transition-all duration-300 hover:bg-slate-50 sm:p-7 lg:p-8 ${
+                index !== 0
+                  ? "border-t border-slate-200 sm:border-l sm:border-t-0"
+                  : ""
+              } ${
+                index === 2
+                  ? "lg:border-l"
+                  : ""
+              }`}
+            >
+
+              {/* Number */}
+              <span className="absolute right-5 top-5 text-[10px] font-black tracking-widest text-slate-200 transition-colors duration-300 group-hover:text-blue-100">
+                0{index + 1}
+              </span>
+
+              {/* Icon */}
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-50 text-[#0b5cab] ring-1 ring-slate-100 transition-all duration-300 group-hover:bg-[#0b2f5c] group-hover:text-white group-hover:shadow-lg group-hover:shadow-[#0b2f5c]/10">
+                <Icon className="h-5 w-5" />
+              </div>
+
+              {/* Content */}
+              <div className="mt-5">
+
+                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">
+                  For Business
+                </p>
+
+                <h3 className="mt-1.5 text-base font-black text-[#07192f]">
+                  {item.title}
+                </h3>
+
+                <div className="mt-4 h-px w-8 bg-[#0b5cab] transition-all duration-300 group-hover:w-14" />
+
+              </div>
+
+              {/* Bottom accent */}
+              <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#0b2f5c] transition-all duration-300 group-hover:w-full" />
+
+            </div>
+          );
+        })}
+
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -879,30 +932,126 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* =====================================================
-          DEALER CTA
-      ====================================================== */}
-      <section className="border-b border-slate-200 bg-white py-12">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-4 text-center sm:px-6 md:flex-row md:text-left lg:px-8">
-          <div>
-            <h2 className="text-2xl font-black text-[#07192f]">
-              Want to become a LIMRA dealer?
-            </h2>
+    {/* =====================================================
+    DEALER CTA
+====================================================== */}
+<section className="border-b border-slate-200 bg-slate-50 py-10 sm:py-14">
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-            <p className="mt-1 text-sm text-slate-500">
-              Join our dealer network.
-            </p>
+    <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm sm:rounded-3xl">
+
+      {/* Subtle decorative background */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-blue-50/80 blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-slate-100 blur-3xl" />
+
+        <div className="absolute right-0 top-0 h-full w-1/3 opacity-40">
+          <svg
+            viewBox="0 0 400 300"
+            className="h-full w-full"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M400 0H260L400 140V0Z"
+              fill="currentColor"
+              className="text-slate-100"
+            />
+            <path
+              d="M400 80L180 300H320L400 220V80Z"
+              fill="currentColor"
+              className="text-slate-50"
+            />
+            <path
+              d="M400 180L280 300H400V180Z"
+              fill="currentColor"
+              className="text-slate-100"
+            />
+          </svg>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="relative flex flex-col gap-7 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-9">
+
+        {/* Left */}
+        <div className="max-w-2xl">
+
+          {/* Small label */}
+          <div className="mb-3 inline-flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#0b5cab]" />
+
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0b5cab] sm:text-xs">
+              Dealer Network
+            </span>
           </div>
+
+          {/* Heading */}
+          <h2 className="text-2xl font-black tracking-tight text-[#07192f] sm:text-3xl lg:text-4xl">
+            Grow your business with{" "}
+            <span className="text-[#0b5cab]">
+              LIMRA
+            </span>
+          </h2>
+
+          {/* Description */}
+          <p className="mt-2 max-w-xl text-sm leading-6 text-slate-500 sm:mt-3">
+            Become a LIMRA dealer and connect your business with our
+            growing fan distribution network.
+          </p>
+
+          {/* Benefits */}
+          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2.5">
+
+            <div className="flex items-center gap-2 text-xs font-semibold text-slate-600">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-50 text-[#0b5cab]">
+                ✓
+              </span>
+              Dealer Support
+            </div>
+
+            <div className="flex items-center gap-2 text-xs font-semibold text-slate-600">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-50 text-[#0b5cab]">
+                ✓
+              </span>
+              Business Opportunities
+            </div>
+
+            <div className="flex items-center gap-2 text-xs font-semibold text-slate-600">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-50 text-[#0b5cab]">
+                ✓
+              </span>
+              Direct Enquiry
+            </div>
+
+          </div>
+        </div>
+
+        {/* Right CTA */}
+        <div className="shrink-0">
 
           <Link
             href="/dealers"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#0b2f5c] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#07192f]"
+            className="group inline-flex w-full items-center justify-center gap-3 rounded-xl bg-[#0b2f5c] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#0b2f5c]/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#07192f] hover:shadow-xl sm:w-auto sm:px-7"
           >
-            Apply for Dealership
-            <ArrowRight className="h-4 w-4" />
+            <span>
+              Become a Dealer
+            </span>
+
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 transition-transform duration-300 group-hover:translate-x-1">
+              <ArrowRight className="h-4 w-4" />
+            </span>
           </Link>
+
+          <p className="mt-2 text-center text-[10px] font-medium text-slate-400">
+            Start your dealership enquiry
+          </p>
+
         </div>
-      </section>
+
+      </div>
+    </div>
+  </div>
+</section>
 
 <FAQ />
   

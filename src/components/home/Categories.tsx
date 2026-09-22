@@ -14,7 +14,7 @@ const ranges = [
       "Our premium full-size ceiling fan collection, combining distinctive designs, refined finishes and dependable everyday performance.",
     models: ["Auro", "High Breeze", "Avencer", "Enticer", "Jazz"],
     href: "/products?range=48-inch",
-    image: "/images/products/demo.png",
+    image: "/images/products/hero.png",
     featured: true,
   },
   {
@@ -24,7 +24,7 @@ const ranges = [
       "Compact premium models designed for spaces where efficient airflow and a smaller sweep are required.",
     models: ["High Breeze", "Auro", "Fantasy", "V130"],
     href: "/products?range=24-inch",
-    image: "/images/products/demo.png",
+    image: "/images/products/hero.png",
     featured: false,
   },
 ];

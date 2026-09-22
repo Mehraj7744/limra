@@ -292,7 +292,7 @@ export default function CataloguePage() {
                   <div className="relative aspect-[4/3] overflow-hidden bg-background">
 
                     <Image
-                      src="/images/products/demo.png"
+                      src="/images/products/hero.png"
                       alt={`${product.model} 48 inch ceiling fan`}
                       fill
                       className="object-contain p-8 transition-transform duration-500 group-hover:scale-105"
@@ -387,7 +387,7 @@ export default function CataloguePage() {
                   <div className="relative aspect-[4/3] overflow-hidden bg-secondary">
 
                     <Image
-                      src="/images/products/demo.png"
+                      src="/images/products/hero.png"
                       alt={`${product.model} 24 inch ceiling fan`}
                       fill
                       className="object-contain p-8 transition-transform duration-500 group-hover:scale-105"

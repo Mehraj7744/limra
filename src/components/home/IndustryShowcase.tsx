@@ -196,7 +196,7 @@ export default function IndustryShowcase() {
               <div className="relative aspect-[4/3] overflow-hidden bg-background">
 
                 <Image
-                  src="/images/products/demo.png"
+                  src="/images/products/hero.png"
                   alt={`${product.model} ceiling fan`}
                   fill
                   className="object-contain p-8 transition-transform duration-500 group-hover:scale-105"
