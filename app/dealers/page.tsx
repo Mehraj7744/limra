@@ -74,7 +74,7 @@ export default function BecomeDealerPage() {
                 <span>Channel Partner Program</span>
               </div>
 
-              <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
+              <h1 className="text-4xl font-bold tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl">
                 Partner with us <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">grow your business.</span>
               </h1>
 
@@ -120,7 +120,7 @@ export default function BecomeDealerPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-black uppercase tracking-widest text-blue-600">Growth Advantage</span>
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 mt-1 sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 mt-1 sm:text-4xl">
               Why Become an Authorized Dealer?
             </h2>
             <p className="text-sm text-slate-600 mt-3 leading-relaxed">
@@ -176,7 +176,7 @@ export default function BecomeDealerPage() {
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
                   <div>
                     <span className="text-[11px] font-black uppercase tracking-widest text-blue-600">Application Form</span>
-                    <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">
                       Dealer Registration Enquiry
                     </h2>
                   </div>
@@ -364,7 +364,7 @@ export default function BecomeDealerPage() {
                   Application Received
                 </span>
 
-                <h3 className="mt-3 text-3xl font-extrabold text-slate-900 tracking-tight">
+                <h3 className="mt-3 text-3xl font-bold text-slate-900 tracking-tight">
                   Thank you for applying.
                 </h3>
 

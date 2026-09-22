@@ -79,7 +79,7 @@ export default function ContactPage() {
                 <span>Enterprise Support & Direct Enquiries</span>
               </div>
 
-              <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
+              <h1 className="text-4xl font-bold tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl">
                 Let&apos;s talk <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">about airflow.</span>
               </h1>
 
@@ -208,7 +208,7 @@ export default function ContactPage() {
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
                     <div>
                       <span className="text-[11px] font-black uppercase tracking-widest text-blue-600">Secure Dispatch</span>
-                      <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+                      <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">
                         Send Your Requirement
                       </h2>
                     </div>
@@ -364,7 +364,7 @@ export default function ContactPage() {
                     Successfully Transmitted
                   </span>
 
-                  <h3 className="mt-3 text-3xl font-extrabold text-slate-900 tracking-tight">
+                  <h3 className="mt-3 text-3xl font-bold text-slate-900 tracking-tight">
                     Thank you for reaching out.
                   </h3>
 
@@ -397,7 +397,7 @@ export default function ContactPage() {
             <div className="lg:col-span-5 space-y-6">
               <div>
                 <span className="text-[11px] font-black uppercase tracking-widest text-blue-600">Geographical Reach</span>
-                <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+                <h2 className="text-3xl font-bold text-slate-900 tracking-tight mt-1">
                   Visit or Connect With Us
                 </h2>
               </div>
@@ -483,7 +483,7 @@ export default function ContactPage() {
             
             <div className="lg:col-span-8">
               <span className="text-[11px] font-black uppercase tracking-widest text-cyan-400">Network Growth</span>
-              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl mt-2">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl mt-2">
                 Interested in working with LIMRA?
               </h2>
               <p className="mt-3 max-w-xl text-sm sm:text-base text-slate-300 leading-relaxed">

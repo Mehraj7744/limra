@@ -88,7 +88,7 @@ export default function Footer() {
 
               <Link
                 href="/"
-                className="text-3xl font-extrabold tracking-tight text-white transition-opacity hover:opacity-80"
+                className="text-3xl font-bold tracking-tight text-white transition-opacity hover:opacity-80"
               >
                 LIMRA
               </Link>

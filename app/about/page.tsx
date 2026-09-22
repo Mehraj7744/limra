@@ -115,7 +115,7 @@ export default function AboutPage() {
                 </span>
               </div>
 
-              <h1 className="mt-6 font-heading text-4xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
+              <h1 className="mt-6 font-heading text-4xl font-bold tracking-tight lg:text-4xl lg:text-5xl">
                 Engineered for <span className="text-primary">better airflow.</span>
               </h1>
 
@@ -185,7 +185,7 @@ export default function AboutPage() {
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Who We Are</span>
               </div>
 
-              <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight sm:text-5xl">
+              <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight sm:text-4xl">
                 A focused approach to ceiling fan engineering.
               </h2>
 
@@ -261,7 +261,7 @@ export default function AboutPage() {
               <span className="h-px w-8 bg-primary" />
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">What Guides Us</span>
             </div>
-            <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight sm:text-5xl">
+            <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight sm:text-4xl">
               Core principles behind every single unit.
             </h2>
           </div>
@@ -349,7 +349,7 @@ export default function AboutPage() {
                 <span className="h-px w-8 bg-primary" />
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Our Collection</span>
               </div>
-              <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight sm:text-5xl">
+              <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight sm:text-4xl">
                 Two premier sizes. Infinite execution.
               </h2>
             </div>
@@ -366,7 +366,7 @@ export default function AboutPage() {
                     <span className="text-xs font-bold uppercase tracking-widest text-primary">Catalog Tier</span>
                     <h3 className="mt-1 font-heading text-2xl font-bold">{range.title}</h3>
                   </div>
-                  <span className="font-heading text-5xl font-extrabold text-muted-foreground/10">{range.size}</span>
+                  <span className="font-heading text-5xl font-bold text-muted-foreground/10">{range.size}</span>
                 </div>
                 <div className="pt-6">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Featured Models</p>
@@ -420,7 +420,7 @@ export default function AboutPage() {
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary-foreground/70">Work With Lemra</span>
-              <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight sm:text-5xl">
+              <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight sm:text-4xl">
                 Let&apos;s find the right product for your space.
               </h2>
               <p className="mt-4 text-base text-primary-foreground/80 sm:text-lg">

@@ -34,7 +34,7 @@ export default function AboutPreview() {
                 </p>
               </div>
 
-              <h2 className="mt-5 font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+              <h2 className="mt-5 font-heading text-4xl font-bold tracking-tight text-foreground sm:text-4xl">
                 A focused approach to
                 <span className="block text-primary">
                   ceiling fan manufacturing.

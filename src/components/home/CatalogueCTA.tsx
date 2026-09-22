@@ -47,7 +47,7 @@ export default function CatalogueCTA() {
               </span>
             </div>
 
-            <h2 className="font-heading text-4xl font-bold leading-[1.05] tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl xl:text-7xl">
+            <h2 className="font-heading text-4xl font-bold leading-[1.05] tracking-tight text-primary-foreground sm:text-4xl lg:text-5xl xl:text-6xl">
               Find the right
               <span className="block text-primary-foreground/60">
                 airflow for

@@ -83,7 +83,7 @@ export default function Hero() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="font-heading text-5xl font-bold leading-[0.98] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl">
+          <h1 className="font-heading text-5xl font-bold leading-[0.98] tracking-tight text-foreground lg:text-4xl md:text-7xl lg:text-5xl xl:text-6xl">
             Better Air.
             <span className="mt-2 block text-primary">
               Better Living.

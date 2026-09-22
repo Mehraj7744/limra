@@ -230,7 +230,7 @@ export default function Navbar() {
             : "border-b border-slate-200 py-3.5"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:gap-8 lg:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-2 sm:px-3 lg:gap-8 lg:px-8">
           {/* =================================================
               LOGO
           ================================================= */}
@@ -241,10 +241,10 @@ export default function Navbar() {
             aria-label="LIMRA INDUSTRY Homepage"
           >
             <Image
-              src="/images/brand/Limra-logo.jpeg"
+              src="/images/brand/logo.png"
               alt="LIMRA Industry Logo"
-              width={160}
-              height={44}
+              width={200}
+              height={80}
               priority
               className="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
             />
@@ -287,7 +287,7 @@ export default function Navbar() {
 
               {isProductsOpen && (
                 <div className="absolute left-0 top-full z-50 mt-1.5 w-72 overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-2 shadow-2xl shadow-slate-900/10">
-                  <div className="px-3 py-2 text-[10px] font-extrabold uppercase tracking-widest text-slate-400">
+                  <div className="px-3 py-2 text-[10px] font-bold uppercase tracking-widest text-slate-400">
                     Fan Product Lines
                   </div>
 
@@ -407,7 +407,7 @@ export default function Navbar() {
                   <div className="flex items-center gap-2 px-3 py-2">
                     <BriefcaseBusiness className="h-3.5 w-3.5 text-slate-400" />
 
-                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-400">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
                       Business Opportunities
                     </span>
                   </div>

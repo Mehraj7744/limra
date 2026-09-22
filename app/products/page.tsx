@@ -17,7 +17,7 @@ export default function ProductsPage() {
               <span>Full Catalog Collection</span>
             </div>
 
-            <h1 className="font-heading text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="font-heading text-4xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
               Premium ceiling fans <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">for every space.</span>
             </h1>
 

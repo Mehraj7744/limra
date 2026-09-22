@@ -359,19 +359,17 @@ export default function HomePage() {
 {/* =====================================================
     FEATURED PRODUCT — AVENCER PRIME
 ===================================================== */}
-<section className="bg-slate-50 py-14 sm:py-20">
-  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<section className="bg-slate-50 py-10 sm:py-14 lg:py-20">
+  <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
 
-    {/* =================================================
-        SECTION HEADER
-    ================================================= */}
-    <div className="mb-8 flex items-end justify-between">
+    {/* SECTION HEADER */}
+    <div className="mb-6 flex items-end justify-between sm:mb-8">
       <div>
-        <p className="text-xs font-bold uppercase tracking-widest text-[#0b5cab]">
+        <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#0b5cab] sm:text-xs">
           Featured Model
         </p>
 
-        <h2 className="mt-1 text-3xl font-black tracking-tight text-[#07192f] sm:text-4xl">
+        <h2 className="mt-1 text-2xl font-black tracking-tight text-[#07192f] sm:text-3xl lg:text-4xl">
           Avencer Prime
         </h2>
       </div>
@@ -385,26 +383,20 @@ export default function HomePage() {
       </Link>
     </div>
 
-
-    {/* =================================================
-        PRODUCT CARD
-    ================================================= */}
-    <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+    {/* PRODUCT CARD */}
+    <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm sm:rounded-3xl">
 
       <div className="grid lg:grid-cols-2">
-
 
         {/* =================================================
             PRODUCT IMAGE AREA
         ================================================= */}
-        <div className="bg-white p-4 sm:p-6 lg:p-8">
+        <div className="p-3 sm:p-6 lg:p-8">
 
-          {/* =============================================
-              MAIN IMAGE
-          ============================================= */}
+          {/* MAIN IMAGE */}
           <Link
             href="/products?model=Avencer%20Prime"
-            className="group relative block aspect-square overflow-hidden rounded-2xl bg-slate-100"
+            className="group relative block aspect-square overflow-hidden rounded-xl bg-slate-100 sm:rounded-2xl"
           >
             <img
               src={avencerColors[selectedAvencerColor].image}
@@ -412,39 +404,32 @@ export default function HomePage() {
               className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.03]"
             />
 
-            {/* PRODUCT TAG */}
-            <span className="absolute left-4 top-4 rounded-md bg-[#0b2f5c] px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-white">
+            <span className="absolute left-3 top-3 rounded-md bg-[#0b2f5c] px-2.5 py-1 text-[9px] font-black uppercase tracking-wider text-white sm:left-4 sm:top-4 sm:px-3 sm:py-1.5 sm:text-[10px]">
               Featured Model
             </span>
           </Link>
 
-
-          {/* =============================================
-              COLOR SELECTOR
-          ============================================= */}
-          <div className="mt-5">
+          {/* COLOR SELECTOR */}
+          <div className="mt-4 sm:mt-5">
 
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500 sm:text-xs">
                   Colour
                 </p>
 
-                <p className="mt-1 text-sm font-black text-[#07192f]">
+                <p className="mt-0.5 text-xs font-black text-[#07192f] sm:mt-1 sm:text-sm">
                   {avencerColors[selectedAvencerColor].name}
                 </p>
               </div>
 
-              <span className="text-xs font-medium text-slate-400">
+              <span className="text-[10px] font-medium text-slate-400 sm:text-xs">
                 {avencerColors.length} Colours
               </span>
             </div>
 
-
-            {/* =========================================
-                THUMBNAILS
-            ========================================= */}
-            <div className="mt-3 flex gap-3 overflow-x-auto pb-1">
+            {/* THUMBNAILS */}
+            <div className="mt-2 flex gap-2 overflow-x-auto pb-1 sm:mt-3 sm:gap-3">
 
               {avencerColors.map((color, index) => {
                 const isSelected =
@@ -459,20 +444,18 @@ export default function HomePage() {
                     }
                     aria-label={`Select ${color.name}`}
                     aria-pressed={isSelected}
-                    className={`group shrink-0 rounded-xl border-2 bg-white p-1 transition-all duration-200 ${
+                    className={`shrink-0 rounded-lg border-2 bg-white p-1 transition-all duration-200 sm:rounded-xl ${
                       isSelected
                         ? "border-[#0b2f5c] shadow-md"
-                        : "border-slate-200 hover:border-slate-400"
+                        : "border-slate-200"
                     }`}
                   >
-                    <div className="relative h-20 w-20 overflow-hidden rounded-lg bg-slate-100 sm:h-24 sm:w-24">
-
+                    <div className="relative h-16 w-16 overflow-hidden rounded-md bg-slate-100 sm:h-20 sm:w-20">
                       <img
                         src={color.image}
                         alt={color.name}
-                        className="h-full w-full object-contain transition duration-300 group-hover:scale-105"
+                        className="h-full w-full object-contain"
                       />
-
                     </div>
                   </button>
                 );
@@ -480,10 +463,8 @@ export default function HomePage() {
 
             </div>
 
-
             {/* COLOR NAMES */}
-            <div className="mt-3 grid grid-cols-4 gap-2">
-
+            <div className="mt-2 grid grid-cols-4 gap-1.5 sm:mt-3 sm:gap-2">
               {avencerColors.map((color, index) => (
                 <button
                   key={color.name}
@@ -491,161 +472,134 @@ export default function HomePage() {
                   onClick={() =>
                     setSelectedAvencerColor(index)
                   }
-                  className={`text-center text-[10px] font-bold leading-tight transition ${
+                  className={`text-center text-[9px] font-bold leading-tight sm:text-[10px] ${
                     selectedAvencerColor === index
                       ? "text-[#0b2f5c]"
-                      : "text-slate-500 hover:text-slate-800"
+                      : "text-slate-500"
                   }`}
                 >
                   {color.name}
                 </button>
               ))}
-
             </div>
 
           </div>
-
         </div>
-
 
         {/* =================================================
             PRODUCT INFORMATION
         ================================================= */}
-        <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
+        <div className="flex flex-col justify-center border-t border-slate-100 p-4 sm:p-8 lg:border-l lg:border-t-0 lg:p-10">
 
           {/* CATEGORY */}
-          <p className="text-xs font-bold uppercase tracking-widest text-slate-500">
+          <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500 sm:text-xs sm:tracking-widest">
             Decorative Ceiling Fan
           </p>
 
-
           {/* PRODUCT NAME */}
-          <h3 className="mt-2 text-3xl font-black tracking-tight text-[#07192f] sm:text-4xl">
+          <h3 className="mt-1 text-2xl font-black tracking-tight text-[#07192f] sm:mt-2 sm:text-4xl">
             Avencer Prime
           </h3>
 
-
           {/* SIZE */}
-          <p className="mt-2 text-sm font-semibold text-slate-500">
+          <p className="mt-1 text-xs font-semibold text-slate-500 sm:mt-2 sm:text-sm">
             1200 mm / 48 inch
           </p>
 
+          {/* PRODUCT FEATURES */}
+          <div className="mt-5 grid grid-cols-2 gap-2 sm:mt-7 sm:gap-3">
 
-          {/* =================================================
-              PRODUCT FEATURES
-          ================================================= */}
-          <div className="mt-7 grid grid-cols-2 gap-3">
-
-            {/* AIRFLOW */}
-            <div className="rounded-xl bg-slate-50 p-4">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+            <div className="rounded-lg bg-slate-50 p-3 sm:rounded-xl sm:p-4">
+              <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400 sm:text-[10px]">
                 Airflow
               </p>
 
-              <p className="mt-1 text-lg font-black text-[#07192f]">
+              <p className="mt-0.5 text-base font-black text-[#07192f] sm:mt-1 sm:text-lg">
                 207 CFM
               </p>
             </div>
 
-
-            {/* MOTOR SPEED */}
-            <div className="rounded-xl bg-slate-50 p-4">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+            <div className="rounded-lg bg-slate-50 p-3 sm:rounded-xl sm:p-4">
+              <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400 sm:text-[10px]">
                 Motor Speed
               </p>
 
-              <p className="mt-1 text-lg font-black text-[#07192f]">
+              <p className="mt-0.5 text-base font-black text-[#07192f] sm:mt-1 sm:text-lg">
                 380 RPM
               </p>
             </div>
 
-
-            {/* POWER */}
-            <div className="rounded-xl bg-slate-50 p-4">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+            <div className="rounded-lg bg-slate-50 p-3 sm:rounded-xl sm:p-4">
+              <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400 sm:text-[10px]">
                 Power Usage
               </p>
 
-              <p className="mt-1 text-lg font-black text-[#07192f]">
+              <p className="mt-0.5 text-base font-black text-[#07192f] sm:mt-1 sm:text-lg">
                 70 W
               </p>
             </div>
 
-
-            {/* BLADES */}
-            <div className="rounded-xl bg-slate-50 p-4">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+            <div className="rounded-lg bg-slate-50 p-3 sm:rounded-xl sm:p-4">
+              <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400 sm:text-[10px]">
                 Blades
               </p>
 
-              <p className="mt-1 text-lg font-black text-[#07192f]">
+              <p className="mt-0.5 text-base font-black text-[#07192f] sm:mt-1 sm:text-lg">
                 3 Blades
               </p>
             </div>
 
           </div>
 
+          {/* MATERIAL + WINDING */}
+          <div className="mt-2 grid grid-cols-2 gap-2 sm:mt-4 sm:gap-3">
 
-          {/* =================================================
-              MATERIAL + WINDING
-          ================================================= */}
-          <div className="mt-4 grid grid-cols-2 gap-3">
-
-            <div className="rounded-xl border border-slate-200 p-4">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+            <div className="rounded-lg border border-slate-200 p-3 sm:rounded-xl sm:p-4">
+              <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400 sm:text-[10px]">
                 Body Material
               </p>
 
-              <p className="mt-1 text-sm font-black text-[#07192f]">
+              <p className="mt-0.5 text-xs font-black text-[#07192f] sm:mt-1 sm:text-sm">
                 Aluminium
               </p>
             </div>
 
-
-            <div className="rounded-xl border border-slate-200 p-4">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+            <div className="rounded-lg border border-slate-200 p-3 sm:rounded-xl sm:p-4">
+              <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400 sm:text-[10px]">
                 Motor
               </p>
 
-              <p className="mt-1 text-sm font-black text-[#07192f]">
+              <p className="mt-0.5 text-xs font-black text-[#07192f] sm:mt-1 sm:text-sm">
                 Aluminium Winding
               </p>
             </div>
 
           </div>
 
-
-          {/* =================================================
-              WARRANTY
-          ================================================= */}
-          <div className="mt-5 flex items-center gap-2 text-sm font-bold text-[#0b2f5c]">
-            <ShieldCheck className="h-5 w-5" />
+          {/* WARRANTY */}
+          <div className="mt-4 flex items-center gap-2 text-xs font-bold text-[#0b2f5c] sm:mt-5 sm:text-sm">
+            <ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5" />
 
             <span>
               2 Year Warranty
             </span>
           </div>
 
-
-          {/* =================================================
-              ACTIONS
-          ================================================= */}
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+          {/* ACTIONS */}
+          <div className="mt-5 grid grid-cols-1 gap-2.5 sm:mt-7 sm:grid-cols-2 sm:gap-3">
 
             <Link
               href="/products?model=Avencer%20Prime"
-              className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#0b2f5c] px-5 py-3.5 text-sm font-bold text-white transition hover:bg-[#07192f]"
+              className="flex items-center justify-center gap-2 rounded-lg bg-[#0b2f5c] px-4 py-3 text-xs font-bold text-white transition hover:bg-[#07192f] sm:rounded-xl sm:px-5 sm:py-3.5 sm:text-sm"
             >
               View Product
-
               <ArrowRight className="h-4 w-4" />
             </Link>
-
 
             <button
               type="button"
               onClick={() => setShowEnquiry(true)}
-              className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-[#0b2f5c] px-5 py-3.5 text-sm font-bold text-[#0b2f5c] transition hover:bg-[#0b2f5c] hover:text-white"
+              className="flex items-center justify-center gap-2 rounded-lg border border-[#0b2f5c] px-4 py-3 text-xs font-bold text-[#0b2f5c] transition hover:bg-[#0b2f5c] hover:text-white sm:rounded-xl sm:px-5 sm:py-3.5 sm:text-sm"
             >
               Get Wholesale Price
             </button>
@@ -907,7 +861,7 @@ export default function HomePage() {
               Dealers • Distributors • Wholesalers
             </p>
 
-            <h2 className="mt-2 text-3xl font-black tracking-tight text-white sm:text-5xl">
+            <h2 className="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl">
               Get Wholesale Pricing
             </h2>
 

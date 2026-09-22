@@ -48,7 +48,7 @@ export default function Applications() {
               </p>
             </div>
 
-            <h2 className="mt-4 font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+            <h2 className="mt-4 font-heading text-4xl font-bold tracking-tight text-foreground sm:text-4xl">
               Made for the spaces
               <span className="block text-primary">
                 people live and work in.

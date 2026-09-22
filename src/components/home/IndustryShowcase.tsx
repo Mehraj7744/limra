@@ -133,7 +133,7 @@ export default function IndustryShowcase() {
                 LIMRA INDUSTRY
               </p>
 
-              <h2 className="mt-5 max-w-4xl font-heading text-4xl font-bold leading-[1.05] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl">
+              <h2 className="mt-5 max-w-4xl font-heading text-4xl font-bold leading-[1.05] tracking-[-0.045em] text-foreground sm:text-4xl lg:text-5xl">
                 A focused approach to
                 <br />
                 ceiling fan manufacturing.
@@ -329,7 +329,7 @@ export default function IndustryShowcase() {
               Finishing Options
             </p>
 
-            <h3 className="mt-4 font-heading text-4xl font-bold tracking-[-0.04em] sm:text-5xl">
+            <h3 className="mt-4 font-heading text-4xl font-bold tracking-[-0.04em] sm:text-4xl">
               Designed to
               <br />
               complement spaces.
@@ -377,7 +377,7 @@ export default function IndustryShowcase() {
               Our Approach
             </p>
 
-            <h3 className="mt-5 font-heading text-4xl font-bold tracking-[-0.04em] sm:text-5xl">
+            <h3 className="mt-5 font-heading text-4xl font-bold tracking-[-0.04em] sm:text-4xl">
               The essentials,
               <br />
               carefully considered.
@@ -435,7 +435,7 @@ export default function IndustryShowcase() {
               Applications
             </p>
 
-            <h3 className="mt-4 font-heading text-4xl font-bold tracking-[-0.04em] sm:text-5xl">
+            <h3 className="mt-4 font-heading text-4xl font-bold tracking-[-0.04em] sm:text-4xl">
               Made for
               <br />
               real spaces.
@@ -494,7 +494,7 @@ export default function IndustryShowcase() {
                   Start a conversation
                 </p>
 
-                <h3 className="mt-5 font-heading text-4xl font-bold tracking-[-0.04em] sm:text-5xl lg:text-6xl">
+                <h3 className="mt-5 font-heading text-4xl font-bold tracking-[-0.04em] sm:text-4xl lg:text-5xl">
                   Looking for the right
                   <br />
                   ceiling fan?

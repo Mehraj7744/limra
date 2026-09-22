@@ -115,7 +115,7 @@ export default function CataloguePage() {
                 Product Catalogue
               </div>
 
-              <h1 className="mt-7 max-w-4xl font-heading text-5xl font-bold leading-[0.98] tracking-[-0.055em] text-foreground sm:text-6xl lg:text-7xl">
+              <h1 className="mt-7 max-w-4xl font-heading text-5xl font-bold leading-[0.98] tracking-[-0.055em] text-foreground lg:text-4xl lg:text-5xl">
                 The LIMRA
                 <br />
                 <span className="text-primary">Collection.</span>
@@ -435,7 +435,7 @@ export default function CataloguePage() {
               Model Index
             </p>
 
-            <h2 className="mt-4 font-heading text-4xl font-bold tracking-[-0.04em] sm:text-5xl">
+            <h2 className="mt-4 font-heading text-4xl font-bold tracking-[-0.04em] sm:text-4xl">
               Catalogue at a glance.
             </h2>
 
@@ -515,7 +515,7 @@ export default function CataloguePage() {
                 Finish Collection
               </p>
 
-              <h2 className="mt-4 font-heading text-4xl font-bold tracking-[-0.04em] sm:text-5xl">
+              <h2 className="mt-4 font-heading text-4xl font-bold tracking-[-0.04em] sm:text-4xl">
                 Colours for
                 <br />
                 different interiors.
@@ -618,7 +618,7 @@ export default function CataloguePage() {
                 Catalogue Enquiry
               </p>
 
-              <h2 className="mt-5 font-heading text-4xl font-bold tracking-[-0.045em] sm:text-5xl lg:text-6xl">
+              <h2 className="mt-5 font-heading text-4xl font-bold tracking-[-0.045em] sm:text-4xl lg:text-5xl">
                 Need detailed product
                 <br />
                 information?
