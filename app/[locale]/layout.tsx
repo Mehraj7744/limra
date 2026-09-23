@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 
 import Navbar from "@/components/layout/Header";
 
-const locales = ["en", "hi", "te", "mr", "ur"];
+const locales = ["en", "hi", "te", "mr", "ur"] as const;
 
 export function generateStaticParams() {
   return locales.map((locale) => ({
@@ -21,17 +21,14 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  if (!locales.includes(locale)) {
+  if (!locales.includes(locale as (typeof locales)[number])) {
     notFound();
   }
 
   const messages = await getMessages({ locale });
 
   return (
-    <NextIntlClientProvider
-      locale={locale}
-      messages={messages}
-    >
+    <NextIntlClientProvider locale={locale} messages={messages}>
       <Navbar />
       {children}
     </NextIntlClientProvider>
