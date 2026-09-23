@@ -6,6 +6,12 @@ import Navbar from "@/components/layout/Header";
 
 const locales = ["en", "hi", "te", "mr", "ur"];
 
+export function generateStaticParams() {
+  return locales.map((locale) => ({
+    locale,
+  }));
+}
+
 export default async function LocaleLayout({
   children,
   params,
@@ -19,10 +25,13 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
 
   return (
-    <NextIntlClientProvider messages={messages}>
+    <NextIntlClientProvider
+      locale={locale}
+      messages={messages}
+    >
       <Navbar />
       {children}
     </NextIntlClientProvider>
