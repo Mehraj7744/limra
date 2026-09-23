@@ -1,11 +1,5 @@
+import { redirect } from "next/navigation";
 
-import HomePage from "./[locale]/page";
-
-export default function Home() {
-  return (
-    <main>
-      <HomePage />
-
-    </main>
-  );
+export default function Page() {
+  redirect("/en");
 }
