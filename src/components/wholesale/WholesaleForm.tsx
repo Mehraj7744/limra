@@ -423,7 +423,7 @@ export default function WholesaleForm({
               name="mobileNumber"
               value={formData.mobileNumber}
               onChange={handleChange}
-              placeholder="+91 98765 43210"
+              placeholder="+91 89198 54467"
               className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:bg-white focus:ring-2 focus:ring-slate-200"
             />
           </div>

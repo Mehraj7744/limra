@@ -263,7 +263,7 @@ export default function WholesaleEnquiry() {
                       name="phone"
                       type="tel"
                       required
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 89198 54467"
                       className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-3.5 text-sm text-slate-900 outline-none transition focus:border-[#0b2f5c] focus:bg-white focus:ring-4 focus:ring-blue-100"
                     />
                   </div>

@@ -3,7 +3,7 @@
 import { MessageSquare } from "lucide-react";
 import WhatsappIcon from "@mui/icons-material/WhatsApp";
 
-const WHATSAPP_NUMBER = "910000000000";
+const WHATSAPP_NUMBER = "918919854467";
 
 const getGeneralWhatsAppUrl = () => {
   const message = encodeURIComponent(

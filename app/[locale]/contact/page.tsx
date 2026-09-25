@@ -275,7 +275,7 @@ export default function ContactPage() {
                           name="phone"
                           type="tel"
                           required
-                          placeholder="+91 98765 43210"
+                          placeholder="+91 89198 54467"
                           className="mt-2 h-12 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 text-sm font-medium text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:bg-white focus:border-[#0b2f5c] focus:ring-4 focus:ring-[#0b2f5c]/10"
                         />
                       </div>

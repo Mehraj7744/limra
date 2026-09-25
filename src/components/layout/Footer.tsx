@@ -13,7 +13,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const WHATSAPP_NUMBER = "910000000000";
+const WHATSAPP_NUMBER = "918919854467";
 
 const getGeneralWhatsAppUrl = () => {
   const message = encodeURIComponent(
@@ -125,7 +125,7 @@ export default function Footer() {
 
 
               <a
-                href="tel:+910000000000"
+                href="tel:+918919854467"
                 className="flex items-center gap-2 transition-colors hover:text-white"
               >
                 <Phone className="h-4 w-4 shrink-0" />

@@ -1,14 +1,48 @@
 {
+      "downloadCatalogue": "Download Catalogue"
+,
   "Navbar": {
     "home": "Home",
     "products": "Products",
     "about": "About Us",
-    "business": "Business",
+    "application": "Application",
     "wholesale": "Wholesale",
+    "superstocker": "Super Stocker",
+    "retailer": "Retailer",
     "dealer": "Become a Dealer",
     "contact": "Contact",
-    "quote": "Get a Quote"
+    "quote": "Get a Quote",
+
+    "certification": "ISO 9001:2015 Certified Manufacturer",
+    "call": "Call",
+    "whatsappInquiry": "WhatsApp Inquiry",
+
+    "homeAria": "LIMRA INDUSTRY Homepage",
+    "toggleNavigation": "Toggle navigation menu",
+
+    "fanProductLines": "Fan Product Lines",
+    "allProductCatalog": "All Product Catalog",
+
+    "ceilingFans": "Ceiling Fans",
+    "ceilingFansDescription": "High speed & luxury models",
+
+    "tableFans": "Table Fans",
+    "tableFansDescription": "Compact high-airflow units",
+
+    "pedestalFans": "Pedestal Fans",
+    "pedestalFansDescription": "Heavy-duty commercial breeze",
+
+    "businessOpportunities": "Business Opportunities",
+
+    "wholesaleDescription": "Bulk orders & wholesale pricing",
+    "dealerDescription": "Join the LIMRA dealer network",
+
+    "productsCatalog": "Products Catalog",
+    "chatWhatsApp": "Chat on WhatsApp"
+  
   },
+  
+ 
   "Home": {
     "hero": {
       "badge": "For Dealers & Wholesale",
@@ -397,7 +431,7 @@
   "wholesaleNamePlaceholder": "e.g. Ramesh Kumar",
   "wholesaleBusinessPlaceholder": "e.g. Sri Balaji Electricals",
   "wholesaleCityPlaceholder": "e.g. Hyderabad / Pune",
-  "wholesalePhonePlaceholder": "e.g. +91 98765 43210",
+  "wholesalePhonePlaceholder": "e.g. +91 89198 54467",
   "wholesaleEmailPlaceholder": "e.g. contact@business.com",
   "wholesaleQuantityPlaceholder": "e.g. 25 Fans, 50 Fans, 100+ Fans",
   "wholesaleMessagePlaceholder": "Specify models, delivery timeline, or any specific requests...",
@@ -622,5 +656,39 @@
   "dealerWarrantySupport": "Applicable warranty support",
   "dealerFormPlaceholderTitle": "Trade Partner Form",
   "dealerFormPlaceholderDescription": "Complete the trade partner application to share your business, territory and purchase requirements with LIMRA INDUSTRIES.",
-  "dealerFormComingSoon": "Application Form"
+  "dealerFormComingSoon": "Application Form",
+  "productsPageTitle": "Our Products",
+  "productsPageDescription": "Explore our complete range of ceiling, table and pedestal fans.",
+  "productsShowing": "Showing {count} of {total} products",
+  "navAllProducts": "All Products",
+  "navCeilingFans": "Ceiling Fans",
+  "navTableFans": "Table Fans",
+  "navPedestalFans": "Pedestal Fans",
+  "productsSearchPlaceholder": "Search products...",
+  "sortDefault": "Sort By",
+  "sortPriceLowHigh": "Price: Low to High",
+  "sortPriceHighLow": "Price: High to Low",
+  "filters": "Filters",
+  "filterProducts": "Filter Products",
+  "reset": "Reset",
+  "resetAllFilters": "Reset All Filters",
+  "category": "Category",
+  "sweepSize": "Sweep Size",
+  "allSizes": "All Sizes",
+  "preferences": "Preferences",
+  "featuredOnly": "Featured Products Only",
+  "inStockOnly": "In Stock Only",
+  "bulkQuantities": "Bulk Quantities",
+  "bulkQuantitiesDescription": "Contact us for dealer, wholesale and institutional orders.",
+  "noProductsFound": "No Products Found",
+  "noProductsFoundDescription": "Try changing your filters or search terms.",
+  "productModel": "Model",
+  "productImageComingSoon": "Product image coming soon",
+  "popular": "Popular",
+  "onRequest": "On Request",
+  "sweep": "Sweep",
+  "mrpLabel": "MRP",
+  "wholesaleBulkRates": "Bulk / Wholesale Rates Available",
+  "viewDetails": "View Details",
+  "enquireBtn": "Enquire Now"
 }

@@ -37,7 +37,7 @@ export const siteConfig: SiteConfig = {
   city: "Hyderabad",
   state: "Telangana",
   country: "India",
-  phone: "+91 98765 43210", // EDIT: Update with your primary business contact phone
+  phone: "+91 89198 54467", // EDIT: Update with your primary business contact phone
   whatsapp: "919876543210", // EDIT: Update with your 10-digit WhatsApp number (with 91 country code, no +)
   email: "contact@limraindustries.com", // EDIT: Update with your official email
   address: "LIMRA INDUSTRIES, Hyderabad, Telangana, India", // EDIT: Update with your full factory/office address

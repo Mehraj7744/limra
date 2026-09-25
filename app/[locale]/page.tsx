@@ -108,7 +108,7 @@ const businessBenefits = [
   },
 ];
 
-const WHATSAPP_NUMBER = "910000000000";
+const WHATSAPP_NUMBER = "918919854467";
 
 function getWhatsAppUrl(message: string) {
   const encodedMessage = encodeURIComponent(message);
