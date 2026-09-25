@@ -172,8 +172,8 @@ export default function Navbar() {
       ===================================================== */}
       <header
         className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md transition-all duration-300 ${isScrolled
-            ? "border-b border-slate-200 py-2.5 shadow-lg shadow-slate-900/5"
-            : "border-b border-slate-200 py-3.5"
+          ? "border-b border-slate-200 py-2.5 shadow-lg shadow-slate-900/5"
+          : "border-b border-slate-200 py-3.5"
           }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-2 sm:px-3 lg:gap-8 lg:px-8">
@@ -349,8 +349,8 @@ export default function Navbar() {
                   <Link
                     href="/wholesale"
                     className={`group block rounded-xl px-3.5 py-3 transition-colors ${isActive("/wholesale")
-                        ? "bg-blue-50"
-                        : "hover:bg-blue-50"
+                      ? "bg-blue-50"
+                      : "hover:bg-blue-50"
                       }`}
                   >
                     <div className="flex items-center justify-between">
@@ -370,8 +370,8 @@ export default function Navbar() {
                   <Link
                     href="/dealers"
                     className={`group mt-1 block rounded-xl px-3.5 py-3 transition-colors ${isActive("/dealers")
-                        ? "bg-blue-50"
-                        : "hover:bg-blue-50"
+                      ? "bg-blue-50"
+                      : "hover:bg-blue-50"
                       }`}
                   >
                     <div className="flex items-center justify-between">
@@ -387,12 +387,12 @@ export default function Navbar() {
                     </div>
                   </Link>
 
-                   {/* DEALER */}
+                  {/* DEALER */}
                   <Link
                     href="/dealers"
                     className={`group mt-1 block rounded-xl px-3.5 py-3 transition-colors ${isActive("/dealers")
-                        ? "bg-blue-50"
-                        : "hover:bg-blue-50"
+                      ? "bg-blue-50"
+                      : "hover:bg-blue-50"
                       }`}
                   >
                     <div className="flex items-center justify-between">
@@ -408,12 +408,12 @@ export default function Navbar() {
                     </div>
                   </Link>
 
-                   {/* DEALER */}
+                  {/* DEALER */}
                   <Link
                     href="/dealers"
                     className={`group mt-1 block rounded-xl px-3.5 py-3 transition-colors ${isActive("/dealers")
-                        ? "bg-blue-50"
-                        : "hover:bg-blue-50"
+                      ? "bg-blue-50"
+                      : "hover:bg-blue-50"
                       }`}
                   >
                     <div className="flex items-center justify-between">
@@ -442,31 +442,33 @@ export default function Navbar() {
           </nav>
 
           {/* =================================================
-              DESKTOP CTA
-          ================================================= */}
-          <div className="flex items-center gap-3">
+    DESKTOP ACTIONS
+================================================= */}
+          <div className="hidden items-center gap-3 lg:flex">
             <LanguageSwitcher />
 
             <Link
               href="/contact"
-              className="rounded-lg bg-[#0b2f5c] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#07192f]"
+              className="inline-flex items-center justify-center rounded-lg bg-[#0b2f5c] px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-[#07192f] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0b2f5c] focus-visible:ring-offset-2"
             >
               {t("quote")}
             </Link>
           </div>
 
           {/* =================================================
-              MOBILE CONTROLS
-          ================================================= */}
+    MOBILE CONTROLS
+================================================= */}
           <div className="flex items-center gap-2 lg:hidden">
+            {/* Only ONE language selector on mobile */}
             <LanguageSwitcher />
 
             <button
               type="button"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="rounded-xl border border-slate-200 bg-slate-50 p-2.5 text-slate-700 transition-colors hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#0b2f5c]"
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-slate-700 transition hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0b2f5c] focus-visible:ring-offset-2"
               aria-label={t("toggleNavigation")}
               aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               {isMobileMenuOpen ? (
                 <X className="h-5 w-5" />
@@ -487,8 +489,8 @@ export default function Navbar() {
               <Link
                 href="/"
                 className={`block rounded-xl px-4 py-3 text-sm font-bold ${isActive("/")
-                    ? "bg-blue-50 text-[#0b2f5c]"
-                    : "text-slate-700 hover:bg-slate-50"
+                  ? "bg-blue-50 text-[#0b2f5c]"
+                  : "text-slate-700 hover:bg-slate-50"
                   }`}
               >
                 {t("home")}
@@ -533,8 +535,8 @@ export default function Navbar() {
               <Link
                 href="/about"
                 className={`block rounded-xl px-4 py-3 text-sm font-bold ${isActive("/about")
-                    ? "bg-blue-50 text-[#0b2f5c]"
-                    : "text-slate-700 hover:bg-slate-50"
+                  ? "bg-blue-50 text-[#0b2f5c]"
+                  : "text-slate-700 hover:bg-slate-50"
                   }`}
               >
                 {t("about")}
@@ -548,8 +550,8 @@ export default function Navbar() {
                     setIsMobileApplicationOpen(!isMobileApplicationOpen)
                   }
                   className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-bold ${isApplicationActive
-                      ? "bg-blue-50 text-[#0b2f5c]"
-                      : "text-slate-700 hover:bg-slate-50"
+                    ? "bg-blue-50 text-[#0b2f5c]"
+                    : "text-slate-700 hover:bg-slate-50"
                     }`}
                   aria-expanded={isMobileApplicationOpen}
                 >
@@ -567,8 +569,8 @@ export default function Navbar() {
                     <Link
                       href="/wholesale"
                       className={`block rounded-lg px-4 py-3 ${isActive("/wholesale")
-                          ? "bg-white text-[#0b2f5c] shadow-sm"
-                          : "text-slate-700 hover:bg-white"
+                        ? "bg-white text-[#0b2f5c] shadow-sm"
+                        : "text-slate-700 hover:bg-white"
                         }`}
                     >
                       <div className="flex items-center justify-between">
@@ -588,8 +590,8 @@ export default function Navbar() {
                     <Link
                       href="/dealers"
                       className={`block rounded-lg px-4 py-3 ${isActive("/dealers")
-                          ? "bg-white text-[#0b2f5c] shadow-sm"
-                          : "text-slate-700 hover:bg-white"
+                        ? "bg-white text-[#0b2f5c] shadow-sm"
+                        : "text-slate-700 hover:bg-white"
                         }`}
                     >
                       <div className="flex items-center justify-between">
@@ -612,8 +614,8 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 className={`block rounded-xl px-4 py-3 text-sm font-bold ${isActive("/contact")
-                    ? "bg-blue-50 text-[#0b2f5c]"
-                    : "text-slate-700 hover:bg-slate-50"
+                  ? "bg-blue-50 text-[#0b2f5c]"
+                  : "text-slate-700 hover:bg-slate-50"
                   }`}
               >
                 {t("contact")}
