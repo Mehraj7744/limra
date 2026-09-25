@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 
-import { Link } from "../../../lib/navigation";
+import { Link } from "@/lib/navigation";
 
 import WhatsappIcon from "@mui/icons-material/WhatsApp";
 

@@ -1,4 +1,4 @@
-import { Link } from "../../../lib/navigation";
+import { Link } from "@/lib/navigation";
 import { getTranslations } from "next-intl/server";
 
 import {

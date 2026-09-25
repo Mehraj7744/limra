@@ -1,4 +1,5 @@
-import { siteConfig } from "../data/site";
+
+import { siteConfig } from "@/data/site";
 
 /**
  * Creates a formatted WhatsApp click-to-chat URL

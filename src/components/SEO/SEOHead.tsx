@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { siteConfig } from "../../../data/site";
+import { siteConfig } from "@/data/site";
 import type { Product } from "../../../data/products";
 
 interface SEOHeadProps {

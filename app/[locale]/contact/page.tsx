@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Link } from "../../../lib/navigation";
+import { Link } from "@/lib/navigation";
 import {
   ArrowRight,
   ArrowUpRight,

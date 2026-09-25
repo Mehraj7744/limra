@@ -24,7 +24,7 @@ import {
 
 import WholesaleForm  from "@/components/wholesale/WholesaleForm";
 import ProductCard  from "@/components/products/ProductCard";
-import { Link } from "../../../lib/navigation";
+import { Link } from "@/lib/navigation";
 
 type ProductDetailsProps = {
   product: Product;
