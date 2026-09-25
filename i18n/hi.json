@@ -291,6 +291,137 @@
       "pedestalFans": "पेडेस्टल फैन"
     },
     "whatsappMessage": "नमस्ते LIMRA INDUSTRY, मुझे थोक फैन मूल्य में रुचि है।"
-  }
+  },
+
+
+
+  "wholesaleTitle": "थोक एवं बड़ी मात्रा में आपूर्ति",
+  "wholesaleSubtitle": "निर्माता से सीधे विश्वसनीय पंखों की आपूर्ति",
+  "wholesaleDescription": "पूरे भारत में सीलिंग फैन, टेबल फैन और पेडेस्टल फैन की विश्वसनीय थोक आपूर्ति के लिए LIMRA INDUSTRIES के साथ साझेदारी करें।",
+  "wholesaleBadge": "B2B व्यापार आपूर्ति",
+
+  "wholesaleHeroTitle": "फैक्ट्री से सीधे थोक पंखों की आपूर्ति",
+  "wholesaleHeroDescription": "रिटेलर्स, थोक विक्रेताओं, डीलर्स, बिल्डर्स और संस्थानों के लिए विश्वसनीय पंखों की आपूर्ति, प्रतिस्पर्धी व्यापार मूल्य और भरोसेमंद आफ्टर-सेल्स सपोर्ट।",
+  "wholesaleEnquiry": "थोक पूछताछ भेजें",
+  "wholesaleWhatsApp": "WhatsApp पर पूछताछ करें",
+  "wholesaleViewProducts": "उत्पाद देखें",
+
+  "wholesaleProductTitle": "थोक उत्पाद श्रेणियां",
+  "wholesaleProductDescription": "रिटेल, कमर्शियल और संस्थागत आवश्यकताओं के लिए उपयुक्त हमारे उत्पादों की रेंज चुनें।",
+
+  "wholesaleCeilingFans": "सीलिंग फैन",
+  "wholesaleCeilingFansDesc": "घर, व्यवसाय और रिटेल आवश्यकताओं के लिए विश्वसनीय सीलिंग फैन।",
+
+  "wholesaleTableFans": "टेबल फैन",
+  "wholesaleTableFansDesc": "घर, कार्यालय और संस्थानों के लिए कॉम्पैक्ट और भरोसेमंद टेबल फैन।",
+
+  "wholesalePedestalFans": "पेडेस्टल फैन",
+  "wholesalePedestalFansDesc": "व्यावसायिक और संस्थागत उपयोग के लिए उच्च एयरफ्लो वाले पेडेस्टल फैन।",
+
+  "wholesaleWhoWeSupply": "हम किसे आपूर्ति करते हैं",
+  "wholesaleWhoWeSupplyDescription": "हमारा थोक आपूर्ति कार्यक्रम उन व्यवसायों और संस्थानों के लिए बनाया गया है जो बड़ी मात्रा में पंखे खरीदते हैं।",
+
+  "wholesaleRetailers": "इलेक्ट्रिकल रिटेलर्स एवं दुकानें",
+  "wholesaleRetailersDesc": "कार्टन मात्रा में आपूर्ति, अच्छे व्यापार मार्जिन और भरोसेमंद वारंटी सपोर्ट के साथ।",
+
+  "wholesaleDistributors": "क्षेत्रीय थोक विक्रेता एवं स्टॉकिस्ट",
+  "wholesaleDistributorsDesc": "क्षेत्रीय वितरकों, थोक विक्रेताओं और इलेक्ट्रिकल स्टॉकिस्ट के लिए बड़ी मात्रा में आपूर्ति।",
+
+  "wholesaleInstitutions": "हॉस्टल एवं शैक्षणिक संस्थान",
+  "wholesaleInstitutionsDesc": "डॉर्मिटरी, कक्षाओं, कार्यालयों और संस्थागत सुविधाओं के लिए विश्वसनीय पंखे।",
+
+  "wholesaleBuilders": "बिल्डर्स एवं इलेक्ट्रिकल कॉन्ट्रैक्टर्स",
+  "wholesaleBuildersDesc": "आवासीय और व्यावसायिक परियोजनाओं के लिए समान बैच में आपूर्ति और समन्वित डिलीवरी।",
+
+  "wholesaleBenefitsTitle": "LIMRA INDUSTRIES से सीधे क्यों खरीदें?",
+  "wholesaleBenefitsDescription": "निर्माण क्षमता और समर्पित सपोर्ट के साथ सरल और विश्वसनीय थोक आपूर्ति प्रक्रिया।",
+
+  "wholesaleBenefit1": "सीधा निर्माता",
+  "wholesaleBenefit1Desc": "हमारी निर्माण सुविधा से सीधे उत्पाद प्राप्त करें।",
+
+  "wholesaleBenefit2": "थोक आपूर्ति",
+  "wholesaleBenefit2Desc": "डीलर्स, रिटेलर्स और संस्थागत खरीदारों के लिए लचीली मात्रा।",
+
+  "wholesaleBenefit3": "विश्वसनीय गुणवत्ता",
+  "wholesaleBenefit3Desc": "बार-बार होने वाले थोक ऑर्डर के लिए लगातार उत्पाद गुणवत्ता।",
+
+  "wholesaleBenefit4": "वारंटी सपोर्ट",
+  "wholesaleBenefit4Desc": "निर्धारित मॉडलों पर वारंटी कवरेज उपलब्ध है।",
+
+  "wholesaleBenefit5": "पूरे भारत में डिलीवरी",
+  "wholesaleBenefit5Desc": "पंजीकृत परिवहन सेवाओं के माध्यम से पूरे भारत में डिस्पैच सपोर्ट।",
+
+  "wholesaleBenefit6": "डीलर सपोर्ट",
+  "wholesaleBenefit6Desc": "थोक और डीलर आवश्यकताओं के लिए समर्पित सहायता।",
+
+  "wholesaleFormTitle": "थोक एवं बड़ी मात्रा में पूछताछ",
+  "wholesaleFormDescription": "अपनी थोक आवश्यकता बताएं और हमारी सेल्स टीम आपसे संपर्क करेगी।",
+
+  "wholesaleName": "पूरा नाम",
+  "wholesaleBusinessName": "व्यवसाय का नाम",
+  "wholesaleCity": "शहर",
+  "wholesaleState": "राज्य",
+  "wholesalePhone": "मोबाइल नंबर",
+  "wholesaleEmail": "ईमेल पता",
+  "wholesaleProduct": "रुचि वाला उत्पाद",
+  "wholesaleQuantity": "आवश्यक मात्रा",
+  "wholesaleMessage": "अतिरिक्त आवश्यकताएं",
+
+  "wholesaleNamePlaceholder": "जैसे रमेश कुमार",
+  "wholesaleBusinessPlaceholder": "जैसे श्री बालाजी इलेक्ट्रिकल्स",
+  "wholesaleCityPlaceholder": "जैसे हैदराबाद / पुणे",
+  "wholesalePhonePlaceholder": "जैसे +91 98765 43210",
+  "wholesaleEmailPlaceholder": "जैसे contact@business.com",
+  "wholesaleQuantityPlaceholder": "जैसे 25 पंखे, 50 पंखे, 100+ पंखे",
+  "wholesaleMessagePlaceholder": "मॉडल, डिलीवरी समय या कोई विशेष आवश्यकता बताएं...",
+
+  "wholesaleSelectState": "राज्य चुनें",
+
+  "wholesaleSubmit": "पूछताछ भेजें",
+  "wholesaleSubmitting": "भेजा जा रहा है...",
+  "wholesaleWhatsAppButton": "WhatsApp पर पूछताछ करें",
+
+  "wholesaleSuccessTitle": "थोक पूछताछ प्राप्त हुई",
+  "wholesaleSuccessDescription": "धन्यवाद। LIMRA INDUSTRIES की सेल्स टीम आपकी आवश्यकता की समीक्षा करेगी और जल्द ही आपसे संपर्क करेगी।",
+  "wholesaleSendWhatsApp": "WhatsApp पर विवरण भेजें",
+  "wholesaleSubmitAnother": "एक और पूछताछ भेजें",
+
+  "wholesaleProductLabel": "उत्पाद",
+  "wholesaleQuantityLabel": "मात्रा",
+  "wholesaleContactLabel": "संपर्क",
+
+  "wholesaleDirectFactory": "सीधे फैक्ट्री से",
+  "wholesalePanIndiaDispatch": "पंजीकृत परिवहन सेवाओं के माध्यम से पूरे भारत में डिस्पैच उपलब्ध है।",
+
+  "wholesaleTrustManufacturer": "सीधा निर्माता",
+  "wholesaleTrustManufacturerDesc": "हमारी निर्माण सुविधा से सीधे गुणवत्तापूर्ण पंखे।",
+
+  "wholesaleTrustWholesale": "थोक आपूर्ति",
+  "wholesaleTrustWholesaleDesc": "डीलर्स और रिटेलर्स के लिए विश्वसनीय थोक आपूर्ति।",
+
+  "wholesaleTrustWarranty": "वारंटी सपोर्ट",
+  "wholesaleTrustWarrantyDesc": "वारंटी सपोर्ट के साथ भरोसेमंद उत्पाद।",
+
+  "wholesaleTrustDelivery": "पूरे भारत में डिलीवरी",
+  "wholesaleTrustDeliveryDesc": "पूरे भारत में सुरक्षित और विश्वसनीय डिलीवरी।",
+
+  "wholesaleTrustTitle": "विश्वसनीय थोक आपूर्ति के लिए बनाया गया",
+
+  "wholesaleProductCeilingBulk": "सीलिंग फैन (थोक)",
+  "wholesaleProductTableBulk": "टेबल फैन (थोक)",
+  "wholesaleProductPedestalBulk": "पेडेस्टल फैन (थोक)",
+  "wholesaleProductMixed": "मिक्स्ड कंटेनर / मिश्रित ऑर्डर",
+  "wholesaleProductInstitutional": "संस्थागत आपूर्ति (हॉस्टल / कॉलेज / कार्यालय)",
+  "wholesaleProductDealer": "डीलर वितरण पूछताछ",
+   "aboutLeadershipEyebrow": "हमारा नेतृत्व",
+  "aboutLeadershipTitle": "LIMRA के पीछे की नेतृत्व टीम",
+  "aboutLeadershipDescription": "अनुभव, व्यावसायिक ज्ञान और साझा दृष्टिकोण LIMRA को आगे बढ़ाने में महत्वपूर्ण भूमिका निभाते हैं।",
+
+  "aboutFounderRole": "संस्थापक एवं विनिर्माण विशेषज्ञ",
+  "aboutFounderDescription": "शेख असलम एक अनुभवी निर्माता हैं, जिन्हें सीलिंग फैन, टेबल फैन, फैन के पुर्जों और वाइंडिंग मशीनों के निर्माण का विशेषज्ञ अनुभव है। विनिर्माण और असेंबली की गहरी समझ के साथ उन्होंने गुणवत्ता, विश्वसनीयता और ग्राहक संतुष्टि पर ध्यान केंद्रित करते हुए व्यवसाय का निर्माण किया है।",
+
+  "aboutFutureLeadershipRole": "व्यवसाय प्रबंधन एवं भावी नेतृत्व",
+  "aboutFutureLeadershipDescription": "शेख सलमान अपने पिता शेख असलम के साथ काम करते हुए व्यवसाय के विभिन्न पहलुओं को संभालने और प्रबंधित करने में सहयोग करते हैं। BBA की डिग्री और वर्तमान में MBA की पढ़ाई के साथ, वे व्यावसायिक शिक्षा को व्यावहारिक उद्योग अनुभव के साथ जोड़ रहे हैं और आधुनिक तथा विकास-केंद्रित दृष्टिकोण के साथ व्यवसाय को आगे बढ़ाने की तैयारी कर रहे हैं।"
+
 }
 

@@ -1,402 +1,349 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import { useParams } from "next/navigation";
+import { useTranslations } from "next-intl";
+
 import {
   ArrowRight,
-  ArrowUpRight,
   Boxes,
   CheckCircle2,
-  Clock,
-  Layers,
-  Percent,
-   ShieldCheck,
-  Sparkles,
+  Handshake,
+  MessageSquare,
+  ShieldCheck,
   Truck,
-  Warehouse,
+  Building2,
 } from "lucide-react";
 
-const businessTypes = [
-  "Retail Showroom",
-  "Distributor / Wholesaler",
-  "Institutional / Corporate Buyer",
-  "Builder / Real Estate Developer",
-  "Electrical Contractor",
-];
-
-const volumeRanges = [
-  "50 - 200 Units",
-  "200 - 500 Units",
-  "500 - 1,000 Units",
-  "1,000+ Units (Custom / Contract)",
-];
-
-const priorityProducts = [
-  "Auro",
-  "High Breeze",
-  "Avencer",
-  "Enticer",
-  "Jazz",
-  "Fantasy",
-  "V130",
-  "Mixed / Multi-Model Order",
-];
+import WholesaleForm from "@/components/wholesale/WholesaleForm";
+import { getWholesaleEnquiryWhatsAppUrl } from "../../../utils/whatsapp";
+import { generateSEO } from "@/components/SEO/SEOHead";
 
 export default function WholesalePage() {
-  const [submitted, setSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const params = useParams();
+  const locale = params.locale as string;
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate network submission delay for high-end UX feedback
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-    }, 700);
-  }
+  // Your JSON has wholesale keys at the root level,
+  // so do NOT use useTranslations("Wholesale").
+  const t = useTranslations();
+
+  const whatsappUrl = getWholesaleEnquiryWhatsAppUrl();
+
+  const buyerTypes = [
+    {
+      icon: Building2,
+      title: t("wholesaleRetailers"),
+      desc: t("wholesaleRetailersDesc"),
+    },
+    {
+      icon: Boxes,
+      title: t("wholesaleDistributors"),
+      desc: t("wholesaleDistributorsDesc"),
+    },
+    {
+      icon: ShieldCheck,
+      title: t("wholesaleInstitutions"),
+      desc: t("wholesaleInstitutionsDesc"),
+    },
+    {
+      icon: Truck,
+      title: t("wholesaleBuilders"),
+      desc: t("wholesaleBuildersDesc"),
+    },
+  ];
+
+  const benefits = [
+    t("wholesaleBenefit1"),
+    t("wholesaleBenefit2"),
+    t("wholesaleBenefit3"),
+    t("wholesaleBenefit4"),
+  ];
+
+  const productTypes = [
+    t("wholesaleProductCeilingBulk"),
+    t("wholesaleProductTableBulk"),
+    t("wholesaleProductPedestalBulk"),
+    t("wholesaleProductMixed"),
+  ];
 
   return (
-    <main className="min-h-screen bg-slate-50/50 selection:bg-blue-600 selection:text-white">
-      {/* =========================================================
-          HERO SECTION
-      ========================================================= */}
-      <section className="relative overflow-hidden border-b border-slate-200/80 bg-[#07192f] text-white py-20 lg:py-28">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 2px 2px, rgba(255,255,255,0.2) 1px, transparent 0)",
-            backgroundSize: "32px 32px",
-          }}
-        />
-        <div className="absolute -top-40 right-0 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
+    <main className="min-h-screen bg-slate-50 pb-20">
+
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+      <section className="relative overflow-hidden bg-[#07192f] text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(23,78,140,0.35),transparent_45%)]" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-            
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-cyan-400 backdrop-blur-md">
-                <Sparkles className="h-3.5 w-3.5" />
-                <span>Direct Factory Wholesale Program</span>
+
+          
+
+          <div className="grid items-center gap-10 py-12 sm:py-16 lg:grid-cols-12 lg:py-20">
+
+            {/* Hero Content */}
+            <div className="lg:col-span-7">
+
+              <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-blue-300">
+                <Handshake className="h-3.5 w-3.5" />
+                {t("wholesaleBadge")}
               </div>
 
-              <h1 className="text-4xl font-bold tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl">
-                Bulk supply <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">engineered for scale.</span>
+              <h1 className="mt-5 text-4xl font-black leading-[1.05] tracking-tight sm:text-4xl lg:text-5xl">
+                {t("wholesaleHeroTitle")}
               </h1>
 
-              <p className="max-w-2xl text-base text-slate-300 sm:text-lg leading-relaxed font-normal">
-                Source high-performance ceiling fans and industrial ventilation systems in volume directly from our manufacturing hub. Tiered pricing and priority fulfillment guaranteed.
+              <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
+                {t("wholesaleHeroDescription")}
               </p>
+
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-emerald-950/20 transition-colors hover:bg-emerald-700"
+                >
+                  <MessageSquare className="h-4 w-4" />
+                  {t("wholesaleWhatsApp")}
+                </a>
+
+                <a
+                  href="#wholesale-enquiry"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/5 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-white/10"
+                >
+                  {t("wholesaleEnquiry")}
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-xs text-slate-400">
+
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                  {t("wholesaleDirectFactory")}
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                  {t("wholesaleBenefit2")}
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                  {t("wholesaleBenefit5")}
+                </div>
+
+              </div>
             </div>
 
+            {/* Hero Side Card */}
             <div className="lg:col-span-5">
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-xl shadow-2xl relative">
-                <div className="absolute -top-3 -right-3 rounded-xl bg-cyan-500 px-3 py-1 text-[10px] font-black uppercase tracking-wider text-slate-950 shadow-md">
-                  B2B Direct
-                </div>
-                <h3 className="text-lg font-bold text-white mb-2">Wholesale Advantages</h3>
-                <p className="text-xs text-slate-300 mb-6 leading-relaxed">
-                  Designed for large-scale retail chains, real estate developers, and regional bulk distributors seeking dependable stock flow.
-                </p>
-                <div className="space-y-3.5 text-xs font-semibold">
-                  <div className="flex items-center gap-3 text-slate-200">
-                    <div className="rounded-lg bg-blue-500/20 p-2 text-cyan-400">
-                      <Warehouse className="h-4 w-4" />
-                    </div>
-                    <span>Massive Production & Stock Capacity</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-slate-200">
-                    <div className="rounded-lg bg-blue-500/20 p-2 text-cyan-400">
-                      <Percent className="h-4 w-4" />
-                    </div>
-                    <span>Volume-Based Price Slabs</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur-sm sm:p-7">
 
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================
-          KEY VALUE PILLARS (GRID SECTION)
-      ========================================================= */}
-      <section className="py-16 sm:py-24 bg-white border-b border-slate-200">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-black uppercase tracking-widest text-blue-600">Enterprise Supply</span>
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 mt-1 sm:text-4xl">
-              Built for Large Volume Requirements
-            </h2>
-            <p className="text-sm text-slate-600 mt-3 leading-relaxed">
-              We streamline wholesale logistics to ensure commercial clients receive consistent product batches with strict adherence to quality checks.
-            </p>
-          </div>
-
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Pillar 1 */}
-            <div className="group rounded-2xl border border-slate-200/80 bg-slate-50/50 p-6 transition-all duration-200 hover:bg-white hover:border-blue-500/50 hover:shadow-xl hover:shadow-slate-900/5">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-[#0b2f5c] group-hover:bg-[#0b2f5c] group-hover:text-white transition-colors">
-                <Boxes className="h-6 w-6" />
-              </div>
-              <h3 className="mt-4 text-lg font-bold text-slate-900">Tiered Volume Discounts</h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-600">
-                Unlock optimized unit economics with price breaks structured specifically for medium-to-large procurement cycles.
-              </p>
-            </div>
-
-            {/* Pillar 2 */}
-            <div className="group rounded-2xl border border-slate-200/80 bg-slate-50/50 p-6 transition-all duration-200 hover:bg-white hover:border-blue-500/50 hover:shadow-xl hover:shadow-slate-900/5">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-[#0b2f5c] group-hover:bg-[#0b2f5c] group-hover:text-white transition-colors">
-                <Truck className="h-6 w-6" />
-              </div>
-              <h3 className="mt-4 text-lg font-bold text-slate-900">Pan-India Freight Logistics</h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-600">
-                Coordinated dispatch via trusted freight carriers ensuring safe transit of bulk crates directly to your warehouse.
-              </p>
-            </div>
-
-            {/* Pillar 3 */}
-            <div className="group rounded-2xl border border-slate-200/80 bg-slate-50/50 p-6 transition-all duration-200 hover:bg-white hover:border-blue-500/50 hover:shadow-xl hover:shadow-slate-900/5">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-[#0b2f5c] group-hover:bg-[#0b2f5c] group-hover:text-white transition-colors">
-                <ShieldCheck className="h-6 w-6" />
-              </div>
-              <h3 className="mt-4 text-lg font-bold text-slate-900">Rigorous Quality Assurance</h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-600">
-                Every bulk lot undergoes strict testing for performance stability, energy efficiency, and balanced airflow rotation.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================
-          WHOLESALE ORDER FORM SECTION
-      ========================================================= */}
-      <section id="quote" className="py-16 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-12 shadow-xl shadow-slate-900/5">
-            {!submitted ? (
-              <>
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+                <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-[11px] font-black uppercase tracking-widest text-blue-600">B2B Procurement</span>
-                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">
-                      Request Wholesale Quotation
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-blue-300">
+                      {t("wholesaleFormTitle")}
+                    </p>
+
+                    <h2 className="mt-1 text-xl font-bold">
+                      {t("wholesaleFormDescription")}
                     </h2>
                   </div>
-                  <div className="hidden sm:flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-[#0b2f5c]">
-                    <Layers className="h-6 w-6" />
+
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-400/10">
+                    <Boxes className="h-5 w-5 text-blue-300" />
                   </div>
                 </div>
 
-                <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-                  {/* Row 1: Contact Name & Company */}
-                  <div className="grid gap-6 sm:grid-cols-2">
-                    <div>
-                      <label htmlFor="contactName" className="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                        Contact Name <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        id="contactName"
-                        name="contactName"
-                        type="text"
-                        required
-                        placeholder="e.g. Vikram Deshmukh"
-                        className="mt-2 h-12 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 text-sm font-medium text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:bg-white focus:border-[#0b2f5c] focus:ring-4 focus:ring-[#0b2f5c]/10"
-                      />
+                <div className="mt-6 space-y-3">
+                  {productTypes.map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-center gap-3 rounded-lg border border-white/5 bg-white/5 px-4 py-3"
+                    >
+                      <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-400" />
+
+                      <span className="text-sm text-slate-200">
+                        {item}
+                      </span>
                     </div>
-
-                    <div>
-                      <label htmlFor="companyName" className="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                        Company / Business Name <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        id="companyName"
-                        name="companyName"
-                        type="text"
-                        required
-                        placeholder="e.g. Deshmukh Trade Links"
-                        className="mt-2 h-12 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 text-sm font-medium text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:bg-white focus:border-[#0b2f5c] focus:ring-4 focus:ring-[#0b2f5c]/10"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Row 2: Email & Phone */}
-                  <div className="grid gap-6 sm:grid-cols-2">
-                    <div>
-                      <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                        Business Email <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        placeholder="purchasing@company.com"
-                        className="mt-2 h-12 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 text-sm font-medium text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:bg-white focus:border-[#0b2f5c] focus:ring-4 focus:ring-[#0b2f5c]/10"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                        Phone / Direct Line <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        required
-                        placeholder="+91 98765 43210"
-                        className="mt-2 h-12 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 text-sm font-medium text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:bg-white focus:border-[#0b2f5c] focus:ring-4 focus:ring-[#0b2f5c]/10"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Row 3: Business Type & Volume Range */}
-                  <div className="grid gap-6 sm:grid-cols-2">
-                    <div>
-                      <label htmlFor="businessType" className="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                        Business Category <span className="text-red-500">*</span>
-                      </label>
-                      <select
-                        id="businessType"
-                        name="businessType"
-                        required
-                        defaultValue=""
-                        className="mt-2 h-12 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 text-sm font-medium text-slate-900 outline-none transition-all focus:bg-white focus:border-[#0b2f5c] focus:ring-4 focus:ring-[#0b2f5c]/10"
-                      >
-                        <option value="" disabled>Select business type</option>
-                        {businessTypes.map((type) => (
-                          <option key={type} value={type}>{type}</option>
-                        ))}
-                      </select>
-                    </div>
-
-                    <div>
-                      <label htmlFor="volume" className="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                        Estimated Order Volume <span className="text-red-500">*</span>
-                      </label>
-                      <select
-                        id="volume"
-                        name="volume"
-                        required
-                        defaultValue=""
-                        className="mt-2 h-12 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 text-sm font-medium text-slate-900 outline-none transition-all focus:bg-white focus:border-[#0b2f5c] focus:ring-4 focus:ring-[#0b2f5c]/10"
-                      >
-                        <option value="" disabled>Select quantity range</option>
-                        {volumeRanges.map((range) => (
-                          <option key={range} value={range}>{range}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* Row 4: Target Product Model & Delivery Location */}
-                  <div className="grid gap-6 sm:grid-cols-2">
-                    <div>
-                      <label htmlFor="product" className="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                        Primary Model of Interest <span className="text-red-500">*</span>
-                      </label>
-                      <select
-                        id="product"
-                        name="product"
-                        required
-                        defaultValue=""
-                        className="mt-2 h-12 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 text-sm font-medium text-slate-900 outline-none transition-all focus:bg-white focus:border-[#0b2f5c] focus:ring-4 focus:ring-[#0b2f5c]/10"
-                      >
-                        <option value="" disabled>Select model</option>
-                        {priorityProducts.map((model) => (
-                          <option key={model} value={model}>{model}</option>
-                        ))}
-                      </select>
-                    </div>
-
-                    <div>
-                      <label htmlFor="destination" className="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                        Destination City / State <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        id="destination"
-                        name="destination"
-                        type="text"
-                        required
-                        placeholder="e.g. Pune, Maharashtra"
-                        className="mt-2 h-12 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 text-sm font-medium text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:bg-white focus:border-[#0b2f5c] focus:ring-4 focus:ring-[#0b2f5c]/10"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Row 5: Detailed Message */}
-                  <div>
-                    <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                      Specification Notes / Delivery Timeline
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      placeholder="Mention specific color preferences, blade sizes, target delivery dates, or custom branding requirements..."
-                      className="mt-2 w-full resize-none rounded-xl border border-slate-200 bg-slate-50/50 p-4 text-sm font-medium text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:bg-white focus:border-[#0b2f5c] focus:ring-4 focus:ring-[#0b2f5c]/10"
-                    />
-                  </div>
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#0b2f5c] px-8 py-4 text-sm font-bold tracking-wide text-white shadow-lg shadow-blue-900/20 transition-all hover:bg-[#07192f] hover:shadow-xl hover:shadow-blue-900/30 active:scale-[0.99] disabled:opacity-70"
-                  >
-                    {isSubmitting ? (
-                      <span>Generating Wholesale Quotation...</span>
-                    ) : (
-                      <>
-                        <span>Submit Wholesale Request</span>
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </>
-                    )}
-                  </button>
-
-                  <p className="text-center text-[11px] text-slate-400">
-                    Our corporate sales division evaluates all bulk RFQs and responds with formal pro-forma pricing within 24 hours.
-                  </p>
-                </form>
-              </>
-            ) : (
-              /* Success Confirmation State */
-              <div className="flex min-h-[420px] flex-col items-center justify-center text-center p-6">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 shadow-lg shadow-emerald-500/10 animate-bounce">
-                  <CheckCircle2 className="h-10 w-10" />
+                  ))}
                 </div>
 
-                <span className="mt-6 rounded-full bg-emerald-50 px-3.5 py-1 text-xs font-bold text-emerald-700 uppercase tracking-widest">
-                  RFQ Logged Successfully
-                </span>
-
-                <h3 className="mt-3 text-3xl font-bold text-slate-900 tracking-tight">
-                  Quotation request received.
-                </h3>
-
-                <p className="mt-3 max-w-md text-sm text-slate-600 leading-relaxed font-normal">
-                  Your bulk procurement specifications have been routed to our commercial sales desk. An account manager will prepare your custom price quote and contact you shortly.
+                <p className="mt-5 text-xs leading-relaxed text-slate-400">
+                  {t("wholesaleDescription")}
                 </p>
 
-                <Link
-                  href="/"
-                  className="group mt-8 inline-flex items-center gap-2 rounded-xl bg-[#0b2f5c] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:bg-[#07192f]"
-                >
-                  <span>Return to Home</span>
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
               </div>
-            )}
+            </div>
+
           </div>
         </div>
       </section>
+
+      {/* =====================================================
+          BUYER TYPES
+      ===================================================== */}
+      <section className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 sm:pt-16 lg:px-8">
+
+        <div className="max-w-2xl">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#174e8c]">
+            {t("wholesaleWhoWeSupply")}
+          </span>
+
+          <h2 className="mt-2 text-2xl font-black text-slate-900 sm:text-3xl">
+            {t("wholesaleWhoWeSupply")}
+          </h2>
+
+          <p className="mt-3 text-sm leading-6 text-slate-500">
+            {t("wholesaleWhoWeSupplyDescription")}
+          </p>
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+          {buyerTypes.map((buyer) => {
+            const Icon = buyer.icon;
+
+            return (
+              <div
+                key={buyer.title}
+                className="group rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-slate-300 hover:shadow-md"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0b2f5c]/10 text-[#0b2f5c]">
+                  <Icon className="h-5 w-5" />
+                </div>
+
+                <h3 className="mt-4 text-sm font-bold text-slate-900">
+                  {buyer.title}
+                </h3>
+
+                <p className="mt-2 text-xs leading-5 text-slate-500">
+                  {buyer.desc}
+                </p>
+              </div>
+            );
+          })}
+
+        </div>
+      </section>
+
+      {/* =====================================================
+          FORM + BENEFITS
+      ===================================================== */}
+      <section
+        id="wholesale-enquiry"
+        className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 sm:pt-16 lg:px-8"
+      >
+        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
+
+          {/* Benefits */}
+          <div className="lg:col-span-5">
+            <div className="sticky top-24 rounded-2xl bg-[#07192f] p-6 text-white shadow-sm sm:p-7">
+
+              <span className="text-xs font-bold uppercase tracking-wider text-blue-300">
+                {t("wholesaleBenefitsTitle")}
+              </span>
+
+              <h2 className="mt-2 text-2xl font-black">
+                {t("wholesaleBenefitsTitle")}
+              </h2>
+
+              <p className="mt-3 text-sm leading-6 text-slate-400">
+                {t("wholesaleBenefitsDescription")}
+              </p>
+
+              <div className="mt-6 space-y-4">
+
+                {benefits.map((benefit) => (
+                  <div
+                    key={benefit}
+                    className="flex items-start gap-3"
+                  >
+                    <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-400/10">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
+                    </div>
+
+                    <p className="text-xs leading-5 text-slate-300">
+                      {benefit}
+                    </p>
+                  </div>
+                ))}
+
+              </div>
+
+              <div className="mt-7 border-t border-slate-800 pt-5">
+
+                <Link
+                  href={`/${locale}/dealers`}
+                  className="group flex items-center justify-between gap-4 rounded-xl border border-blue-700/40 bg-blue-900/30 p-4 transition-colors hover:bg-blue-900/50"
+                >
+                  <div className="flex items-center gap-3">
+
+                    <Handshake className="h-5 w-5 shrink-0 text-amber-400" />
+
+                    <div>
+                      <p className="text-xs font-bold text-white">
+                        {t("wholesaleProductDealer")}
+                      </p>
+
+                      <p className="mt-0.5 text-[11px] text-blue-200">
+                        {t("wholesaleBenefit6")}
+                      </p>
+                    </div>
+
+                  </div>
+
+                  <ArrowRight className="h-4 w-4 text-blue-300 transition-transform group-hover:translate-x-1" />
+                </Link>
+
+              </div>
+
+              <div className="mt-4 flex items-center gap-2 text-[11px] text-emerald-400">
+                <ShieldCheck className="h-4 w-4" />
+
+                <span>
+                  {t("wholesaleTrustWarranty")}
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Form */}
+          <div className="lg:col-span-7">
+
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
+
+              <div className="mb-6">
+
+                <span className="text-xs font-bold uppercase tracking-wider text-[#174e8c]">
+                  {t("wholesaleEnquiry")}
+                </span>
+
+                <h2 className="mt-1 text-2xl font-black text-slate-900">
+                  {t("wholesaleFormTitle")}
+                </h2>
+
+                <p className="mt-2 text-sm text-slate-500">
+                  {t("wholesaleFormDescription")}
+                </p>
+
+              </div>
+
+              <WholesaleForm />
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+     
     </main>
   );
 }

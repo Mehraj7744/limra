@@ -15,6 +15,7 @@ import {
   Target,
   Wind,
 } from "lucide-react";
+import LeadershipProfiles from "@/components/about/LeadershipProfiles";
 
 const values = [
   {
@@ -182,6 +183,8 @@ export default async function AboutPage() {
           </div>
         </div>
       </section>
+
+      <LeadershipProfiles/>
 
       {/* =========================================================
           COMPANY INTRODUCTION

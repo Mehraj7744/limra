@@ -376,5 +376,135 @@
     "description": "మా పెరుగుతున్న అధీకృత డిస్ట్రిబ్యూటర్లు, హోల్‌సేలర్లు మరియు రిటైల్ డీలర్ల నెట్‌వర్క్‌లో చేరండి. ఆకర్షణీయమైన ధరలు మరియు విశ్వసనీయ ఉత్పత్తుల ప్రయోజనం పొందండి.",
     "button": "వ్యాపార విచారణ ప్రారంభించండి"
   }
-}
+},
+
+  "wholesaleTitle": "హోల్‌సేల్ & బల్క్ సరఫరా",
+  "wholesaleSubtitle": "తయారీదారు నుండి నేరుగా నమ్మకమైన ఫ్యాన్ సరఫరా",
+  "wholesaleDescription": "భారతదేశవ్యాప్తంగా సీలింగ్ ఫ్యాన్లు, టేబుల్ ఫ్యాన్లు మరియు పెడెస్టల్ ఫ్యాన్ల నమ్మకమైన హోల్‌సేల్ సరఫరా కోసం LIMRA INDUSTRIESతో భాగస్వామ్యం చేయండి.",
+  "wholesaleBadge": "B2B వాణిజ్య సరఫరా",
+
+  "wholesaleHeroTitle": "ఫ్యాక్టరీ నుండి నేరుగా బల్క్ ఫ్యాన్ సరఫరా",
+  "wholesaleHeroDescription": "రిటైలర్లు, హోల్‌సేలర్లు, డీలర్లు, బిల్డర్లు మరియు సంస్థల కోసం నమ్మకమైన ఫ్యాన్ సరఫరా, పోటీ వాణిజ్య ధరలు మరియు విశ్వసనీయ ఆఫ్టర్-సేల్స్ సపోర్ట్.",
+  "wholesaleEnquiry": "బల్క్ విచారణ పంపండి",
+  "wholesaleWhatsApp": "WhatsAppలో విచారించండి",
+  "wholesaleViewProducts": "ఉత్పత్తులను చూడండి",
+
+  "wholesaleProductTitle": "హోల్‌సేల్ ఉత్పత్తి విభాగాలు",
+  "wholesaleProductDescription": "రిటైల్, వాణిజ్య మరియు సంస్థాగత అవసరాలకు అనువైన మా ఉత్పత్తుల శ్రేణిని ఎంచుకోండి.",
+
+  "wholesaleCeilingFans": "సీలింగ్ ఫ్యాన్లు",
+  "wholesaleCeilingFansDesc": "ఇళ్లు, వ్యాపారాలు మరియు రిటైల్ అవసరాల కోసం నమ్మకమైన సీలింగ్ ఫ్యాన్లు.",
+
+  "wholesaleTableFans": "టేబుల్ ఫ్యాన్లు",
+  "wholesaleTableFansDesc": "ఇళ్లు, కార్యాలయాలు మరియు సంస్థల కోసం కాంపాక్ట్ మరియు నమ్మకమైన టేబుల్ ఫ్యాన్లు.",
+
+  "wholesalePedestalFans": "పెడెస్టల్ ఫ్యాన్లు",
+  "wholesalePedestalFansDesc": "వాణిజ్య మరియు సంస్థాగత వినియోగానికి అధిక గాలి ప్రవాహం కలిగిన పెడెస్టల్ ఫ్యాన్లు.",
+
+  "wholesaleWhoWeSupply": "మేము ఎవరికి సరఫరా చేస్తాము",
+  "wholesaleWhoWeSupplyDescription": "బల్క్‌గా ఫ్యాన్లను కొనుగోలు చేసే వ్యాపారాలు మరియు సంస్థల కోసం మా హోల్‌సేల్ సరఫరా కార్యక్రమం రూపొందించబడింది.",
+
+  "wholesaleRetailers": "ఎలక్ట్రికల్ రిటైలర్లు & షాపులు",
+  "wholesaleRetailersDesc": "కార్టన్ పరిమాణంలో సరఫరా, మంచి ట్రేడ్ మార్జిన్లు మరియు నమ్మకమైన వారంటీ సపోర్ట్.",
+
+  "wholesaleDistributors": "ప్రాంతీయ హోల్‌సేలర్లు & స్టాకిస్టులు",
+  "wholesaleDistributorsDesc": "ప్రాంతీయ డిస్ట్రిబ్యూటర్లు, హోల్‌సేలర్లు మరియు ఎలక్ట్రికల్ స్టాకిస్టులకు బల్క్ సరఫరా.",
+
+  "wholesaleInstitutions": "హాస్టళ్లు & విద్యా సంస్థలు",
+  "wholesaleInstitutionsDesc": "డార్మిటరీలు, తరగతి గదులు, కార్యాలయాలు మరియు సంస్థాగత సౌకర్యాల కోసం నమ్మకమైన ఫ్యాన్లు.",
+
+  "wholesaleBuilders": "బిల్డర్లు & ఎలక్ట్రికల్ కాంట్రాక్టర్లు",
+  "wholesaleBuildersDesc": "నివాస మరియు వాణిజ్య ప్రాజెక్టుల కోసం సమాన బ్యాచ్ సరఫరా మరియు సమన్వయ డెలివరీ.",
+
+  "wholesaleBenefitsTitle": "LIMRA INDUSTRIES నుండి నేరుగా ఎందుకు కొనాలి?",
+  "wholesaleBenefitsDescription": "తయారీ సామర్థ్యం మరియు ప్రత్యేక సపోర్ట్‌తో సులభమైన మరియు నమ్మకమైన హోల్‌సేల్ సరఫరా ప్రక్రియ.",
+
+  "wholesaleBenefit1": "నేరుగా తయారీదారు",
+  "wholesaleBenefit1Desc": "మా తయారీ కేంద్రం నుండి నేరుగా ఉత్పత్తులను పొందండి.",
+
+  "wholesaleBenefit2": "బల్క్ సరఫరా",
+  "wholesaleBenefit2Desc": "డీలర్లు, రిటైలర్లు మరియు సంస్థాగత కొనుగోలుదారులకు అనువైన పరిమాణాలు.",
+
+  "wholesaleBenefit3": "నమ్మకమైన నాణ్యత",
+  "wholesaleBenefit3Desc": "పునరావృతమయ్యే బల్క్ ఆర్డర్ల కోసం స్థిరమైన ఉత్పత్తి నాణ్యత.",
+
+  "wholesaleBenefit4": "వారంటీ సపోర్ట్",
+  "wholesaleBenefit4Desc": "ఎంచుకున్న మోడళ్లకు వారంటీ కవరేజ్ అందుబాటులో ఉంది.",
+
+  "wholesaleBenefit5": "భారతదేశవ్యాప్తంగా డెలివరీ",
+  "wholesaleBenefit5Desc": "రిజిస్టర్డ్ ట్రాన్స్‌పోర్ట్ సేవల ద్వారా భారతదేశవ్యాప్తంగా డిస్పాచ్ సపోర్ట్.",
+
+  "wholesaleBenefit6": "డీలర్ సపోర్ట్",
+  "wholesaleBenefit6Desc": "హోల్‌సేల్ మరియు డీలర్ అవసరాల కోసం ప్రత్యేక సహాయం.",
+
+  "wholesaleFormTitle": "హోల్‌సేల్ & బల్క్ విచారణ",
+  "wholesaleFormDescription": "మీ బల్క్ అవసరాన్ని మాకు తెలియజేయండి. మా సేల్స్ టీమ్ మిమ్మల్ని సంప్రదిస్తుంది.",
+
+  "wholesaleName": "పూర్తి పేరు",
+  "wholesaleBusinessName": "వ్యాపార పేరు",
+  "wholesaleCity": "నగరం",
+  "wholesaleState": "రాష్ట్రం",
+  "wholesalePhone": "మొబైల్ నంబర్",
+  "wholesaleEmail": "ఇమెయిల్ చిరునామా",
+  "wholesaleProduct": "ఆసక్తి ఉన్న ఉత్పత్తి",
+  "wholesaleQuantity": "అవసరమైన పరిమాణం",
+  "wholesaleMessage": "అదనపు అవసరాలు",
+
+  "wholesaleNamePlaceholder": "ఉదా. రమేష్ కుమార్",
+  "wholesaleBusinessPlaceholder": "ఉదా. శ్రీ బాలాజీ ఎలక్ట్రికల్స్",
+  "wholesaleCityPlaceholder": "ఉదా. హైదరాబాద్ / పుణే",
+  "wholesalePhonePlaceholder": "ఉదా. +91 98765 43210",
+  "wholesaleEmailPlaceholder": "ఉదా. contact@business.com",
+  "wholesaleQuantityPlaceholder": "ఉదా. 25 ఫ్యాన్లు, 50 ఫ్యాన్లు, 100+ ఫ్యాన్లు",
+  "wholesaleMessagePlaceholder": "మోడల్స్, డెలివరీ సమయం లేదా ప్రత్యేక అవసరాలను పేర్కొనండి...",
+
+  "wholesaleSelectState": "రాష్ట్రాన్ని ఎంచుకోండి",
+
+  "wholesaleSubmit": "విచారణ పంపండి",
+  "wholesaleSubmitting": "పంపుతోంది...",
+  "wholesaleWhatsAppButton": "WhatsAppలో విచారించండి",
+
+  "wholesaleSuccessTitle": "హోల్‌సేల్ విచారణ అందింది",
+  "wholesaleSuccessDescription": "ధన్యవాదాలు. LIMRA INDUSTRIES సేల్స్ టీమ్ మీ అవసరాన్ని పరిశీలించి త్వరలో మిమ్మల్ని సంప్రదిస్తుంది.",
+  "wholesaleSendWhatsApp": "WhatsAppలో వివరాలను పంపండి",
+  "wholesaleSubmitAnother": "మరో విచారణ పంపండి",
+
+  "wholesaleProductLabel": "ఉత్పత్తి",
+  "wholesaleQuantityLabel": "పరిమాణం",
+  "wholesaleContactLabel": "సంప్రదింపు",
+
+  "wholesaleDirectFactory": "ఫ్యాక్టరీ నుండి నేరుగా",
+  "wholesalePanIndiaDispatch": "రిజిస్టర్డ్ ట్రాన్స్‌పోర్ట్ సేవల ద్వారా భారతదేశవ్యాప్తంగా డిస్పాచ్ అందుబాటులో ఉంది.",
+
+  "wholesaleTrustManufacturer": "నేరుగా తయారీదారు",
+  "wholesaleTrustManufacturerDesc": "మా తయారీ కేంద్రం నుండి నేరుగా నాణ్యమైన ఫ్యాన్లు.",
+
+  "wholesaleTrustWholesale": "హోల్‌సేల్ సరఫరా",
+  "wholesaleTrustWholesaleDesc": "డీలర్లు మరియు రిటైలర్ల కోసం నమ్మకమైన బల్క్ సరఫరా.",
+
+  "wholesaleTrustWarranty": "వారంటీ సపోర్ట్",
+  "wholesaleTrustWarrantyDesc": "వారంటీ సపోర్ట్‌తో నమ్మకమైన ఉత్పత్తులు.",
+
+  "wholesaleTrustDelivery": "భారతదేశవ్యాప్తంగా డెలివరీ",
+  "wholesaleTrustDeliveryDesc": "భారతదేశవ్యాప్తంగా సురక్షితమైన మరియు నమ్మకమైన డెలివరీ.",
+
+  "wholesaleTrustTitle": "నమ్మకమైన హోల్‌సేల్ సరఫరా కోసం రూపొందించబడింది",
+
+  "wholesaleProductCeilingBulk": "సీలింగ్ ఫ్యాన్లు (బల్క్)",
+  "wholesaleProductTableBulk": "టేబుల్ ఫ్యాన్లు (బల్క్)",
+  "wholesaleProductPedestalBulk": "పెడెస్టల్ ఫ్యాన్లు (బల్క్)",
+  "wholesaleProductMixed": "మిక్స్‌డ్ కంటైనర్ / అసార్టెడ్ ఆర్డర్",
+  "wholesaleProductInstitutional": "సంస్థాగత సరఫరా (హాస్టల్స్ / కాలేజీలు / కార్యాలయాలు)",
+  "wholesaleProductDealer": "డీలర్ డిస్ట్రిబ్యూషన్ విచారణ",
+   "aboutLeadershipEyebrow": "మా నాయకత్వం",
+  "aboutLeadershipTitle": "LIMRA వెనుక ఉన్న నాయకత్వం",
+  "aboutLeadershipDescription": "అనుభవం, వ్యాపార పరిజ్ఞానం మరియు సమిష్టి దృష్టి LIMRAను ముందుకు నడిపిస్తున్నాయి.",
+
+  "aboutFounderRole": "వ్యవస్థాపకుడు & తయారీ నిపుణుడు",
+  "aboutFounderDescription": "షేక్ అస్లాం సీలింగ్ ఫ్యాన్లు, టేబుల్ ఫ్యాన్లు, ఫ్యాన్ భాగాలు మరియు వైండింగ్ మెషీన్ల తయారీలో అనుభవం కలిగిన నిపుణుడు. తయారీ మరియు అసెంబ్లీపై ఉన్న లోతైన అవగాహనతో, నాణ్యత, విశ్వసనీయత మరియు కస్టమర్ సంతృప్తిపై దృష్టి పెట్టి ఆయన ఈ వ్యాపారాన్ని అభివృద్ధి చేశారు.",
+
+  "aboutFutureLeadershipRole": "వ్యాపార నిర్వహణ & భవిష్యత్ నాయకత్వం",
+  "aboutFutureLeadershipDescription": "షేక్ సల్మాన్ తన తండ్రి షేక్ అస్లాంతో కలిసి పనిచేస్తూ వ్యాపారంలోని వివిధ అంశాలను నిర్వహించడంలో మరియు అభివృద్ధి చేయడంలో సహకరిస్తున్నారు. BBA డిగ్రీతో పాటు ప్రస్తుతం MBA చదువుతూ, వ్యాపార విద్యను ప్రాయోగిక పరిశ్రమ అనుభవంతో కలిపి, ఆధునిక మరియు అభివృద్ధి దృక్పథంతో వ్యాపారాన్ని ముందుకు తీసుకెళ్లేందుకు సిద్ధమవుతున్నారు."
+
+
 }   
