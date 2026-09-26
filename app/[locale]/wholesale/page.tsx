@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 import WholesaleForm from "@/components/wholesale/WholesaleForm";
-import { getWholesaleEnquiryWhatsAppUrl } from "../../../utils/whatsapp";
+import { getWholesaleEnquiryWhatsAppUrl } from "@/utils/whatsapp";
 import { generateSEO } from "@/components/SEO/SEOHead";
 
 export default function WholesalePage() {
