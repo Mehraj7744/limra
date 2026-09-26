@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import Swal from "sweetalert2";
+
 import {
   CheckCircle2,
   Handshake,
@@ -200,32 +202,95 @@ export default function DealerForm({
      SUBMIT
   ========================================================= */
 
-  const handleSubmit = (
-    e: React.FormEvent<HTMLFormElement>
-  ) => {
-    e.preventDefault();
+const handleSubmit = async (
+  e: React.FormEvent<HTMLFormElement>
+) => {
+  e.preventDefault();
 
-    setIsSubmitting(true);
+  if (isSubmitting) return;
 
-    const generatedId =
-      `LL-${selectedRole
-        .substring(0, 3)
-        .toUpperCase()}-${Math.floor(
-        10000 + Math.random() * 90000
-      )}`;
+  setIsSubmitting(true);
 
-    setInquiryId(generatedId);
+  try {
+    const response = await fetch(
+      "/api/dealer-applications",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          role: selectedRole,
+          hasGst,
+          ...formData,
+          whatsapp:
+            formData.whatsapp || formData.phone,
+        }),
+      }
+    );
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
+    const data = await response.json();
 
-      window.scrollTo({
-        top: 300,
-        behavior: "smooth",
-      });
-    }, 600);
-  };
+    if (!response.ok) {
+      throw new Error(
+        data?.message ||
+          "Unable to submit your application."
+      );
+    }
+
+    // Backend-generated inquiry ID
+    setInquiryId(data.inquiryId);
+
+    // Success alert
+    await Swal.fire({
+      icon: "success",
+      title: "Application Submitted!",
+      html: `
+        <p style="margin-bottom: 10px;">
+          Your trade partner application has been submitted successfully.
+        </p>
+
+        <p style="font-weight: 700; margin-bottom: 5px;">
+          Inquiry Reference
+        </p>
+
+        <p style="
+          font-size: 18px;
+          font-weight: 800;
+          color: #0b2f5c;
+          margin: 0;
+        ">
+          ${data.inquiryId}
+        </p>
+      `,
+      confirmButtonText: "Continue",
+      confirmButtonColor: "#0b2f5c",
+      allowOutsideClick: false,
+    });
+
+    // Show your existing success screen
+    setIsSubmitted(true);
+
+  } catch (error) {
+    console.error(
+      "Dealer application submission failed:",
+      error
+    );
+
+    await Swal.fire({
+      icon: "error",
+      title: "Submission Failed",
+      text:
+        error instanceof Error
+          ? error.message
+          : "Unable to submit your application. Please try again.",
+      confirmButtonText: "Try Again",
+      confirmButtonColor: "#0b2f5c",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   /* =========================================================
      WHATSAPP

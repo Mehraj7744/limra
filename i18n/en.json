@@ -1,48 +1,45 @@
 {
-      "downloadCatalogue": "Download Catalogue"
-,
+  "navCeilingFans": "Ceiling Fans",
+"navTableFans": "Table Fans",
+"navPedestalFans": "Pedestal Fans",
+
+"popular": "Popular",
+"productModel": "Model",
+"sweep": "Sweep",
+"mrpLabel": "MRP",
+"wholesaleBulkRates": "Wholesale & Bulk Rates",
+"viewDetails": "View Details",
+"enquireBtn": "Enquire Now",
+    "navCeilingFans": "Ceiling Fans",
+  "navTableFans": "Table Fans",
+  "navPedestalFans": "Pedestal Fans",
+
+  "popular": "Popular",
+  "productModel": "Model",
+  "sweep": "Sweep",
+  "mrpLabel": "MRP",
+  "wholesaleBulkRates": "Wholesale & Bulk Rates",
+  "viewDetails": "View Details",
+  "enquireBtn": "Enquire Now",
+
   "Navbar": {
     "home": "Home",
     "products": "Products",
     "about": "About Us",
-    "application": "Application",
+    "business": "Business",
     "wholesale": "Wholesale",
-    "superstocker": "Super Stocker",
-    "retailer": "Retailer",
     "dealer": "Become a Dealer",
     "contact": "Contact",
     "quote": "Get a Quote",
-
-    "certification": "ISO 9001:2015 Certified Manufacturer",
+    "certification": "Quality Assured",
     "call": "Call",
-    "whatsappInquiry": "WhatsApp Inquiry",
-
-    "homeAria": "LIMRA INDUSTRY Homepage",
-    "toggleNavigation": "Toggle navigation menu",
-
-    "fanProductLines": "Fan Product Lines",
-    "allProductCatalog": "All Product Catalog",
-
-    "ceilingFans": "Ceiling Fans",
-    "ceilingFansDescription": "High speed & luxury models",
-
-    "tableFans": "Table Fans",
-    "tableFansDescription": "Compact high-airflow units",
-
-    "pedestalFans": "Pedestal Fans",
-    "pedestalFansDescription": "Heavy-duty commercial breeze",
-
-    "businessOpportunities": "Business Opportunities",
-
-    "wholesaleDescription": "Bulk orders & wholesale pricing",
-    "dealerDescription": "Join the LIMRA dealer network",
-
-    "productsCatalog": "Products Catalog",
-    "chatWhatsApp": "Chat on WhatsApp"
-  
+    "whatsappInquiry": "WhatsApp Enquiry",
+    "homeAria": "Go to Home",
+    "application": "Applications",
+    "toggleNavigation": "Toggle Navigation"
   },
-  
- 
+
+
   "Home": {
     "hero": {
       "badge": "For Dealers & Wholesale",
@@ -133,6 +130,7 @@
     },
     "whatsappMessage": "Hello LIMRA INDUSTRY, I am interested in wholesale fan pricing."
   },
+
   "Hero": {
     "badge": "For Dealers & Wholesale",
     "title": "Premium Fans.",
@@ -146,6 +144,7 @@
     "featuredModel": "Featured Model",
     "view": "View"
   },
+
   "ProductHighlights": {
     "model": "Avencer Prime",
     "title": "Built for Performance",
@@ -158,6 +157,7 @@
     "body": "Body",
     "motorWinding": "Motor Winding"
   },
+
   "FeaturedProduct": {
     "featuredModel": "Featured Model",
     "viewAllProducts": "View All Products",
@@ -175,6 +175,7 @@
     "viewProduct": "View Product",
     "wholesalePrice": "Get Wholesale Price"
   },
+
   "Business": {
     "whyLimra": "Why LIMRA",
     "builtForBusiness": "Built for Business",
@@ -184,12 +185,14 @@
     "dealerPricing": "Dealer Pricing",
     "panIndiaSupply": "Pan-India Supply"
   },
+
   "WholesaleCTA": {
     "audience": "Dealers • Distributors • Wholesalers",
     "title": "Get Wholesale Pricing",
     "description": "Tell us what you need and our team will contact you.",
     "button": "Send Wholesale Enquiry"
   },
+
   "DealerCTA": {
     "network": "Dealer Network",
     "title": "Grow your business with LIMRA",
@@ -200,6 +203,7 @@
     "button": "Become a Dealer",
     "subtext": "Start your dealership enquiry"
   },
+
   "About": {
     "hero": {
       "badge": "About LIMRA Industry",
@@ -295,6 +299,7 @@
       "contact": "Contact Us"
     }
   },
+
   "Contact": {
     "hero": {
       "badge": "Enterprise Support & Direct Enquiries",
@@ -376,6 +381,7 @@
       "button": "Start Trade Enquiry"
     }
   },
+
   "wholesaleTitle": "Wholesale & Bulk Supply",
   "wholesaleSubtitle": "Reliable fan supply directly from the manufacturer",
   "wholesaleDescription": "Partner with LIMRA INDUSTRIES for dependable bulk supply of ceiling fans, table fans and pedestal fans across India.",
@@ -431,7 +437,7 @@
   "wholesaleNamePlaceholder": "e.g. Ramesh Kumar",
   "wholesaleBusinessPlaceholder": "e.g. Sri Balaji Electricals",
   "wholesaleCityPlaceholder": "e.g. Hyderabad / Pune",
-  "wholesalePhonePlaceholder": "e.g. +91 89198 54467",
+  "wholesalePhonePlaceholder": "e.g. +91 98765 43210",
   "wholesaleEmailPlaceholder": "e.g. contact@business.com",
   "wholesaleQuantityPlaceholder": "e.g. 25 Fans, 50 Fans, 100+ Fans",
   "wholesaleMessagePlaceholder": "Specify models, delivery timeline, or any specific requests...",
@@ -463,6 +469,7 @@
   "wholesaleProductMixed": "Mixed Container / Assorted Order",
   "wholesaleProductInstitutional": "Institutional Supply (Hostels / Colleges / Offices)",
   "wholesaleProductDealer": "Dealer Distribution Inquiry",
+
   "aboutLeadershipEyebrow": "Our Leadership",
   "aboutLeadershipTitle": "The People Behind LIMRA",
   "aboutLeadershipDescription": "Experience, business knowledge, and a shared vision driving LIMRA forward.",
@@ -470,6 +477,7 @@
   "aboutFounderDescription": "Shaik Aslam is an experienced manufacturer with expertise in ceiling fans, table fans, fan components, and winding machines. With a strong understanding of manufacturing and assembly, he has built the business with a focus on quality, reliability, and customer satisfaction.",
   "aboutFutureLeadershipRole": "Business Management & Future Leadership",
   "aboutFutureLeadershipDescription": "Shaik Salman works alongside his father, Shaik Aslam, supporting and managing various aspects of the business. With a BBA degree and currently pursuing an MBA, he combines business education with practical industry experience and is preparing to take the business forward with a modern and growth-oriented approach.",
+
   "dealerPageTitle": "Trade Partner & Dealer Network",
   "dealerEyebrow": "B2B Commercial Supply • LIMRA INDUSTRIES",
   "dealerWarrantyBadge": "2-Year Warranty Backed",
@@ -487,6 +495,7 @@
   "dealerRoleDealerDescription": "Town or city showroom supplying electricians and local projects.",
   "dealerRoleRetailerDescription": "Neighborhood electrical or hardware shop seeking competitive factory-direct rates.",
   "dealerMinimumOrder": "Typical initial order",
+
   "dealerGuideEyebrow": "Partner Onboarding",
   "dealerGuideTitle": "How to Fill the Trade Partner Form",
   "dealerGuideRolesIntro": "Choose the partner level that best matches your business scale, territory, storage capacity, and expected purchase volume.",
@@ -552,6 +561,7 @@
   "dealerFaq4Answer": "Yes. You can indicate ceiling, table, pedestal, or mixed fan requirements in the product category section.",
   "dealerFaq5Question": "How will LIMRA contact me after submission?",
   "dealerFaq5Answer": "The sales team can use the contact details provided in the enquiry to discuss requirements, pricing, territory, and dispatch arrangements.",
+
   "dealerNeedHelpTitle": "Need help filling the form?",
   "dealerNeedHelpDescription": "Review the partner-level and field instructions before submitting your enquiry.",
   "dealerHideGuide": "Hide Guide",
@@ -657,38 +667,44 @@
   "dealerFormPlaceholderTitle": "Trade Partner Form",
   "dealerFormPlaceholderDescription": "Complete the trade partner application to share your business, territory and purchase requirements with LIMRA INDUSTRIES.",
   "dealerFormComingSoon": "Application Form",
-  "productsPageTitle": "Our Products",
-  "productsPageDescription": "Explore our complete range of ceiling, table and pedestal fans.",
-  "productsShowing": "Showing {count} of {total} products",
-  "navAllProducts": "All Products",
-  "navCeilingFans": "Ceiling Fans",
-  "navTableFans": "Table Fans",
-  "navPedestalFans": "Pedestal Fans",
-  "productsSearchPlaceholder": "Search products...",
-  "sortDefault": "Sort By",
-  "sortPriceLowHigh": "Price: Low to High",
-  "sortPriceHighLow": "Price: High to Low",
-  "filters": "Filters",
-  "filterProducts": "Filter Products",
-  "reset": "Reset",
-  "resetAllFilters": "Reset All Filters",
-  "category": "Category",
-  "sweepSize": "Sweep Size",
-  "allSizes": "All Sizes",
-  "preferences": "Preferences",
-  "featuredOnly": "Featured Products Only",
-  "inStockOnly": "In Stock Only",
-  "bulkQuantities": "Bulk Quantities",
-  "bulkQuantitiesDescription": "Contact us for dealer, wholesale and institutional orders.",
-  "noProductsFound": "No Products Found",
-  "noProductsFoundDescription": "Try changing your filters or search terms.",
-  "productModel": "Model",
-  "productImageComingSoon": "Product image coming soon",
-  "popular": "Popular",
-  "onRequest": "On Request",
-  "sweep": "Sweep",
-  "mrpLabel": "MRP",
-  "wholesaleBulkRates": "Bulk / Wholesale Rates Available",
-  "viewDetails": "View Details",
-  "enquireBtn": "Enquire Now"
+
+  "trustManufacturer": "Direct Manufacturer",
+  "trustManufacturerDesc": "Source fans directly from LIMRA INDUSTRY with factory-focused supply and support.",
+  "trustWholesale": "Wholesale Supply",
+  "trustWholesaleDesc": "Bulk fan supply for dealers, distributors, retailers and business buyers.",
+  "trustWarranty": "Warranty Support",
+  "trustWarrantyDesc": "Designated LIMRA products are supported by applicable warranty coverage.",
+  "trustDelivery": "Pan-India Delivery",
+  "trustDeliveryDesc": "Dispatch support available across India through registered transport services.",
+
+  "categoryCeilingDesc": "1200 mm ceiling fans designed for dependable airflow, performance and everyday residential or commercial use.",
+  "categoryTableDesc": "Compact table fans designed for focused airflow in homes, offices, shops and institutional spaces.",
+  "categoryPedestalDesc": "High-airflow pedestal fans suitable for commercial, workshop and institutional applications.",
+
+  "categoriesHeading": "Our Fan Categories",
+  "categoriesDesc": "Explore ceiling, table and pedestal fans designed for different spaces and requirements.",
+
+  "whyFactoryDirect": "Factory Direct Supply",
+  "whyFactoryDirectDesc": "Source directly from the manufacturer for dependable supply and straightforward business coordination.",
+  "whyReliableMotor": "Reliable Motor Build",
+  "whyReliableMotorDesc": "Performance-focused motor construction designed for dependable everyday operation.",
+  "whyHighAir": "High Air Delivery",
+  "whyHighAirDesc": "Fan designs focused on strong airflow and practical cooling performance.",
+  "whyEnergyEfficient": "Energy Efficient",
+  "whyEnergyEfficientDesc": "Selected models are designed to deliver useful airflow with efficient power consumption.",
+  "whyQualityComponents": "Quality Components",
+  "whyQualityComponentsDesc": "Attention to materials, construction and component quality across the product range.",
+  "whyWarranty": "Warranty Support",
+  "whyWarrantyDesc": "Designated products are supported by applicable manufacturer warranty coverage.",
+  "whyHeading": "Why Choose LIMRA?",
+  "whyDesc": "We combine manufacturing capability, product-focused engineering, dependable supply and support for customers across India.",
+
+  "dealerSubmitSuccessTitle": "Application Submitted!",
+  "dealerSubmitSuccessDescription": "Your trade partner application has been submitted successfully.",
+  "dealerSubmitSuccessReference": "Inquiry Reference",
+  "dealerSubmitSuccessContinue": "Continue",
+
+  "dealerSubmitErrorTitle": "Submission Failed",
+  "dealerSubmitErrorDefault": "Unable to submit your application. Please try again.",
+  "dealerSubmitErrorRetry": "Try Again"
 }

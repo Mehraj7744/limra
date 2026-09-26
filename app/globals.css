@@ -1,8 +1,7 @@
-@config "../tailwind.config.ts";
 @import "tailwindcss";
 
 /* =========================================================
-   LIGHT THEME
+   LIGHT THEME (Default)
    ========================================================= */
 
 :root {
@@ -47,6 +46,7 @@
   --muted: 222 24% 14%;
   --muted-foreground: 215 20% 65%;
 
+  --card: 222 26% NNN%; /* Keep values clean */
   --card: 222 26% 10%;
   --card-foreground: 210 40% 96%;
 
@@ -54,10 +54,10 @@
 }
 
 /* =========================================================
-   TAILWIND THEME TOKENS
+   TAILWIND v4 THEME MAPPINGS
    ========================================================= */
 
-@theme inline {
+@theme {
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
 
@@ -80,7 +80,7 @@
 }
 
 /* =========================================================
-   GLOBAL
+   GLOBAL STYLES
    ========================================================= */
 
 * {
@@ -93,42 +93,32 @@ html {
 
 body {
   margin: 0;
-  background: hsl(var(--background));
-  color: hsl(var(--foreground));
-  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
 }
 
 /* =========================================================
-   INTERACTIONS
+   INTERACTIONS & SELECTION
    ========================================================= */
 
 button,
 a {
-  transition:
-    color var(--duration-normal) var(--ease-smooth),
-    background-color var(--duration-normal) var(--ease-smooth),
-    border-color var(--duration-normal) var(--ease-smooth),
-    transform var(--duration-normal) var(--ease-smooth);
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
-
-/* =========================================================
-   SELECTION
-   ========================================================= */
 
 ::selection {
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
 }
 
 /* =========================================================
-   MARQUEE
+   MARQUEE ANIMATION
    ========================================================= */
 
 @keyframes marquee {
   from {
     transform: translateX(0);
   }
-
   to {
     transform: translateX(-50%);
   }

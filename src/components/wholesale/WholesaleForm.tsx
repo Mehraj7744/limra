@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { getWholesaleEnquiryWhatsAppUrl } from "../../../utils/whatsapp";
+import { getWholesaleEnquiryWhatsAppUrl } from "@/utils/whatsapp";
 
 interface WholesaleFormProps {
   defaultProduct?: string;

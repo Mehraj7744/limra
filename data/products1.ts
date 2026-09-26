@@ -62,7 +62,7 @@ export const products: Product[] = [
   {
     id: "cf-01",
     slug: "le-limra-aeroflow-ceiling-fan",
-    name: "LE LIMRA AeroFlow Ceiling Fan (Sample Product — Replace Details)",
+    name: "LE LIMRA AeroFlow Ceiling Fan ",
     category: "ceiling-fan",
     model: "LL-CF-1200-AF",
     shortDescription: "High-airflow ceiling fan engineered for dependable everyday cooling in Indian homes and offices.",
@@ -102,7 +102,7 @@ export const products: Product[] = [
   {
     id: "cf-02",
     slug: "le-limra-breeze-deluxe-ceiling-fan",
-    name: "LE LIMRA Breeze Deluxe Ceiling Fan (Sample Product — Replace Details)",
+    name: "LE LIMRA Breeze Deluxe Ceiling Fan ",
     category: "ceiling-fan",
     model: "LL-CF-1200-BD",
     shortDescription: "Classic metallic ring finish ceiling fan with high speed air delivery and low power consumption.",
@@ -141,7 +141,7 @@ export const products: Product[] = [
   {
     id: "cf-03",
     slug: "le-limra-economy-speed-ceiling-fan",
-    name: "LE LIMRA Economy Speed 900mm (Sample Product — Replace Details)",
+    name: "LE LIMRA Economy Speed 900mm ",
     category: "ceiling-fan",
     model: "LL-CF-900-ECO",
     shortDescription: "Compact 900mm ceiling fan engineered for small rooms, kitchens, cabins, and corridors.",
@@ -177,7 +177,7 @@ export const products: Product[] = [
   {
     id: "tf-01",
     slug: "le-limra-airjet-table-fan",
-    name: "LE LIMRA AirJet 400mm Table Fan (Sample Product — Replace Details)",
+    name: "LE LIMRA AirJet 400mm Table Fan ",
     category: "table-fan",
     model: "LL-TF-400-AJ",
     shortDescription: "Compact, portable, and powerful high-speed table fan for personal desks, study areas, and countertops.",
@@ -215,7 +215,7 @@ export const products: Product[] = [
   {
     id: "tf-02",
     slug: "le-limra-compact-desk-fan",
-    name: "LE LIMRA Compact Desk Fan 300mm (Sample Product — Replace Details)",
+    name: "LE LIMRA Compact Desk Fan 300mm ",
     category: "table-fan",
     model: "LL-TF-300-CD",
     shortDescription: "300mm lightweight personal table fan with tilt adjustment and smooth oscillation.",
@@ -250,7 +250,7 @@ export const products: Product[] = [
   {
     id: "pf-01",
     slug: "le-limra-stormflow-pedestal-fan",
-    name: "LE LIMRA StormFlow Pedestal Fan (Sample Product — Replace Details)",
+    name: "LE LIMRA StormFlow Pedestal Fan ",
     category: "pedestal-fan",
     model: "LL-PF-400-SF",
     shortDescription: "Heavy-duty standing pedestal fan with telescopic height adjustment for halls, shops, and workshops.",
@@ -289,7 +289,7 @@ export const products: Product[] = [
   {
     id: "pf-02",
     slug: "le-limra-commercial-high-thrust-pedestal-fan",
-    name: "LE LIMRA High-Thrust Commercial Pedestal Fan (Sample Product — Replace Details)",
+    name: "LE LIMRA High-Thrust Commercial Pedestal Fan ",
     category: "pedestal-fan",
     model: "LL-PF-450-HT",
     shortDescription: "High-thrust 450mm commercial standing fan designed for large gathering areas, tents, and halls.",
